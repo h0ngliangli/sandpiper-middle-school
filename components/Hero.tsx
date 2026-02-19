@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
           Sandpiper<br />Middle School
         </h1>
         <p className="mt-4 max-w-2xl text-xl text-gray-300 sm:mt-6 font-light leading-relaxed">
-          Empowering the next generation of innovators, creators, and leaders through a rigorous curriculum designed for the future.
+          home of our Stingray Families. We are a safe and vibrant TK–8 community committed to <strong>strong academics, reduced bullying, and student leadership</strong>, where diversity is celebrated and every learner feels empowered to belong and succeed.
         </p>
         <div className="mt-10 sm:flex sm:justify-start gap-4">
           <div className="rounded-md shadow">
