@@ -1,12 +1,12 @@
 import React from 'react';
-import { Users, Trophy, BookOpen, Clock } from 'lucide-react';
+import { Users, Trophy, BookOpen, SmilePlus, Bot } from 'lucide-react';
 import { StatItem } from '../types';
 
 const stats: StatItem[] = [
-  { id: '1', label: 'Student Ratio', value: '12:1', icon: <Users className="h-8 w-8 text-sandpiper-gold" /> },
-  { id: '2', label: 'AP & Honors Courses', value: '15+', icon: <BookOpen className="h-8 w-8 text-sandpiper-gold" /> },
-  { id: '3', label: 'State Championships', value: '24', icon: <Trophy className="h-8 w-8 text-sandpiper-gold" /> },
-  { id: '4', label: 'Years of Excellence', value: '50', icon: <Clock className="h-8 w-8 text-sandpiper-gold" /> },
+  { id: '1', label: 'Student Ratio', value: '15:1', icon: <Users className="h-8 w-8 text-sandpiper-gold" /> },
+  { id: '2', label: 'Student Clubs', value: '10+', icon: <Bot className="h-8 w-8 text-sandpiper-gold" /> },
+  { id: '3', label: 'Sport Teams', value: '6', icon: <Trophy className="h-8 w-8 text-sandpiper-gold" /> },
+  { id: '4', label: 'Student Satisfaction', value: '90%', icon: <SmilePlus className="h-8 w-8 text-sandpiper-gold" /> },
 ];
 
 const StatsSection: React.FC = () => {
