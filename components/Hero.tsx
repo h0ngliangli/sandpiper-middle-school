@@ -4,12 +4,17 @@ import { ArrowRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <div className="relative bg-midnight overflow-hidden min-h-[600px] flex items-center">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          className="w-full h-full object-cover"
-          src="https://picsum.photos/1920/1080?grayscale&blur=1"
-          alt="Sandpiper Middle School Campus"
+      {/* Background Video with Overlay */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none w-full h-full object-cover"
+          src="/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          controlsList="nodownload nofullscreen noremoteplayback"
         />
         <div className="absolute inset-0 bg-midnight/80 mix-blend-multiply"></div>
       </div>
