@@ -37,12 +37,10 @@ const Footer: React.FC = () => {
 
           {/* Links */}
           <div>
-            <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
+            <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wider text-sm">More Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors">Staff Directory</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Employment</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Board of Education</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="https://sandpiper.brssd.org/quick-links/staff-directory" className="hover:text-white transition-colors">Staff Directory</a></li>
+              <li><a href="https://www.brssd.org/board-of-trustees" className="hover:text-white transition-colors">Board of Education</a></li>
             </ul>
           </div>
         </div>

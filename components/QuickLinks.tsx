@@ -1,14 +1,14 @@
 import React from 'react';
 import { LinkItem } from '../types';
-import { Calendar, Utensils, Bus, ShieldAlert, FileText, HelpCircle } from 'lucide-react';
+import { Calendar, Utensils, Phone, ShieldAlert, FileText, MessageCircleQuestionMark } from 'lucide-react';
 
 const links: LinkItem[] = [
-  { id: '1', label: 'School Calendar', url: '#', icon: <Calendar className="h-6 w-6" /> },
-  { id: '2', label: 'Lunch Menu', url: '#', icon: <Utensils className="h-6 w-6" /> },
-  { id: '3', label: 'Bus Routes', url: '#', icon: <Bus className="h-6 w-6" /> },
+  { id: '1', label: 'School Calendar', url: 'https://sandpiper.brssd.org/quick-links/calendars-and-events', icon: <Calendar className="h-6 w-6" /> },
+  { id: '2', label: 'Lunch Menu', url: 'https://sandpiper.brssd.org/quick-links/meals', icon: <Utensils className="h-6 w-6" /> },
+  { id: '3', label: 'Absence Reporting', url: 'https://sandpiper.brssd.org/quick-links/absence-reporting', icon: <Phone className="h-6 w-6" /> },
   { id: '4', label: 'Safe School Report', url: '#', icon: <ShieldAlert className="h-6 w-6" /> },
   { id: '5', label: 'Student Handbook', url: '#', icon: <FileText className="h-6 w-6" /> },
-  { id: '6', label: 'Help Desk', url: '#', icon: <HelpCircle className="h-6 w-6" /> },
+  { id: '6', label: 'Ask Me Anything', url: 'https://wa.me/1234567890', icon: <MessageCircleQuestionMark className="h-6 w-6"/>, description: 'Have questions? Our parent embassador is here to help!', newTab: true },
 ];
 
 const QuickLinks: React.FC = () => {
@@ -27,6 +27,8 @@ const QuickLinks: React.FC = () => {
             <a
               key={link.id}
               href={link.url}
+              target={link.newTab ? '_blank' : undefined}
+              rel={link.newTab ? 'noopener noreferrer' : undefined}
               className="group flex items-center p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:bg-sandpiper-blue hover:border-sandpiper-blue transition-all duration-300 hover:-translate-y-1 shadow-lg"
             >
               <div className="flex-shrink-0 bg-slate-900 group-hover:bg-white/20 p-3 rounded-lg transition-colors">
@@ -38,7 +40,11 @@ const QuickLinks: React.FC = () => {
                 <h3 className="text-lg font-bold text-white group-hover:text-white transition-colors">
                   {link.label}
                 </h3>
-                <span className="text-sm text-slate-400 group-hover:text-blue-100">Access Now &rarr;</span>
+                {link.description && (
+                  <p className="text-sm text-slate-400 group-hover:text-blue-100 mt-1">
+                    {link.description}
+                  </p>
+                )}
               </div>
             </a>
           ))}

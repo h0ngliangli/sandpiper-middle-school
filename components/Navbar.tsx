@@ -30,11 +30,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#learn' },
-    { name: 'Admissions', href: '#explore' },
-    { name: 'Academics', href: '#create' },
-    { name: 'Athletics', href: '#compete' },
-    { name: 'Parents', href: '#links' },
+    { name: 'Link Holder', href: '#learn' },
+    { name: 'Link Holder', href: '#explore' },
+    { name: 'Link Holder', href: '#create' },
   ];
 
   return (
@@ -65,9 +63,6 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="#" className="bg-sandpiper-blue hover:bg-blue-800 text-white px-5 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition-colors shadow-md">
-                Enroll Now
-              </a>
             </div>
           </div>
           
@@ -99,9 +94,6 @@ const Navbar: React.FC = () => {
                 {link.name}
               </a>
             ))}
-             <a href="#" className="bg-sandpiper-blue block text-center text-white px-3 py-3 mt-4 rounded-md text-base font-bold uppercase">
-                Enroll Now
-              </a>
           </div>
         </div>
       )}

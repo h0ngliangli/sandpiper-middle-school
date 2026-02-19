@@ -23,4 +23,6 @@ export interface LinkItem {
   label: string;
   url: string;
   icon: React.ReactNode;
+  description?: string; // Optional description for the link
+  newTab?: boolean;
 }
