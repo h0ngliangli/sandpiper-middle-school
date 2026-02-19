@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-3">
             <div className="bg-sandpiper-blue p-2 rounded-full">
-                <GraduationCap className="h-8 w-8 text-white" />
+                <img src="/assets/favicon.svg" className="h-8 w-8" alt="" />
             </div>
             <span className="font-serif font-bold text-xl tracking-wider text-white">
               SANDPIPER MIDDLE SCHOOL
