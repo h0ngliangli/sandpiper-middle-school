@@ -1,0 +1,64 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import StatsSection from './components/StatsSection';
+import SectionGrid from './components/SectionGrid';
+import QuickLinks from './components/QuickLinks';
+import Footer from './components/Footer';
+import { SectionContent } from './types';
+
+const App: React.FC = () => {
+  const mainSections: SectionContent[] = [
+    {
+      id: 'learn',
+      title: 'LEARN',
+      description: 'At Sandpiper, we believe in a curriculum that challenges students to think critically and solve real-world problems. Our STEAM-focused approach integrates Science, Technology, Engineering, Arts, and Mathematics into daily learning, ensuring every student is prepared for high school and beyond. From advanced robotics labs to creative writing workshops, learning here is an adventure.',
+      imageUrl: 'https://picsum.photos/seed/learn2/800/600',
+      imageAlt: 'Students working in a science lab',
+      reverse: false,
+      ctaText: 'View Curriculum',
+    },
+    {
+      id: 'explore',
+      title: 'EXPLORE',
+      description: 'Education extends far beyond the four walls of a classroom. Our "Explore" initiative offers students opportunities to engage with the community and the environment. Through quarterly field trips, guest speaker series, and outdoor education camps, students discover their passions and broaden their horizons.',
+      imageUrl: 'https://picsum.photos/seed/explore/800/600',
+      imageAlt: 'Students on an outdoor field trip',
+      reverse: true,
+      ctaText: 'See Field Trips',
+    },
+    {
+      id: 'create',
+      title: 'CREATE',
+      description: 'Imagination is the beginning of creation. Our dedicated maker spaces and art studios provide the tools and freedom for students to express themselves. Whether it is 3D printing a prototype, painting a mural, or composing digital music, we celebrate the unique creative voice of every student.',
+      imageUrl: 'https://picsum.photos/seed/art/800/600',
+      imageAlt: 'Student painting in art class',
+      reverse: false,
+      ctaText: 'Visit Art Gallery',
+    },
+    {
+      id: 'compete',
+      title: 'COMPETE',
+      description: 'Sandpiper Middle School creates champions on and off the field. Our athletics program fosters teamwork, discipline, and resilience. We offer a wide range of sports including soccer, basketball, track & field, and volleyball. Additionally, our academic teams in Math Olympiad and Debate consistently rank at the state level.',
+      imageUrl: 'https://picsum.photos/seed/sports/800/600',
+      imageAlt: 'Students playing soccer',
+      reverse: true,
+      ctaText: 'Athletics Schedule',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-50 flex flex-col">
+      <Navbar />
+      <main className="flex-grow pt-20">
+        <Hero />
+        <StatsSection />
+        <SectionGrid sections={mainSections} />
+        <QuickLinks />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
