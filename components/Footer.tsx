@@ -51,6 +51,9 @@ const Footer: React.FC = () => {
           <p className="mt-1 italic text-gray-500">
             Powered by the Sandpiper Parent Innovation Advisory Council
           </p>
+          <p className="mt-1 text-gray-600">
+            Build Time: {process.env.__BUILD_TIME__}
+          </p>
         </div>
       </div>
     </footer>
