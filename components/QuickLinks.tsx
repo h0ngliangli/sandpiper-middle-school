@@ -8,7 +8,6 @@ const links: LinkItem[] = [
   { id: '3', label: 'Absence Reporting', url: 'https://sandpiper.brssd.org/quick-links/absence-reporting', icon: <Phone className="h-6 w-6" /> },
   { id: '4', label: 'Safe School Report', url: '#', icon: <ShieldAlert className="h-6 w-6" /> },
   { id: '5', label: 'Student Handbook', url: '#', icon: <FileText className="h-6 w-6" /> },
-  { id: '6', label: 'Ask Me Anything', url: 'https://wa.me/1234567890', icon: <MessageCircleQuestionMark className="h-6 w-6"/>, description: 'Have questions? Our parent embassador is here to help!', newTab: true },
 ];
 
 const QuickLinks: React.FC = () => {
