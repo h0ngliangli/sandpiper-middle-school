@@ -11,8 +11,8 @@ const App: React.FC = () => {
   const mainSections: SectionContent[] = [
     {
       id: 'learn',
-      title: 'LEARN',
-      description: 'At Sandpiper, we believe in a curriculum that challenges students to think critically and solve real-world problems. Our STEAM-focused approach integrates Science, Technology, Engineering, Arts, and Mathematics into daily learning, ensuring every student is prepared for high school and beyond. From advanced robotics labs to creative writing workshops, learning here is an adventure.',
+      title: 'DESIGN THINKING',
+      description: 'At Sandpiper, Design Thinking is woven into everyday learning. Students tackle real-world challenges by empathizing, defining problems, brainstorming ideas, and testing solutions. Students learn to view feedback and setbacks as part of the growth process. This approach builds confident, innovative learners prepared for high school and beyond.',
       imageUrl: '/images/learn.png',
       imageAlt: 'Students working in a science lab',
       reverse: false,

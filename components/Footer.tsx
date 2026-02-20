@@ -48,6 +48,9 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
           &copy; {new Date().getFullYear()} Sandpiper Middle School. All rights reserved.
+          <p className="mt-1 italic text-gray-500">
+            Powered by the Sandpiper Parent Innovation Advisory Council
+          </p>
         </div>
       </div>
     </footer>
