@@ -46,14 +46,16 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
-          &copy; {new Date().getFullYear()} Sandpiper Middle School. All rights reserved.
-          <p className="mt-1 italic text-gray-500">
+        <div className="border-t border-slate-800 mt-12 pt-1 text-center text-sm text-slate-500 md:flex md:items-center md:justify-between md:text-left">
+          <div className="md:pr-4">
+            &copy; {new Date().getFullYear()} Sandpiper Middle School. All rights reserved.
+          </div>
+          <div className="mt-1 italic text-gray-500 md:mt-0 md:px-4">
             Powered by the Sandpiper Parent Innovation Advisory Council
-          </p>
-          <p className="mt-1 text-gray-600">
+          </div>
+          <div className="mt-1 text-gray-600 md:mt-0 md:pl-4">
             Build Time: {process.env.__BUILD_TIME__}
-          </p>
+          </div>
         </div>
       </div>
     </footer>
