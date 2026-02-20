@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
         <p className="mt-4 max-w-2xl text-xl text-gray-300 sm:mt-6 font-light leading-relaxed">
           home of our Stingray Families. We are a safe and vibrant TK–8 community committed to <strong>strong academics, reduced bullying, and student leadership</strong>, where diversity is celebrated and every learner feels empowered to belong and succeed.
         </p>
-        <div className="mt-10 sm:flex sm:justify-start gap-4">
+        {/* <div className="mt-10 sm:flex sm:justify-start gap-4">
           <div className="rounded-md shadow">
             <a
               href="#learn"
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

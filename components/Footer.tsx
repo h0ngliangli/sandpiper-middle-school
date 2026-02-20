@@ -39,8 +39,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wider text-sm">More Links</h4>
             <ul className="space-y-2">
-              <li><a href="https://sandpiper.brssd.org/quick-links/staff-directory" className="hover:text-white transition-colors">Staff Directory</a></li>
-              <li><a href="https://www.brssd.org/board-of-trustees" className="hover:text-white transition-colors">Board of Education</a></li>
+              <li><a href="https://sandpiper.brssd.org" className="hover:text-white transition-colors">Sandpiper School</a></li>
+              <li><a href="https://www.brssd.org" className="hover:text-white transition-colors">BRSSD</a></li>
+              <li><a href="https://www.brssd.org/board-of-trustees" className="hover:text-white transition-colors">Board of Trustees</a></li>
             </ul>
           </div>
         </div>
