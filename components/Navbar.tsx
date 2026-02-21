@@ -35,13 +35,13 @@ const Navbar: React.FC = () => {
 
   return (
     <nav 
-      className={`bg-midnight text-white fixed top-0 w-full z-50 shadow-lg border-b border-slate-700 transition-transform duration-300 ${
+      className={`bg-sandpiper-blue text-white fixed top-0 w-full z-50 shadow-lg border-b border-slate-700 transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center gap-1">
             <div className="bg-sandpiper-blue p-2 rounded-full">
                 <img src="/favicon.svg" className="h-8 w-8" alt="" />
             </div>

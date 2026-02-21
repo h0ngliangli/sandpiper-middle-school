@@ -61,7 +61,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <Navbar />
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-16">
         <Hero />
         <StatsSection />
         <SectionGrid sections={mainSections} />
