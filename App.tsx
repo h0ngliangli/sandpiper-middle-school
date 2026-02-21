@@ -5,6 +5,7 @@ import StatsSection from './components/StatsSection';
 import SectionGrid from './components/SectionGrid';
 import QuickLinks from './components/QuickLinks';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 import { SectionContent } from './types';
 
 const App: React.FC = () => {
@@ -67,6 +68,7 @@ const App: React.FC = () => {
         <QuickLinks />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 };
