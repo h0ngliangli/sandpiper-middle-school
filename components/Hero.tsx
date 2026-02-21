@@ -8,14 +8,16 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         <video
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none w-full h-full object-cover"
-          src="/hero.mp4"
           autoPlay
           muted
           loop
           playsInline
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
-        />
+        >
+          <source src="/videos/school-life.webm" type="video/webm" />
+          <source src="/videos/school-life.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-midnight/80 mix-blend-multiply"></div>
       </div>
 
