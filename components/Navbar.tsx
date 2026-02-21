@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
             <div className="bg-sandpiper-blue p-2 rounded-full">
                 <img src="/favicon.svg" className="h-8 w-8" alt="" />
             </div>
-            <span className="font-serif font-bold text-xl tracking-wider text-white">
+            <span className="text-xl tracking-wider text-white">
               SANDPIPER MIDDLE SCHOOL
             </span>
           </div>
