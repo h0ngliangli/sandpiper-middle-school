@@ -283,8 +283,8 @@ const Chatbot: React.FC = () => {
           {/* Header */}
           <div className="bg-sandpiper-blue px-4 py-3 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-full bg-sandpiper-gold flex items-center justify-center font-bold text-white text-sm select-none">
-                S
+              <div className="bg-sandpiper-blue p-2 rounded-full">
+                  <img src="/favicon.svg" className="h-8 w-8" alt="" />
               </div>
               <div>
                 <p className="text-white font-semibold text-sm leading-tight">Sandpiper Assistant</p>
