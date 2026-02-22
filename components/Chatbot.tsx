@@ -34,7 +34,7 @@ ${FAQ_ITEMS.map((item) => `Q: ${item.question}\nA: ${item.answer}`).join('\n\n')
 Rules:
 1. Answer questions using the FAQ above, well-known facts about the school (address, phone), or information from the Belmont-Redwood Shores School District website at https://www.brssd.org/. You may use Google Search to look up current information from brssd.org when the FAQ does not cover the topic.
 2. If you cannot find a relevant answer even after considering brssd.org, respond with exactly the word: ${REDIRECT_SIGNAL}
-3. If the parent asks to speak to a person, a parent ambassador, or a human, respond with exactly: ${REDIRECT_SIGNAL}
+3. If the parent asks to speak to a person, a parent ambassador, or a human, please softly respond with ${REDIRECT_SIGNAL}
 4. Visitors can ask about anything in any language, you can reply in the same language.
 5. Otherwise, keep answers concise, warm, and helpful. Do not invent information not found in the FAQ or on brssd.org.`;
 
@@ -341,7 +341,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Persistent WhatsApp shortcut */}
-          <div className="px-4 py-2 bg-slate-50 border-t border-slate-100 flex-shrink-0">
+          {/* <div className="px-4 py-2 bg-slate-50 border-t border-slate-100 flex-shrink-0">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -351,7 +351,7 @@ const Chatbot: React.FC = () => {
               <WhatsAppIcon className="h-3.5 w-3.5" />
               <span>Speak to a Parent Ambassador</span>
             </a>
-          </div>
+          </div> */}
 
           {/* Input */}
           <div className="px-3 py-3 border-t border-slate-200 flex items-center space-x-2 flex-shrink-0">
