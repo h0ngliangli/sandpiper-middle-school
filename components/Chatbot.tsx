@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, AlertCircle } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { FAQ_ITEMS } from './faq';
 
 // TODO: Replace with your actual WhatsApp number, e.g. https://wa.me/16501234567
@@ -329,7 +331,26 @@ const Chatbot: React.FC = () => {
                         : 'bg-slate-100 text-slate-800 rounded-bl-sm'
                     }`}
                   >
-                    {msg.content}
+                    {msg.role === 'user' ? (
+                      msg.content
+                    ) : (
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          p: ({ children }) => <p className="mb-1 last:mb-0">{children}</p>,
+                          ul: ({ children }) => <ul className="list-disc list-inside mb-1 space-y-0.5">{children}</ul>,
+                          ol: ({ children }) => <ol className="list-decimal list-inside mb-1 space-y-0.5">{children}</ol>,
+                          li: ({ children }) => <li>{children}</li>,
+                          strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                          a: ({ href, children }) => (
+                            <a href={href} target="_blank" rel="noopener noreferrer" className="underline text-blue-700 hover:text-blue-900">{children}</a>
+                          ),
+                          code: ({ children }) => <code className="bg-slate-200 rounded px-1 font-mono text-xs">{children}</code>,
+                        }}
+                      >
+                        {msg.content}
+                      </ReactMarkdown>
+                    )}
                   </div>
                   {msg.showWhatsApp && <WhatsAppButton />}
                 </div>
