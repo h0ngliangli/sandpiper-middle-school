@@ -1,0 +1,45 @@
+Here's what I found, organized by priority:
+
+Critical
+API key exposed in the bundle — vite.config.ts:13-16
+The GEMINI_API_KEY is embedded into the client-side JS via define. Anyone can extract it from the browser. API calls should go through a backend proxy.
+
+High
+aria-expanded is hardcoded to false — Navbar.tsx:73
+The mobile menu button never updates this attribute when the menu opens. Should be aria-expanded={isOpen}.
+
+Empty alt text on logo images — Navbar.tsx:46, Chatbot.tsx:291
+Screen readers get no context. Use alt="Sandpiper Middle School logo".
+
+Medium
+Tailwind loaded via CDN — index.html:8
+The CDN version is larger, slower, and not tree-shaken. For production, set up Tailwind with PostCSS via npm.
+
+Dead <link> for /index.css — index.html:49
+The file doesn't exist. Remove it.
+
+Commented-out code blocks — Hero.tsx:34-52, Chatbot.tsx:365-375
+Delete them — that's what git history is for.
+
+Placeholder nav link in production — Navbar.tsx:33
+'[Place Holder for more links]' is visible to users. Remove or replace it.
+
+Placeholder # links — QuickLinks.tsx:9-10
+"Safe School Report" and "Student Handbook" link to #. Either wire them up or visually indicate they're coming soon.
+
+console.log in production — Chatbot.tsx:202
+Remove the Gemini API response status log.
+
+TypeScript strict mode disabled — tsconfig.json
+No "strict": true means no strictNullChecks, implicit any, etc. Enable it.
+
+Chatbot.tsx is 420+ lines doing too much — Chatbot.tsx
+API logic, message state, UI state, and rendering are all mixed together. Extract a useGeminiChat() hook and a ChatMessage component.
+
+Low / Quick Wins
+Missing focus-visible styles on links (Footer.tsx:17-19) — add focus:ring-2 focus:ring-sandpiper-gold
+Scroll handler in Navbar could be throttled (Navbar.tsx:9-30)
+Images in SectionGrid.tsx should have loading="lazy" to avoid layout shift
+No <ErrorBoundary> — a crash in any component takes down the whole app
+Missing Open Graph / SEO meta tags in index.html
+Easiest wins right now: fix aria-expanded, add alt text, delete commented code, remove the dead CSS link, and remove the console.log. All under 5 minutes total. Want me to handle any of these?

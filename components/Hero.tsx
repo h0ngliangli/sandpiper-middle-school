@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -31,25 +30,6 @@ const Hero: React.FC = () => {
         <p className="mt-4 max-w-2xl text-xl text-gray-300 sm:mt-6 font-light leading-relaxed">
           home of our Stingray Families. We are a safe and vibrant TK–8 community committed to <strong>strong academics, reduced bullying, and student leadership</strong>, where diversity is celebrated and every learner feels empowered to belong and succeed.
         </p>
-        {/* <div className="mt-10 sm:flex sm:justify-start gap-4">
-          <div className="rounded-md shadow">
-            <a
-              href="#learn"
-              className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-midnight bg-sandpiper-gold hover:bg-yellow-400 md:py-4 md:text-lg transition-colors"
-            >
-              Explore Our Programs
-            </a>
-          </div>
-          <div className="mt-3 sm:mt-0">
-            <a
-              href="#visit"
-              className="w-full flex items-center justify-center px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-midnight md:py-4 md:text-lg transition-colors group"
-            >
-              Plan a Visit
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div> */}
       </div>
     </div>
   );

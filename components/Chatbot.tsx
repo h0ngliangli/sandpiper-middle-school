@@ -199,8 +199,7 @@ const Chatbot: React.FC = () => {
         }),
       }
     );
-    console.log('Gemini API response status:', response.status);
-    if (!response.ok) throw new Error(`Gemini API error: ${response.status}`);
+if (!response.ok) throw new Error(`Gemini API error: ${response.status}`);
     const data = await response.json();
     return data.candidates?.[0]?.content?.parts?.[0]?.text ?? REDIRECT_SIGNAL;
   };
@@ -288,7 +287,7 @@ const Chatbot: React.FC = () => {
           <div className="bg-sandpiper-blue px-4 py-3 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center space-x-3">
               <div className="bg-sandpiper-blue p-2 rounded-full">
-                  <img src="/favicon.svg" className="h-8 w-8" alt="" />
+                  <img src="/favicon.svg" className="h-8 w-8" alt="Sandpiper Middle School logo" />
               </div>
               <div>
                 <p className="text-white font-semibold text-sm leading-tight">Sandpiper Assistant</p>
@@ -360,19 +359,6 @@ const Chatbot: React.FC = () => {
             {isLoading && <TypingIndicator />}
             <div ref={messagesEndRef} />
           </div>
-
-          {/* Persistent WhatsApp shortcut */}
-          {/* <div className="px-4 py-2 bg-slate-50 border-t border-slate-100 flex-shrink-0">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-1.5 text-green-600 hover:text-green-700 text-xs font-medium transition-colors"
-            >
-              <WhatsAppIcon className="h-3.5 w-3.5" />
-              <span>Speak to a Parent Ambassador</span>
-            </a>
-          </div> */}
 
           {/* Input */}
           <div className="px-3 py-3 border-t border-slate-200 flex items-center space-x-2 flex-shrink-0">

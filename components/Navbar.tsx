@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-1">
             <div className="bg-sandpiper-blue p-2 rounded-full">
-                <img src="/favicon.svg" className="h-8 w-8" alt="" />
+                <img src="/favicon.svg" className="h-8 w-8" alt="Sandpiper Middle School logo" />
             </div>
             <span className="text-sm sm:text-base md:text-xl tracking-wider text-white whitespace-nowrap">
               SANDPIPER MIDDLE SCHOOL
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
               type="button"
               className="bg-slate-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-700 focus:outline-none"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
