@@ -3,6 +3,7 @@
 ## To do
 - [ ] New video clip.
 - [ ] Replace images with real photos.
+- [ ] Add a social section to display Whatsapp groups by grade and Room Parent info. 
 
 ## Done
 - [x] Add a chatbot.
