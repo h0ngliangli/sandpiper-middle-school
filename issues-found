@@ -10,11 +10,7 @@ Placeholder # links — QuickLinks.tsx:9-10
 TypeScript strict mode disabled — tsconfig.json
 No "strict": true means no strictNullChecks, implicit any, etc. Enable it.
 
-Chatbot.tsx is 420+ lines doing too much — Chatbot.tsx
-API logic, message state, UI state, and rendering are all mixed together. Extract a useGeminiChat() hook and a ChatMessage component.
-
 Low / Quick Wins
 Missing focus-visible styles on links (Footer.tsx:17-19) — add focus:ring-2 focus:ring-sandpiper-gold
 Scroll handler in Navbar could be throttled (Navbar.tsx:9-30)
-Images in SectionGrid.tsx should have loading="lazy" to avoid layout shift
 No <ErrorBoundary> — a crash in any component takes down the whole app
