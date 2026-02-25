@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wider text-sm">Contact Us</h4>
+            <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-sm">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-sandpiper-gold mt-1" />
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
 
           {/* Links */}
           <div>
-            <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wider text-sm">More Links</h4>
+            <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-sm">More Links</h4>
             <ul className="space-y-2">
               <li><a href="https://sandpiper.brssd.org" className="hover:text-white transition-colors">Sandpiper School</a></li>
               <li><a href="https://www.brssd.org" className="hover:text-white transition-colors">BRSSD</a></li>
