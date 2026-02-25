@@ -1,13 +1,16 @@
 {
   "hosting": {
-    "source": ".",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "frameworksBackend": {
-      "region": "us-west1"
-    }
-  }
+    "rewrites": [
+      { "source": "/api/chat", "run": { "serviceId": "chat", "region": "us-west1" } }
+    ]
+  },
+  "functions": [
+    { "source": "functions" }
+  ]
 }

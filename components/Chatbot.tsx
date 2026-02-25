@@ -9,11 +9,7 @@ const WHATSAPP_URL = 'https://wa.me/1234567890';
 
 const REDIRECT_SIGNAL = 'REDIRECT_TO_WHATSAPP';
 
-type ConnectionStatus = 'idle' | 'checking' | 'ok' | 'no-key' | 'error';
-
-function isKeyMissing(key: string | undefined): boolean {
-  return !key || key === 'PLACEHOLDER_API_KEY';
-}
+type ConnectionStatus = 'idle' | 'checking' | 'ok' | 'error';
 
 interface Message {
   id: string;
@@ -112,40 +108,18 @@ const Chatbot: React.FC = () => {
     hasCheckedRef.current = true;
 
     const checkConnection = async () => {
-      const apiKey = process.env.API_KEY;
-
-      // 1. Check the key is present and not the placeholder
-      if (isKeyMissing(apiKey)) {
-        setConnectionStatus('no-key');
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            id: 'cfg-error',
-            role: 'assistant',
-            content:
-              '⚠️ The AI assistant is not configured yet (API key missing). You can still reach a Parent Ambassador directly via WhatsApp.',
-            showWhatsApp: true,
-          },
-        ]);
-        return;
-      }
-
-      // 2. Make a minimal test call to verify the key and network connectivity
       setConnectionStatus('checking');
       try {
-        const res = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              contents: [{ role: 'user', parts: [{ text: 'hi' }] }],
-              generationConfig: { maxOutputTokens: 1 },
-            }),
-          }
-        );
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ role: 'user', parts: [{ text: 'hi' }] }],
+            generationConfig: { maxOutputTokens: 1 },
+          }),
+        });
 
-        if (res.status === 400 || res.status === 401 || res.status === 403) {
+        if (!res.ok) {
           const body = await res.json().catch(() => ({}));
           const reason = (body as { error?: { message?: string } })?.error?.message ?? `HTTP ${res.status}`;
           setConnectionStatus('error');
@@ -160,8 +134,6 @@ const Chatbot: React.FC = () => {
           ]);
           return;
         }
-
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
         setConnectionStatus('ok');
       } catch {
@@ -183,25 +155,19 @@ const Chatbot: React.FC = () => {
   }, [isOpen]);
 
   const callGemini = async (history: GeminiMessage[]): Promise<string> => {
-    const apiKey = process.env.API_KEY;
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' ,
-          'X-Goog-Api-Key': apiKey
-        },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents: history,
-          tools: [{ googleSearch: {} }],
-          generationConfig: { temperature: 0.2, maxOutputTokens: 512 },
-        }),
-      }
-    );
-if (!response.ok) throw new Error(`Gemini API error: ${response.status}`);
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: history,
+        tools: [{ googleSearch: {} }],
+        generationConfig: { temperature: 0.2, maxOutputTokens: 512 },
+      }),
+    });
+    if (!response.ok) throw new Error(`Chat API error: ${response.status}`);
     const data = await response.json();
-    return data.candidates?.[0]?.content?.parts?.[0]?.text ?? REDIRECT_SIGNAL;
+    return data.text ?? REDIRECT_SIGNAL;
   };
 
   const handleSend = async () => {
@@ -262,14 +228,12 @@ if (!response.ok) throw new Error(`Gemini API error: ${response.status}`);
     }
   };
 
-  const isInputDisabled =
-    isLoading || connectionStatus === 'no-key' || connectionStatus === 'error';
+  const isInputDisabled = isLoading || connectionStatus === 'error';
 
   const statusLabel: Record<ConnectionStatus, string> = {
     idle: 'Ask about our school',
     checking: 'Connecting…',
     ok: 'Connected',
-    'no-key': 'AI unavailable — API key missing',
     error: 'AI unavailable — use WhatsApp below',
   };
 
@@ -299,7 +263,7 @@ if (!response.ok) throw new Error(`Gemini API error: ${response.status}`);
                   {connectionStatus === 'ok' && (
                     <span className="w-2 h-2 rounded-full bg-green-400" />
                   )}
-                  {(connectionStatus === 'no-key' || connectionStatus === 'error') && (
+                  {connectionStatus === 'error' && (
                     <AlertCircle className="h-3.5 w-3.5 text-red-400" />
                   )}
                   <p className="text-blue-200 text-xs">{statusLabel[connectionStatus]}</p>

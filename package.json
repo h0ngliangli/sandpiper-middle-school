@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "firebase": "firebase deploy",
+    "deploy:staging": "npm run build && firebase deploy -P staging",
+    "deploy:production": "npm run build && firebase deploy -P production",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,5 +1,7 @@
 {
   "projects": {
+    "staging": "sandpipermiddle-staging",
+    "production": "sandpipermiddle",
     "default": "sandpipermiddle"
   }
 }

@@ -10,9 +10,6 @@ Placeholder nav link in production — Navbar.tsx:33
 Placeholder # links — QuickLinks.tsx:9-10
 "Safe School Report" and "Student Handbook" link to #. Either wire them up or visually indicate they're coming soon.
 
-console.log in production — Chatbot.tsx:202
-Remove the Gemini API response status log.
-
 TypeScript strict mode disabled — tsconfig.json
 No "strict": true means no strictNullChecks, implicit any, etc. Enable it.
 
