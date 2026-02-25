@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import { siWhatsapp } from 'simple-icons';
+
+const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+    <path d={siWhatsapp.path} />
+  </svg>
+);
 
 interface RoomParent {
   name: string;
@@ -150,7 +157,7 @@ const WhatsAppGroups: React.FC = () => {
                     className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
                     style={{ backgroundColor: '#25D366' }}
                   >
-                    <MessageCircle className="h-5 w-5" />
+                    <WhatsAppIcon className="h-5 w-5" />
                     Join Grade {group.grade} Group
                   </button>
                 </div>
@@ -173,7 +180,7 @@ const WhatsAppGroups: React.FC = () => {
             </button>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#25D366' }}>
-                <MessageCircle className="h-5 w-5 text-white" />
+                <WhatsAppIcon className="h-5 w-5 text-white" />
               </div>
               <h3 className="text-lg font-extrabold text-midnight">Join Grade {confirmGroup.grade} Group?</h3>
             </div>
