@@ -56,17 +56,21 @@ const Footer: React.FC = () => {
               Contact Us
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start">
+                <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-sandpiper-gold mt-1" />
-                <span>
+                <a href="https://maps.app.goo.gl/7vEqDSCx1vPRpFai6" className="hover:text-white transition-colors">
+                  <span>
                   801 Redwood Shores Parkway,
                   <br />
                   Redwood City, CA 94065
-                </span>
-              </li>
+                  </span>
+                </a>
+                </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-sandpiper-gold" />
-                <span>650.631.5510</span>
+                <a href="tel:650.631.5510" className="hover:text-white transition-colors">
+                  <span>650.631.5510</span>
+                </a>
               </li>
             </ul>
           </div>
