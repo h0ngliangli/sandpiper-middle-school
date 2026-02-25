@@ -30,7 +30,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: '[Place Holder for more links]', href: '#learn' },
+    { name: 'LEARN', href: '#learn' },
+    { name: 'EXPLORE', href: '#explore' },
+    { name: 'CREATE', href: '#create' },
+    { name: 'COMPETE', href: '#compete' },
+    { name: 'ASK ME ANYTHING', href: '#parent-ambassadors' },
   ];
 
   return (
