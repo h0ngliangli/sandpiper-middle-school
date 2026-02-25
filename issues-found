@@ -4,23 +4,6 @@ Critical
 API key exposed in the bundle — vite.config.ts:13-16
 The GEMINI_API_KEY is embedded into the client-side JS via define. Anyone can extract it from the browser. API calls should go through a backend proxy.
 
-High
-aria-expanded is hardcoded to false — Navbar.tsx:73
-The mobile menu button never updates this attribute when the menu opens. Should be aria-expanded={isOpen}.
-
-Empty alt text on logo images — Navbar.tsx:46, Chatbot.tsx:291
-Screen readers get no context. Use alt="Sandpiper Middle School logo".
-
-Medium
-Tailwind loaded via CDN — index.html:8
-The CDN version is larger, slower, and not tree-shaken. For production, set up Tailwind with PostCSS via npm.
-
-Dead <link> for /index.css — index.html:49
-The file doesn't exist. Remove it.
-
-Commented-out code blocks — Hero.tsx:34-52, Chatbot.tsx:365-375
-Delete them — that's what git history is for.
-
 Placeholder nav link in production — Navbar.tsx:33
 '[Place Holder for more links]' is visible to users. Remove or replace it.
 
