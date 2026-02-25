@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
             </span>
           </div>
           
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <a
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
           
-          <div className="-mr-2 flex md:hidden">
+          <div className="-mr-2 flex lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-midnight border-t border-slate-700" id="mobile-menu">
+        <div className="lg:hidden bg-midnight border-t border-slate-700" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <a
