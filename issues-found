@@ -18,5 +18,3 @@ Missing focus-visible styles on links (Footer.tsx:17-19) — add focus:ring-2 fo
 Scroll handler in Navbar could be throttled (Navbar.tsx:9-30)
 Images in SectionGrid.tsx should have loading="lazy" to avoid layout shift
 No <ErrorBoundary> — a crash in any component takes down the whole app
-Missing Open Graph / SEO meta tags in index.html
-Easiest wins right now: fix aria-expanded, add alt text, delete commented code, remove the dead CSS link, and remove the console.log. All under 5 minutes total. Want me to handle any of these?
