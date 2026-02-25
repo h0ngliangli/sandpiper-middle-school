@@ -10,14 +10,12 @@
    - `staging` -> `sandpipermiddle-staging`
    - `production` -> `sandpipermiddle`
 4. Set Gemini API keys:
-   - Local dev (`npm run dev`): set `GEMINI_API_KEY` in `.env.local`
-   - Functions deploy (recommended per environment):
-     - `functions/.env.staging` for `-P staging`
-     - `functions/.env.production` for `-P production`
-   - You can also use a shared `functions/.env` for all environments.
+   - Go to aistudio.google.com, create a Gemini API key, and add it to your Firebase project secrets:
+     - `firebase functions:secrets:set GEMINI_API_KEY -P staging`
+     - `firebase functions:secrets:set GEMINI_API_KEY -P production`
+     - Local dev (`npm run dev`): set `GEMINI_API_KEY` in `.env.local`
 
 ## Run Locally
-
 `npm run dev`
 
 ## Deploy to Firebase Hosting
