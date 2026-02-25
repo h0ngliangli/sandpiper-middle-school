@@ -1,8 +1,5 @@
 Here's what I found, organized by priority:
 
-Critical
-API key exposed in the bundle — vite.config.ts:13-16
-The GEMINI_API_KEY is embedded into the client-side JS via define. Anyone can extract it from the browser. API calls should go through a backend proxy.
 
 Placeholder nav link in production — Navbar.tsx:33
 '[Place Holder for more links]' is visible to users. Remove or replace it.
