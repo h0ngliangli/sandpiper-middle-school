@@ -355,11 +355,11 @@ const Chatbot: React.FC = () => {
       {/* ── Floating action button ──────────────────────────────── */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed bottom-6 right-4 sm:right-6 z-50 w-14 h-14 bg-sandpiper-blue hover:bg-blue-900 text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-110"
+        className="fixed bottom-6 right-4 sm:right-6 z-50 w-14 h-14 bg-blue-800 text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-110"
         aria-label={isOpen ? 'Close chat' : 'Open school assistant chat'}
       >
         {!isOpen && (
-          <span className="absolute inline-flex w-full h-full rounded-full bg-sandpiper-blue opacity-75 animate-ping" />
+          <span className="absolute inline-flex w-full h-full rounded-full bg-blue-800 opacity-75 animate-ping" />
         )}
         {isOpen ? <X className="h-6 w-6 relative" /> : <MessageCircle className="h-6 w-6 relative" />}
       </button>
