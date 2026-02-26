@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-1">
             <div className="bg-sandpiper-blue p-2 rounded-full">
-                <img src="/favicon.svg" className="h-8 w-8" alt="Sandpiper Middle School logo" />
+                <img src="/favicon.svg" className="h-12 w-12" alt="Sandpiper Middle School logo" />
             </div>
             <span className="text-sm sm:text-base md:text-xl tracking-wider text-white whitespace-nowrap">
               SANDPIPER MIDDLE SCHOOL
