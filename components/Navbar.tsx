@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="hover:text-sandpiper-gold transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide"
+                  className="hover:text-sandpiper-gold transition-all duration-300 px-3 py-2 text-sm hover:scale-110 font-medium uppercase tracking-wide"
                 >
                   {link.name}
                 </a>
