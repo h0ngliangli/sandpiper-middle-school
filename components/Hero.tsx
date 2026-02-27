@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           <source src="/videos/school-life.webm" type="video/webm" />
           <source src="/videos/school-life.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-midnight/80 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-midnight/20 mix-blend-multiply"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col justify-center h-full">
