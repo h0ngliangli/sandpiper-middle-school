@@ -5,6 +5,6 @@
     "node": "22"
   },
   "dependencies": {
-    "firebase-functions": "^7.0.5"
+    "firebase-functions": "^7.0.6"
   }
 }
