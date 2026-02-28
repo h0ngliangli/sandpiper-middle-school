@@ -165,8 +165,25 @@ exports.chat = onRequest(
         return;
       }
 
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
-      res.json({ text });
+      const candidate = data.candidates?.[0];
+      const finishReason = candidate?.finishReason;
+      
+      let responseText = '';
+
+      // 检查停止原因
+      if (!candidate) {
+        // 如果根本没有候选答案（极少数情况，通常与安全过滤有关）
+        responseText = REDIRECT_SIGNAL;
+      } else if (finishReason === 'SAFETY' || finishReason === 'RECITATION') {
+        // 如果是因为安全或版权原因被拦截，返回重定向信号
+        responseText = REDIRECT_SIGNAL;
+      } else {
+        // 正常尝试提取文本：拼接所有 part，并去除首尾空白
+        const textContent = candidate.content?.parts?.map(p => p.text || '').join('').trim();
+        responseText = textContent || REDIRECT_SIGNAL;
+      }
+
+      res.json({ text: responseText });
     } catch (err) {
       res.status(500).json({ error: String(err) });
     }
