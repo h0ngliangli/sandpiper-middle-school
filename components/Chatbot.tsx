@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, AlertCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { FAQ_ITEMS } from './faq';
-
 // TODO: Replace with your actual WhatsApp number, e.g. https://wa.me/16501234567
 const WHATSAPP_URL = 'https://wa.me/1234567890';
 
@@ -23,18 +21,6 @@ interface GeminiMessage {
   parts: { text: string }[];
 }
 
-const SYSTEM_PROMPT = `You are a friendly and helpful assistant for Sandpiper Middle School in Redwood City, CA. You help parents find quick answers about the school.
-
-Here is the school FAQ you should draw from:
-
-${FAQ_ITEMS.map((item) => `Q: ${item.question}\nA: ${item.answer}`).join('\n\n')}
-
-Rules:
-1. Answer questions using the FAQ above, well-known facts about the school (address, phone), or information from the Belmont-Redwood Shores School District website at https://www.brssd.org/. You may use Google Search to look up current information from brssd.org when the FAQ does not cover the topic.
-2. If you cannot find a relevant answer even after considering brssd.org, respond with exactly the word: ${REDIRECT_SIGNAL}
-3. If the parent asks to speak to a person, a parent ambassador, or a human, please softly respond with ${REDIRECT_SIGNAL}
-4. Visitors can ask about anything in any language, you can reply in the same language.
-5. Otherwise, keep answers concise, warm, and helpful. Do not invent information not found in the FAQ or on brssd.org.`;
 
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -158,12 +144,7 @@ const Chatbot: React.FC = () => {
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents: history,
-        tools: [{ googleSearch: {} }],
-        generationConfig: { temperature: 0.2, maxOutputTokens: 512 },
-      }),
+      body: JSON.stringify({ contents: history }),
     });
     if (!response.ok) throw new Error(`Chat API error: ${response.status}`);
     const data = await response.json();

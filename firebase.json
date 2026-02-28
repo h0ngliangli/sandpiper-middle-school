@@ -7,10 +7,30 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      { "source": "/api/chat", "run": { "serviceId": "chat", "region": "us-west1" } }
+      {
+        "source": "/api/chat",
+        "run": {
+          "serviceId": "chat",
+          "region": "us-west1"
+        }
+      }
     ]
   },
   "functions": [
-    { "source": "functions" }
-  ]
+    {
+      "source": "functions"
+    }
+  ],
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "ui": {
+      "enabled": true
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "singleProjectMode": true
+  }
 }
