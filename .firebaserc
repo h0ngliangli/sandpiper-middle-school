@@ -2,6 +2,6 @@
   "projects": {
     "staging": "sandpipermiddle-staging",
     "production": "sandpipermiddle",
-    "default": "sandpipermiddle"
+    "default": "sandpipermiddle-staging"
   }
 }
