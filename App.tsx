@@ -7,6 +7,7 @@ import QuickLinks from './components/QuickLinks';
 import WhatsAppGroups from './components/WhatsAppGroups';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import Testimonials from './components/Testominials';
 import { SectionContent } from './types';
 
 const App: React.FC = () => {
@@ -65,6 +66,7 @@ const App: React.FC = () => {
       <main className="flex-grow pt-16">
         <Hero />
         <StatsSection />
+        <Testimonials />
         <SectionGrid sections={mainSections} />
         <WhatsAppGroups />
         <QuickLinks />
