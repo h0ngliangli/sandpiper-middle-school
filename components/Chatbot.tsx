@@ -108,33 +108,20 @@ const Chatbot: React.FC = () => {
     const checkConnection = async () => {
       setConnectionStatus('checking');
       try {
-        const res = await fetch('/api/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ role: 'user', parts: [{ text: 'hi' }] }],
-            generationConfig: { maxOutputTokens: 1 },
-          }),
-        });
-
+        const res = await fetch('/api/chat');
         if (!res.ok) {
-          const body = await res.json().catch(() => ({}));
-          const reason =
-            (body as { error?: { message?: string } })?.error?.message ??
-            `HTTP ${res.status}`;
           setConnectionStatus('error');
           setMessages((prev: Message[]) => [
             ...prev,
             {
               id: 'api-error',
               role: 'assistant',
-              content: `⚠️ Could not connect to the AI assistant (${reason}). You can still reach a Parent Ambassador directly via WhatsApp.`,
+              content: `⚠️ Could not connect to the AI assistant (HTTP ${res.status}). You can still reach a Parent Ambassador directly via WhatsApp.`,
               showWhatsApp: true,
             },
           ]);
           return;
         }
-
         setConnectionStatus('ok');
       } catch {
         setConnectionStatus('error');

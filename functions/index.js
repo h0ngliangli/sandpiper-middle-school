@@ -123,6 +123,11 @@ exports.chat = onRequest(
     cors: true,
   },
   async (req, res) => {
+    if (req.method === 'GET') {
+      res.json({ ok: true });
+      return;
+    }
+
     if (req.method !== 'POST') {
       res.status(405).send('Method Not Allowed');
       return;
