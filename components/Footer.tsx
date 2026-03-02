@@ -119,6 +119,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="mt-1 text-gray-600 md:mt-0 md:pl-4">
             Build Time: {process.env.__BUILD_TIME__}
+            [{process.env.__COMMIT_HASH__}]
           </div>
         </div>
       </div>
