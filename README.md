@@ -17,11 +17,10 @@
      - Local dev (`npm run dev`): set `GEMINI_API_KEY` in `.env.local`
 
 ## Run Locally
-set  set `GEMINI_API_KEY` in `.env.local` and `functions/.env.local`
-`firebase use default` (firebase will use the default project id, this will impact the API endpoint of emulated functions. See vite.config.ts for "rewrite")
-`firebase emulators:start --only functions` (starts the functions emulator on localhost:5001)
-open a new terminal and run
-`npm run dev`
+- set `GEMINI_API_KEY` in `.env.local` and `functions/.env.local` (both are needed for local development)
+- run `firebase use default` (firebase will use the default project id "sandpipermiddle-staging", this will impact the API endpoint of emulated functions "/sandpipermiddle-staging/us-west1/chat". See vite.config.ts for "rewrite")
+- run `npm run build` inside your functions directory before running `firebase emulators:start` (starts the functions emulator on localhost:5001)
+- open a new terminal and run `npm run dev`
 
 ## Deploy to Firebase Hosting
 
