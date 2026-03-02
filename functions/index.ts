@@ -1,5 +1,9 @@
+import { initializeApp } from 'firebase-admin/app';
+import { getAppCheck } from 'firebase-admin/app-check';
 import { onRequest } from 'firebase-functions/v2/https';
 import { FAQ_ITEMS } from './faq';
+
+initializeApp();
 
 
 const GEMINI_URL =
@@ -31,6 +35,22 @@ export const chat = onRequest(
     cors: true,
   },
   async (req, res) => {
+    // Verify App Check token.
+    // If you don't want to use App Check in your development environment, 
+    // You can use if (!process.env.FUNCTIONS_EMULATOR) to skip.
+    const appCheckToken = req.header('X-Firebase-AppCheck');
+    if (!appCheckToken) {
+      res.status(401).json({ error: 'Unauthorized' });
+      return;
+    }
+    
+    try {
+      await getAppCheck().verifyToken(appCheckToken);
+    } catch {
+      res.status(401).json({ error: 'Unauthorized' });
+      return;
+    }
+
     if (req.method === 'GET') {
       res.json({ ok: true });
       return;

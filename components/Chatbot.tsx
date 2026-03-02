@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, AlertCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { getToken } from 'firebase/app-check';
+import { appCheck } from '../firebase';
 // TODO: Replace with your actual WhatsApp number, e.g. https://wa.me/16501234567
 const WHATSAPP_URL = 'https://wa.me/1234567890';
 
@@ -60,6 +62,17 @@ const TypingIndicator: React.FC = () => (
   </div>
 );
 
+const getAppCheckHeaders = async (): Promise<Record<string, string>> => {
+  if (!appCheck) return {};
+  try {
+    const { token } = await getToken(appCheck);
+    return { 'X-Firebase-AppCheck': token };
+  } catch {
+    console.log('Failed to get App Check token');
+    return {};
+  }
+};
+
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [connectionStatus, setConnectionStatus] =
@@ -108,7 +121,8 @@ const Chatbot: React.FC = () => {
     const checkConnection = async () => {
       setConnectionStatus('checking');
       try {
-        const res = await fetch('/api/chat');
+        const appCheckHeaders = await getAppCheckHeaders();
+        const res = await fetch('/api/chat', { headers: appCheckHeaders });
         if (!res.ok) {
           setConnectionStatus('error');
           setMessages((prev: Message[]) => [
@@ -142,9 +156,10 @@ const Chatbot: React.FC = () => {
   }, [isOpen]);
 
   const callGemini = async (history: GeminiMessage[]): Promise<string> => {
+    const appCheckHeaders = await getAppCheckHeaders();
     const response = await fetch('/api/chat', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...appCheckHeaders },
       body: JSON.stringify({ contents: history }),
     });
     if (!response.ok) throw new Error(`Chat API error: ${response.status}`);
