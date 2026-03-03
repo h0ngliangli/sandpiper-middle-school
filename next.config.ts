@@ -12,8 +12,7 @@ function getCommitHash(): string {
 const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  images: { unoptimized: true },
+  output: 'standalone',
   env: {
     BUILD_TIME: new Date().toLocaleString(),
     COMMIT_HASH: process.env.VERCEL_GITHUB_COMMIT_SHA ?? getCommitHash(),
