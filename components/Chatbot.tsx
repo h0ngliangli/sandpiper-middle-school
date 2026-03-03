@@ -67,8 +67,8 @@ const getAppCheckHeaders = async (): Promise<Record<string, string>> => {
   try {
     const { token } = await getToken(appCheck);
     return { 'X-Firebase-AppCheck': token };
-  } catch {
-    console.log('Failed to get App Check token');
+  } catch (error) {
+    console.log('Failed to get App Check token', error);
     return {};
   }
 };
@@ -137,7 +137,8 @@ const Chatbot: React.FC = () => {
           return;
         }
         setConnectionStatus('ok');
-      } catch {
+      } catch (error) {
+        console.log('Failed to connect to the AI assistant', error);
         setConnectionStatus('error');
         setMessages((prev: Message[]) => [
           ...prev,
