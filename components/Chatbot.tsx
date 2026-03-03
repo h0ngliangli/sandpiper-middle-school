@@ -1,9 +1,10 @@
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, AlertCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getToken } from 'firebase/app-check';
-import { appCheck } from '../firebase';
+import { appCheck } from '@/lib/firebase';
 // TODO: Replace with your actual WhatsApp number, e.g. https://wa.me/16501234567
 const WHATSAPP_URL = 'https://wa.me/1234567890';
 

@@ -122,8 +122,8 @@ const Footer: React.FC = () => {
 
          <div className="mt-6 md:mt-0 md:pl-4 flex flex-col items-center md:items-end text-xs text-slate-600 space-y-1.5">
             <div className="flex items-center space-x-1 font-mono opacity-60">
-               <span>Build: {process.env.__BUILD_TIME__}</span>
-               <span>[{process.env.__COMMIT_HASH__}]</span>
+               <span>Build: {process.env.BUILD_TIME}</span>
+               <span>[{process.env.COMMIT_HASH}]</span>
             </div>
             <div className={"flex items-center space-x-1.5 opacity-80"}>
                <ShieldCheck className="h-3.5 w-3.5 text-slate-500" />

@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './index.html',
-    './*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
+    './data/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
@@ -17,8 +17,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'serif'],
       },
     },
   },
