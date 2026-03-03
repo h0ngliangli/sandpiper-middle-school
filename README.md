@@ -28,5 +28,9 @@
 
 ## Deploy to Firebase Hosting
 
-- For staging: `npm run deploy:staging`
-- For production: `npm run deploy:production`
+- Staging web only: `npm run deploy:staging:web`
+- Staging functions only: `npm run deploy:staging:functions`
+- Staging full deploy: `npm run deploy:staging`
+- Production web only: `npm run deploy:production:web`
+- Production functions only: `npm run deploy:production:functions`
+- Production full deploy: `npm run deploy:production`

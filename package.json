@@ -5,12 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:web",
+    "build:web": "next build",
+    "build:functions": "npm --prefix functions run build",
     "start": "next start",
-    "build:staging": "dotenv -e .env.staging -e .env.staging.local -- next build",
-    "build:production": "dotenv -e .env.production -e .env.production.local -- next build",
-    "deploy:staging": "dotenv -e .env.staging -e .env.staging.local -- next build && firebase deploy -P staging",
-    "deploy:production": "dotenv -e .env.production -e .env.production.local -- next build && firebase deploy -P production"
+    "build:staging": "dotenv -e .env.staging -e .env.staging.local -- npm run build:web",
+    "build:production": "dotenv -e .env.production -e .env.production.local -- npm run build:web",
+    "deploy:staging:web": "dotenv -e .env.staging -e .env.staging.local -- npm run build:web && firebase deploy -P staging --only hosting",
+    "deploy:staging:functions": "firebase deploy -P staging --only functions",
+    "deploy:production:web": "dotenv -e .env.production -e .env.production.local -- npm run build:web && firebase deploy -P production --only hosting",
+    "deploy:production:functions": "firebase deploy -P production --only functions",
+    "deploy:staging": "npm run deploy:staging:web && npm run deploy:staging:functions",
+    "deploy:production": "npm run deploy:production:web && npm run deploy:production:functions"
   },
   "dependencies": {
     "firebase": "^12.10.0",
