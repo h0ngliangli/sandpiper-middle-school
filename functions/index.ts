@@ -40,14 +40,14 @@ export const chat = onRequest(
     // You can use if (!process.env.FUNCTIONS_EMULATOR) to skip.
     const appCheckToken = req.header('X-Firebase-AppCheck');
     if (!appCheckToken) {
-      res.status(401).json({ error: 'Unauthorized' });
+      res.status(401).json({ error: 'X-Firebase-AppCheck header missing' });
       return;
     }
-    
+
     try {
       await getAppCheck().verifyToken(appCheckToken);
     } catch {
-      res.status(401).json({ error: 'Unauthorized' });
+      res.status(401).json({ error: 'X-Firebase-AppCheck token failed' });
       return;
     }
 
