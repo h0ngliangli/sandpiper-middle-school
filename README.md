@@ -9,19 +9,19 @@
 3. Create Firebase projects for staging and production (or use existing ones), then make sure your aliases in `.firebaserc` map correctly:
    - `staging` -> `sandpipermiddle-staging`
    - `production` -> `sandpipermiddle`
-4. Set Gemini API keys:
-   - Go to aistudio.google.com, create a Gemini API key, and add it to your Firebase project secrets:
-     - `firebase functions:secrets:set GEMINI_API_KEY -P staging`
-     - `firebase functions:secrets:set GEMINI_API_KEY -P production`
-
-     - Local dev (`npm run dev`): set `GEMINI_API_KEY` in `.env.local`
 
 ## Run Locally
-- set `GEMINI_API_KEY` in `.env.local`. 
-  Note: This is required for local development since the functions emulator 
-  won't have access to Firebase secrets. In production, the API has been set 
-  by `firebase functions:secrets:set` and will be accessible in the functions 
-  environment.
-- run `firebase use default` (firebase will use the default project id "sandpipermiddle-staging", this will impact the API endpoint of emulated functions "/sandpipermiddle-staging/us-west1/chat". See vite.config.ts for "rewrite")
-- run `npm run build` inside your functions directory before running `firebase emulators:start` (starts the functions emulator on localhost:5001)
+- set the following environment variables in `.env.local`:
+  - GEMINI_API_KEY
+  - NEXT_PUBLIC_FIREBASE_API_KEY
+  - NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+  - NEXT_PUBLIC_FIREBASE_PROJECT_ID
+  - NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+  - NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+  - NEXT_PUBLIC_FIREBASE_APP_ID
+  - NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+- download the service account key from Firebase Console for the staging project
+  and save it as `firebase-admin-key.json` in the root directory of the project
+- notice the output of App Check debug token in the terminal and add it to the 
+  Firebase Console > App Check > Debug tokens
 - open a new terminal and run `npm run dev`
