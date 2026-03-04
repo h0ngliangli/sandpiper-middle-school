@@ -9,6 +9,17 @@
 3. Create Firebase projects for staging and production (or use existing ones), then make sure your aliases in `.firebaserc` map correctly:
    - `staging` -> `sandpipermiddle-staging`
    - `production` -> `sandpipermiddle`
+4. Config App Check in Firebase Console.
+5. Create Gemini API key in Google AI Studio.
+6. Config the following environment variables in App Hosting > Environment Variables in Firebase Console for both staging and production:
+   - GEMINI_API_KEY
+   - NEXT_PUBLIC_FIREBASE_API_KEY
+   - NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+   - NEXT_PUBLIC_FIREBASE_PROJECT_ID
+   - NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+   - NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+   - NEXT_PUBLIC_FIREBASE_APP_ID
+   - NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 ## Run Locally
 - set the following environment variables in `.env.local`:
