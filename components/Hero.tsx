@@ -14,7 +14,6 @@ const Hero: React.FC = () => {
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
         >
-          <source src="/videos/school-life.webm" type="video/webm" />
           <source src="/videos/school-life.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-midnight/20 mix-blend-multiply"></div>
