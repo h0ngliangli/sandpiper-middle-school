@@ -24,7 +24,7 @@ interface GradeGroup {
 const gradeGroups: GradeGroup[] = [
   {
     grade: 6,
-    whatsappUrl: 'https://chat.whatsapp.com/HeV4bmMEaZR87aWdov0rjk?mode=gi_t',
+    whatsappUrl: 'https://chat.whatsapp.com/Is1VLr3bIXl6vrRui4roYi',
     groupImageUrl: '/images/whatsapp-group-6.jpg',
     roomParents: [
       { name: 'To Do' },
@@ -32,7 +32,7 @@ const gradeGroups: GradeGroup[] = [
   },
   {
     grade: 7,
-    whatsappUrl: 'https://chat.whatsapp.com/ETnpOob0pYmJBgFGx29fFi?mode=gi_t',
+    whatsappUrl: 'https://chat.whatsapp.com/ETnpOob0pYmJBgFGx29fFi',
     groupImageUrl: '/images/whatsapp-group-7.jpg',
     roomParents: [
       { name: 'Ying Wang' },
@@ -40,7 +40,7 @@ const gradeGroups: GradeGroup[] = [
   },
   {
     grade: 8,
-    whatsappUrl: 'https://chat.whatsapp.com/HeV4bmMEaZR87aWdov0rjk?mode=gi_t',
+    whatsappUrl: 'https://chat.whatsapp.com/C6FRRvNQ7j0J9Jo3osQA4o',
     groupImageUrl: '/images/whatsapp-group-8.jpg',
     roomParents: [
       { name: 'Reiko Medina' },
