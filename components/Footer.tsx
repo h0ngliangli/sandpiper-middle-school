@@ -30,20 +30,18 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/SandpiperElementary"
                 className="text-slate-400 hover:text-sandpiper-gold transition-colors"
+                target="_blank"
+                rel="noreferrer"
               >
                 <SocialIcon icon={siFacebook} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/sandpiper_stingrays"
                 className="text-slate-400 hover:text-sandpiper-gold transition-colors"
-              >
-                <SocialIcon icon={siX} />
-              </a>
-              <a
-                href="#"
-                className="text-slate-400 hover:text-sandpiper-gold transition-colors"
+                target="_blank"
+                rel="noreferrer"
               >
                 <SocialIcon icon={siInstagram} />
               </a>
