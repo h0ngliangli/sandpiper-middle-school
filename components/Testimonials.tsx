@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
 
@@ -7,29 +7,40 @@ import { testimonials } from '../data/testimonials';
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-
+  const isAnimatingRef = useRef(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      handleNext();
+      if (isAnimatingRef.current) return;
+      isAnimatingRef.current = true;
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+        isAnimatingRef.current = false;
+        setIsAnimating(false);
+      }, 300);
     }, 8000);
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, []);
 
   const handleNext = () => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      isAnimatingRef.current = false;
       setIsAnimating(false);
     }, 300);
   };
 
   const handlePrev = () => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setTimeout(() => {
       setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      isAnimatingRef.current = false;
       setIsAnimating(false);
     }, 300);
   };
