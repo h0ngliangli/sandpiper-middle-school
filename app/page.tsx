@@ -6,7 +6,7 @@ import QuickLinks from '@/components/QuickLinks';
 import WhatsAppGroups from '@/components/WhatsAppGroups';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
-import Testimonials from '@/components/Testominials';
+import Testimonials from '@/components/Testimonials';
 import { SectionContent } from '@/types';
 
 const mainSections: SectionContent[] = [
