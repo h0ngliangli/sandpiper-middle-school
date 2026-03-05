@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getAppCheck } from 'firebase-admin/app-check';
 import { initAdmin } from '@/lib/firebase-admin';
-import { FAQ_ITEMS } from '@/lib/faq';
+import { FAQ_ITEMS } from '@/data/faq';
 
 // Initialize Firebase Admin
 initAdmin();

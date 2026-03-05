@@ -2,53 +2,13 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { siWhatsapp } from 'simple-icons';
+import { gradeGroups, type GradeGroup, type RoomParent } from '@/data/grade-groups';
 
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
     <path d={siWhatsapp.path} />
   </svg>
 );
-
-interface RoomParent {
-  name: string;
-  imageUrl?: string;
-}
-
-interface GradeGroup {
-  grade: number;
-  whatsappUrl: string;
-  groupImageUrl: string;
-  roomParents: RoomParent[];
-}
-
-const gradeGroups: GradeGroup[] = [
-  {
-    grade: 6,
-    whatsappUrl: 'https://chat.whatsapp.com/Is1VLr3bIXl6vrRui4roYi',
-    groupImageUrl: '/images/whatsapp-group-6.jpg',
-    roomParents: [
-      { name: 'Yi Wang' },
-      { name: 'Manique Bloom' },
-    ],
-  },
-  {
-    grade: 7,
-    whatsappUrl: 'https://chat.whatsapp.com/ETnpOob0pYmJBgFGx29fFi',
-    groupImageUrl: '/images/whatsapp-group-7.jpg',
-    roomParents: [
-      { name: 'Ying Wang' },
-    ],
-  },
-  {
-    grade: 8,
-    whatsappUrl: 'https://chat.whatsapp.com/C6FRRvNQ7j0J9Jo3osQA4o',
-    groupImageUrl: '/images/whatsapp-group-8.jpg',
-    roomParents: [
-      { name: 'Reiko Medina' },
-      { name: 'Manique Bloom' },
-    ],
-  },
-];
 
 const getInitials = (name: string) =>
   name
