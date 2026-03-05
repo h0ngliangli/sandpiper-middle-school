@@ -39,6 +39,7 @@ export async function POST(req: Request) {
     // In development mode, you might want to skip this check or use a debug token
     // For now, we enforce it as in the original function
     if (process.env.NODE_ENV !== 'development') {
+        console.error('App Check token missing');
         return NextResponse.json({ error: 'X-Firebase-AppCheck header missing' }, { status: 401 });
     }
   } else {

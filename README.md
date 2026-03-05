@@ -11,7 +11,9 @@
    - `production` -> `sandpipermiddle`
 4. Config App Check in Firebase Console.
 5. Create Gemini API key in Google AI Studio.
-6. Config the following environment variables in App Hosting > Environment Variables in Firebase Console for both staging and production:
+6. Create reCAPTCHA v3 keys in Google reCAPTCHA admin console. Add domains.
+7. Add the secret key to Firebase Console > App Check > Apps > Your App > reCAPTCHA v3 configuration.
+8. Config the following environment variables in App Hosting > Environment Variables in Firebase Console for both staging and production:
    - GEMINI_API_KEY
    - NEXT_PUBLIC_FIREBASE_API_KEY
    - NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
