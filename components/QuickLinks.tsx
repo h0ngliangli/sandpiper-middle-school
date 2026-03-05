@@ -1,6 +1,6 @@
 import React from 'react';
 import { LinkItem } from '../types';
-import { Calendar, Utensils, Phone, ShieldAlert, FileText, MessageCircleQuestionMark } from 'lucide-react';
+import { Calendar, Utensils, Phone, ShieldAlert, FileText } from 'lucide-react';
 
 const links: LinkItem[] = [
   { id: '1', label: 'School Calendar', url: 'https://sandpiper.brssd.org/quick-links/calendars-and-events', icon: <Calendar className="h-6 w-6" /> },

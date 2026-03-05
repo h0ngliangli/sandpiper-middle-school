@@ -27,7 +27,8 @@ const gradeGroups: GradeGroup[] = [
     whatsappUrl: 'https://chat.whatsapp.com/Is1VLr3bIXl6vrRui4roYi',
     groupImageUrl: '/images/whatsapp-group-6.jpg',
     roomParents: [
-      { name: 'To Do' },
+      { name: 'Yi Wang' },
+      { name: 'Manique Bloom' },
     ],
   },
   {
