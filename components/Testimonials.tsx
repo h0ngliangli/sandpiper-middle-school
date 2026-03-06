@@ -69,7 +69,7 @@ export default function Testimonials() {
 
             {/* Avatar and Role */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden mb-4 bg-blue-50">
+              <div className={`w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden mb-4 bg-blue-50 ${testimonials[currentIndex].avatar ? '' : 'hidden'}`} >
                 <img 
                   src={testimonials[currentIndex].avatar} 
                   alt={testimonials[currentIndex].name}
