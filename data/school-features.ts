@@ -8,7 +8,7 @@ export const schoolFeatures: SectionContent[] = [
     imageUrl: '/images/design-thinking.jpg',
     imageAlt: 'Students working in a science lab',
     reverse: false,
-    ctaText: 'View Curriculum',
+    // ctaText: 'View Curriculum',
   },
   {
     id: 'explore',
@@ -17,7 +17,7 @@ export const schoolFeatures: SectionContent[] = [
     imageUrl: '/images/explore.jpg',
     imageAlt: 'Students on an outdoor field trip',
     reverse: true,
-    ctaText: 'See Field Trips',
+    // ctaText: 'See Field Trips',
   },
   {
     id: 'create',
@@ -26,7 +26,7 @@ export const schoolFeatures: SectionContent[] = [
     imageUrl: '/images/create.jpg',
     imageAlt: 'Student painting in art class',
     reverse: false,
-    ctaText: 'Visit Art Gallery',
+    // ctaText: 'Visit Art Gallery',
   },
   {
     id: 'compete',
@@ -35,7 +35,7 @@ export const schoolFeatures: SectionContent[] = [
     imageUrl: '/images/compete.jpg',
     imageAlt: 'Students playing soccer',
     reverse: true,
-    ctaText: 'Athletics Schedule',
+    // ctaText: 'Athletics Schedule',
   },
   {
     id: 'parent-ambassadors',
