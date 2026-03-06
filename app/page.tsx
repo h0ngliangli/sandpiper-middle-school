@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import StatsSection from '@/components/ByTheNumbers';
+import ByTheNumbers from '@/components/ByTheNumbers';
 import SectionGrid from '@/components/SchoolFeatures';
 import QuickLinks from '@/components/QuickLinks';
 import WhatsAppGroups from '@/components/WhatsAppGroups';
@@ -16,7 +16,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow pt-16">
         <Hero />
-        <StatsSection />
+        <ByTheNumbers />
         <RecentNews />
         <Testimonials />
         <SectionGrid sections={schoolFeatures} />

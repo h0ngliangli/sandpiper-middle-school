@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface StatItem {
+export interface ByTheNumberItem {
   id: string;
   label: string;
   value: string;
