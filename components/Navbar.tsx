@@ -48,7 +48,9 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-1">
             <div className="bg-sandpiper-blue p-2 rounded-full">
-                <img src="/favicon.svg" className="h-12 w-12" alt="Sandpiper Middle School logo" />
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top">
+                <img src="/favicon.svg" className="h-10 w-10" alt="Sandpiper Middle School logo" />
+              </button>
             </div>
             <span className="text-sm sm:text-base md:text-xl tracking-wider text-white whitespace-nowrap">
               SANDPIPER MIDDLE SCHOOL
