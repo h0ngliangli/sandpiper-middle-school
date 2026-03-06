@@ -1,7 +1,4 @@
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
+import { FAQItem } from '@/types';
 
 /**
  * Starter FAQ for Sandpiper Middle School.

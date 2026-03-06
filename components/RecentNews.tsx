@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { X, Calendar, Tag } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { events, type SchoolEvent } from '@/data/events';
+import { events } from '@/data/events';
+import { SchoolEvent } from '@/types';
 
 const CATEGORY_COLORS: Record<string, string> = {
   Academic:  'bg-blue-50 text-sandpiper-blue dark:bg-blue-900/30 dark:text-blue-300',

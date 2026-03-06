@@ -1,14 +1,4 @@
-export interface RoomParent {
-  name: string;
-  imageUrl?: string;
-}
-
-export interface GradeGroup {
-  grade: number;
-  whatsappUrl: string;
-  groupImageUrl: string;
-  roomParents: RoomParent[];
-}
+import { GradeGroup } from '@/types';
 
 export const gradeGroups: GradeGroup[] = [
   {

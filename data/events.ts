@@ -1,13 +1,4 @@
-export interface SchoolEvent {
-  id: string;
-  title: string;
-  summary: string; // Short blurb for the card
-  description: string; // Full detail shown in the modal
-  eventDate: string; // ISO date string (YYYY-MM-DD) — when the event happens
-  expirationDate: string; // ISO date string — after this date the event is "past" and won't appear in Recent News
-  category: string; // e.g. "Academic", "Sports", "Community", "Arts"
-  imageUrl?: string;
-}
+import { SchoolEvent } from '@/types';
 
 /**
  * Upcoming school events.

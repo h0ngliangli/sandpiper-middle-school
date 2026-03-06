@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { siWhatsapp } from 'simple-icons';
-import { gradeGroups, type GradeGroup, type RoomParent } from '@/data/grade-groups';
+import { gradeGroups } from '@/data/grade-groups';
+import { GradeGroup, RoomParent } from '@/types';
 
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
