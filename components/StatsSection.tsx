@@ -15,7 +15,7 @@ const StatsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
            <h2 className="text-sm font-bold text-sandpiper-gold uppercase tracking-widest mb-2">Our Impact</h2>
-           <h3 className="text-3xl font-bold text-white uppercase">By The Numbers</h3>
+           <h3 className="section-title font-bold text-white uppercase">By The Numbers</h3>
         </div>
        
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">

@@ -38,7 +38,7 @@ const SectionGrid: React.FC<Props> = ({ sections }) => {
                 <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue uppercase bg-blue-50 rounded-full w-fit">
                   Sandpiper {section.title}
                 </div>
-                <h2 className="text-4xl font-extrabold text-midnight mb-6 tracking-tight">
+                <h2 className="section-title">
                   {section.title}
                 </h2>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">

@@ -15,7 +15,7 @@ const QuickLinks: React.FC = () => {
     <section id="links" className="bg-midnight py-20 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Quick Links</h2>
+          <h2 className="section-title text-white">Quick Links</h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Everything students and parents need for a successful school year, right at your fingertips.
           </p>

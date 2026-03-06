@@ -34,7 +34,7 @@ const EventCard: React.FC<{ event: SchoolEvent; onClick: () => void }> = ({ even
   return (
     <button
       onClick={onClick}
-      className="group text-left bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer w-full"
+      className="group text-left bg-white rounded-2xl shadow-sm border border-slate-500 p-6 flex flex-col gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer w-full"
     >
       {event.imageUrl && (
         <img
@@ -128,7 +128,7 @@ const RecentNews: React.FC = () => {
           <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue uppercase bg-blue-50 rounded-full">
             What&apos;s Coming Up
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-midnight mb-4 tracking-tight">
+          <h2 className="section-title">
             Recent News &amp; Events
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
