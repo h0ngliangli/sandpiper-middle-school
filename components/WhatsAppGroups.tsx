@@ -86,12 +86,9 @@ const WhatsAppGroups: React.FC = () => {
                   <img
                     src={group.groupImageUrl}
                     alt={`Grade ${group.grade}`}
-                    className="w-10 h-10 rounded-full object-cover flex-shrink-0 ring-2 ring-sandpiper-gold"
+                    className="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-sandpiper-gold"
                   />
                   <div>
-                    <p className="text-xs font-bold tracking-widest text-slate-300 uppercase">
-                      Grade
-                    </p>
                     <h3 className="text-xl font-extrabold text-white leading-tight">
                       {group.grade}th Grade
                     </h3>
