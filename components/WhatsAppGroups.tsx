@@ -32,16 +32,16 @@ const RoomParentCard: React.FC<{ parent: RoomParent; colorIndex: number }> = ({
       <img
         src={parent.imageUrl}
         alt={parent.name}
-        className="w-16 h-16 rounded-full object-cover ring-2 ring-slate-200"
+        className="w-16 h-16 rounded-full object-cover ring-2 ring-slate-200 dark:ring-slate-600"
       />
     ) : (
       <div
-        className={`w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold ring-2 ring-slate-200 ${avatarColors[colorIndex % avatarColors.length]}`}
+        className={`w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold ring-2 ring-slate-200 dark:ring-slate-600 ${avatarColors[colorIndex % avatarColors.length]}`}
       >
         {getInitials(parent.name)}
       </div>
     )}
-    <span className="text-sm font-semibold text-slate-700 text-center leading-tight">
+    <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 text-center leading-tight">
       {parent.name}
     </span>
   </div>
@@ -58,16 +58,16 @@ const WhatsAppGroups: React.FC = () => {
   };
 
   return (
-    <section id="whatsapp-groups" className="py-20 bg-slate-50">
+    <section id="whatsapp-groups" className="py-20 bg-slate-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue uppercase bg-blue-50 rounded-full">
+          <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue dark:text-blue-300 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full">
             Stay Connected
           </div>
           <h2 className="section-title">
             WhatsApp Groups &amp; Room Parents
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
             Join your grade&apos;s WhatsApp group to stay in the loop. Your room parents are here
             to help and answer questions throughout the year.
           </p>
@@ -77,7 +77,7 @@ const WhatsAppGroups: React.FC = () => {
           {gradeGroups.map((group) => (
             <div
               key={group.grade}
-              className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col"
+              className="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 overflow-hidden flex flex-col"
             >
               {/* Grade header */}
               <div className="relative h-20 w-full overflow-hidden">
@@ -130,7 +130,7 @@ const WhatsAppGroups: React.FC = () => {
       {confirmGroup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-midnight/60 backdrop-blur-sm" onClick={() => setConfirmGroup(null)} />
-          <div className="relative bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 flex flex-col gap-4">
+          <div className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-sm w-full p-6 flex flex-col gap-4">
             <button
               onClick={() => setConfirmGroup(null)}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors"
@@ -141,15 +141,15 @@ const WhatsAppGroups: React.FC = () => {
               <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#25D366' }}>
                 <WhatsAppIcon className="h-5 w-5 text-white" />
               </div>
-              <h3 className="text-lg font-extrabold text-midnight">Join Grade {confirmGroup.grade} Group?</h3>
+              <h3 className="text-lg font-extrabold text-midnight dark:text-white">Join Grade {confirmGroup.grade} Group?</h3>
             </div>
-            <p className="text-slate-500 text-sm">
+            <p className="text-slate-500 dark:text-slate-400 text-sm">
               You are about to open WhatsApp and join the <span className="font-semibold text-slate-700">Grade {confirmGroup.grade} parent group</span>. Are you sure?
             </p>
             <div className="flex gap-3 mt-2">
               <button
                 onClick={() => setConfirmGroup(null)}
-                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 font-bold text-slate-600 hover:bg-slate-50 transition-colors"
+                className="flex-1 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-600 font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
               >
                 Cancel
               </button>

@@ -46,7 +46,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-16 bg-slate-50 px-4 overflow-hidden">
+    <section id="testimonials" className="py-16 bg-slate-50 dark:bg-slate-900 px-4 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="section-title">Voices From Our Community</h2>
@@ -54,7 +54,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Card */}
-        <div className="relative bg-white rounded-3xl shadow-xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center">
+        <div className="relative bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center">
           
           {/* Background Quote */}
           <div className="absolute top-8 left-8 text-blue-100 opacity-50">
@@ -63,7 +63,7 @@ export default function Testimonials() {
 
           {/* Switching Content */}
           <div className={`transition-all duration-300 transform ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-            <p className="text-xl md:text-2xl italic text-slate-700 leading-relaxed mb-8 relative z-10">
+            <p className="text-xl md:text-2xl italic text-slate-700 dark:text-slate-200 leading-relaxed mb-8 relative z-10">
               "{testimonials[currentIndex].content}"
             </p>
 
@@ -76,7 +76,7 @@ export default function Testimonials() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="text-lg font-bold text-slate-900">{testimonials[currentIndex].name}</h4>
+              <h4 className="text-lg font-bold text-slate-900 dark:text-white">{testimonials[currentIndex].name}</h4>
               <p className="text-blue-800 font-medium text-sm uppercase tracking-wider">
                 {testimonials[currentIndex].role}
               </p>
@@ -87,14 +87,14 @@ export default function Testimonials() {
           <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 pointer-events-none">
             <button
               onClick={handlePrev}
-              className="pointer-events-auto w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white shadow-md text-slate-400 hover:text-blue-800 hover:shadow-lg transition-all"
+              className="pointer-events-auto w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-md text-slate-400 dark:text-slate-300 hover:text-blue-800 dark:hover:text-blue-400 hover:shadow-lg transition-all"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={handleNext}
-              className="pointer-events-auto w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white shadow-md text-slate-400 hover:text-blue-800 hover:shadow-lg transition-all"
+              className="pointer-events-auto w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-md text-slate-400 dark:text-slate-300 hover:text-blue-800 dark:hover:text-blue-400 hover:shadow-lg transition-all"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />
@@ -108,7 +108,7 @@ export default function Testimonials() {
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  idx === currentIndex ? 'w-6 bg-blue-800' : 'bg-slate-300 hover:bg-slate-400'
+                  idx === currentIndex ? 'w-6 bg-blue-800' : 'bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500'
                 }`}
               />
             ))}
@@ -116,7 +116,7 @@ export default function Testimonials() {
         </div>
 
         {/* Bottom Note */}
-        <p className="text-center mt-8 text-slate-500 text-sm">
+        <p className="text-center mt-8 text-slate-500 dark:text-slate-400 text-sm">
           Join the Sandpiper community and start your child's journey of exceptional growth.
         </p>
       </div>

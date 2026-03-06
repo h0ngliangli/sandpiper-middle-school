@@ -6,10 +6,10 @@ import remarkGfm from 'remark-gfm';
 import { events, type SchoolEvent } from '@/data/events';
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Academic:  'bg-blue-50 text-sandpiper-blue',
-  Sports:    'bg-green-50 text-green-700',
-  Community: 'bg-amber-50 text-amber-700',
-  Arts:      'bg-purple-50 text-purple-700',
+  Academic:  'bg-blue-50 text-sandpiper-blue dark:bg-blue-900/30 dark:text-blue-300',
+  Sports:    'bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300',
+  Community: 'bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300',
+  Arts:      'bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300',
 };
 
 function formatDate(iso: string) {
@@ -34,7 +34,7 @@ const EventCard: React.FC<{ event: SchoolEvent; onClick: () => void }> = ({ even
   return (
     <button
       onClick={onClick}
-      className="group text-left bg-white rounded-2xl shadow-sm border border-slate-500 p-6 flex flex-col gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer w-full"
+      className="group text-left bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-500 dark:border-slate-600 p-6 flex flex-col gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer w-full"
     >
       {event.imageUrl && (
         <img
@@ -54,10 +54,10 @@ const EventCard: React.FC<{ event: SchoolEvent; onClick: () => void }> = ({ even
         </span>
       </div>
       <div>
-        <h3 className="text-base font-extrabold text-midnight mb-1 group-hover:text-sandpiper-blue transition-colors">
+        <h3 className="text-base font-extrabold text-midnight dark:text-white mb-1 group-hover:text-sandpiper-blue dark:group-hover:text-blue-400 transition-colors">
           {event.title}
         </h3>
-        <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">{event.summary}</p>
+        <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3">{event.summary}</p>
       </div>
       <span className="text-xs font-semibold text-sandpiper-blue mt-auto">
         View details →
@@ -71,7 +71,7 @@ const EventModal: React.FC<{ event: SchoolEvent; onClose: () => void }> = ({ eve
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-midnight/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 flex flex-col gap-5 max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-lg w-full p-6 flex flex-col gap-5 max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors"
@@ -99,14 +99,14 @@ const EventModal: React.FC<{ event: SchoolEvent; onClose: () => void }> = ({ eve
           </span>
         </div>
 
-        <h2 className="text-xl font-extrabold text-midnight leading-tight pr-6">{event.title}</h2>
-        <div className="text-sm text-slate-600 leading-relaxed prose prose-sm max-w-none prose-headings:text-midnight prose-a:text-sandpiper-blue prose-strong:text-slate-800">
+        <h2 className="text-xl font-extrabold text-midnight dark:text-white leading-tight pr-6">{event.title}</h2>
+        <div className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed prose prose-sm max-w-none prose-headings:text-midnight dark:prose-headings:text-white prose-a:text-sandpiper-blue prose-strong:text-slate-800 dark:prose-strong:text-slate-200">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{event.description}</ReactMarkdown>
         </div>
 
         <button
           onClick={onClose}
-          className="mt-2 w-full py-2.5 px-4 rounded-xl border border-slate-200 font-bold text-slate-600 hover:bg-slate-50 transition-colors text-sm"
+          className="mt-2 w-full py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-600 font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm"
         >
           Close
         </button>
@@ -122,16 +122,16 @@ const RecentNews: React.FC = () => {
   if (upcomingEvents.length === 0) return null;
 
   return (
-    <section id="recent-news" className="py-20 bg-white">
+    <section id="recent-news" className="py-20 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue uppercase bg-blue-50 rounded-full">
+          <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue dark:text-blue-300 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full">
             What&apos;s Coming Up
           </div>
           <h2 className="section-title">
             Recent News &amp; Events
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
             Stay up to date with what&apos;s happening at Sandpiper. Click any event for full details.
           </p>
         </div>

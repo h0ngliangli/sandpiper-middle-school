@@ -8,12 +8,12 @@ interface Props {
 
 const SectionGrid: React.FC<Props> = ({ sections }) => {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 dark:bg-slate-900">
       {sections.map((section, index) => (
         <section
           id={section.id}
           key={section.id}
-          className={`py-20 lg:py-28 overflow-hidden ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
+          className={`py-20 lg:py-28 overflow-hidden ${index % 2 === 0 ? 'bg-white dark:bg-slate-900' : 'bg-slate-50 dark:bg-slate-800'}`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
@@ -35,20 +35,20 @@ const SectionGrid: React.FC<Props> = ({ sections }) => {
 
               {/* Text Side */}
               <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue uppercase bg-blue-50 rounded-full w-fit">
+                <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue dark:text-blue-300 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full w-fit">
                   Sandpiper {section.title}
                 </div>
                 <h2 className="section-title">
                   {section.title}
                 </h2>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
                   {section.description}
                 </p>
                 {section.ctaText && (
                   <div>
                     <a
                       href={section.ctaLink || '#'}
-                      className="inline-flex items-center text-sandpiper-blue font-bold hover:text-blue-800 transition-colors group"
+                      className="inline-flex items-center text-sandpiper-blue dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300 transition-colors group"
                     >
                       {section.ctaText}
                       <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />

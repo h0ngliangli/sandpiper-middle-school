@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MapPin, ShieldCheck } from 'lucide-react';
 import { siFacebook, siX, siInstagram, SimpleIcon } from 'simple-icons';
+import ThemeIndicator from './ThemeIndicator';
 
 const SocialIcon: React.FC<{ icon: SimpleIcon }> = ({ icon }) => (
   <svg
@@ -120,10 +121,11 @@ const Footer: React.FC = () => {
 
          <div className="mt-6 md:mt-0 md:pl-4 flex flex-col items-center md:items-end text-xs text-slate-600 space-y-1.5">
             <div className="flex items-center space-x-1 font-mono opacity-60">
+               <ThemeIndicator />
                <span>Build: {process.env.BUILD_TIME}</span>
                <span>[{process.env.COMMIT_HASH}]</span>
             </div>
-            <div className={"flex items-center space-x-1.5 opacity-80"}>
+            <div className={"flex items-center space-x-1 opacity-80"}>
                <ShieldCheck className="h-3.5 w-3.5 text-slate-500" />
                <span>Protected by reCAPTCHA v3</span>
                <span className="text-slate-700 mx-0.5">|</span>
