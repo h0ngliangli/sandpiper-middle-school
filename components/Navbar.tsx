@@ -31,11 +31,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'LEARN', href: '#learn' },
-    { name: 'EXPLORE', href: '#explore' },
-    { name: 'CREATE', href: '#create' },
-    { name: 'COMPETE', href: '#compete' },
-    { name: 'ASK ME ANYTHING', href: '#parent-ambassadors' },
+    { name: 'Academics', href: '#design-thinking' },
+    { name: 'News', href: '#recent-news' },
+    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Contact', href: '#parent-ambassadors' },
+    { name: 'Quick Links', href: '#links' },
   ];
 
   return (

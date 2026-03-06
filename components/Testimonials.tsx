@@ -46,7 +46,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 bg-slate-50 px-4 overflow-hidden">
+    <section id="testimonials" className="py-16 bg-slate-50 px-4 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Voices From Our Community</h2>
