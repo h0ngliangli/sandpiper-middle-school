@@ -31,7 +31,7 @@ async function fetchTab(tab: string, sheetId = SHEET_ID): Promise<Record<string,
   if (!sheetId) throw new Error('NEXT_PUBLIC_GOOGLE_SHEET_ID is not configured');
   const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(tab)}&headers=1`;
   // `next.revalidate` is a Next.js server-side fetch extension (ignored in browsers).
-  const res = await fetch(url, { next: { revalidate: 300 } } as RequestInit);
+  const res = await fetch(url, { next: { revalidate: 60 } } as RequestInit);
   if (!res.ok) throw new Error(`Failed to fetch sheet "${tab}": HTTP ${res.status}`);
   return parseGviz(await res.text());
 }
@@ -106,5 +106,16 @@ export async function fetchFAQ(sheetId?: string) {
   return rows.map((r) => ({
     question: r.question,
     answer: r.answer,
+  }));
+}
+
+export async function fetchQuickLinks(sheetId?: string) {
+  const rows = await fetchTab('quick-links', sheetId);
+  return rows.map((r) => ({
+    id: r.id,
+    label: r.label,
+    url: r.url,
+    iconName: r.icon,
+    description: r.description || undefined,
   }));
 }

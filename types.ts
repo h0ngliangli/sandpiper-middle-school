@@ -22,7 +22,7 @@ export interface LinkItem {
   id: string;
   label: string;
   url: string;
-  icon: React.ReactNode;
+  iconName: string;
   description?: string; // Optional description for the link
 }
 

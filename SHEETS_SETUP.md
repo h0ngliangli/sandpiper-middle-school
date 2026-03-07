@@ -16,6 +16,7 @@ testimonials
 grade-groups
 events
 faq
+quick-links
 ```
 
 ## 第二步：设置权限
@@ -116,6 +117,20 @@ NEXT_PUBLIC_GOOGLE_SHEET_ID=你的Sheet ID
 | `answer` | 回答 | `Sandpiper runs from 8:00 AM...` |
 
 > FAQ 同时用于 AI 聊天机器人。每次修改后，机器人会在 **5 分钟内**自动更新。
+
+---
+
+### Tab: `quick-links`
+
+| 列名 | 说明 | 示例 |
+|------|------|------|
+| `id` | 唯一 ID | `1` |
+| `label` | 链接名称 | `School Calendar` |
+| `url` | 链接地址 | `https://sandpiper.brssd.org/quick-links/calendars-and-events` |
+| `icon` | 图标名（见下方） | `Calendar` |
+| `description` | 补充说明（可为空） | `View upcoming events` |
+
+**可用图标名：** `Calendar` / `Utensils` / `Phone` / `ShieldAlert` / `FileText`
 
 ---
 

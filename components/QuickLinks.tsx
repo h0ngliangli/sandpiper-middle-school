@@ -1,28 +1,23 @@
 import React from 'react';
-import { LinkItem } from '../types';
-import { Calendar, Utensils, Phone, ShieldAlert, FileText } from 'lucide-react';
+import * as Icons from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
-const links: LinkItem[] = [
-  { id: '1', label: 'School Calendar', url: 'https://sandpiper.brssd.org/quick-links/calendars-and-events', icon: <Calendar className="h-6 w-6" /> },
-  { id: '2', label: 'Lunch Menu', url: 'https://sandpiper.brssd.org/quick-links/meals', icon: <Utensils className="h-6 w-6" /> },
-  { id: '3', label: 'Absence Reporting', url: 'https://sandpiper.brssd.org/quick-links/absence-reporting', icon: <Phone className="h-6 w-6" /> },
-  { id: '4', label: 'Safe School Report', url: '#', icon: <ShieldAlert className="h-6 w-6" /> },
-  { id: '5', label: 'Student Handbook', url: '#', icon: <FileText className="h-6 w-6" /> },
-];
+const DEFAULT_ICON = Icons.FileText as LucideIcon;
+import { fetchQuickLinks } from '@/lib/sheets';
 
-const QuickLinks: React.FC = () => {
+const QuickLinks: React.FC = async () => {
+  const links = await fetchQuickLinks();
   return (
     <section id="links" className="bg-midnight py-20 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="section-title text-white">Quick Links</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Everything students and parents need for a successful school year, right at your fingertips.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {links.map((link) => (
+          {links.map((link) => {
+            const Icon = (Icons[link.iconName as keyof typeof Icons] as LucideIcon) ?? DEFAULT_ICON;
+            return (
             <a
               key={link.id}
               href={link.url}
@@ -32,7 +27,7 @@ const QuickLinks: React.FC = () => {
             >
               <div className="flex-shrink-0 bg-slate-900 group-hover:bg-white/20 p-3 rounded-lg transition-colors">
                 <span className="text-sandpiper-gold group-hover:text-white transition-colors">
-                    {link.icon}
+                    <Icon className="h-6 w-6" />
                 </span>
               </div>
               <div className="ml-4">
@@ -46,7 +41,8 @@ const QuickLinks: React.FC = () => {
                 )}
               </div>
             </a>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
