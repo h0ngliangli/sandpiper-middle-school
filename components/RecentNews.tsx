@@ -1,9 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Calendar, Tag } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { events } from '@/data/events';
+import { fetchEvents } from '@/lib/sheets';
 import { SchoolEvent } from '@/types';
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -21,10 +21,10 @@ function formatDate(iso: string) {
   });
 }
 
-function getUpcomingEvents(): SchoolEvent[] {
+function filterUpcoming(all: SchoolEvent[]): SchoolEvent[] {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  return events.filter((e) => {
+  return all.filter((e) => {
     const expiration = new Date(e.expirationDate + 'T00:00:00');
     return expiration >= today;
   });
@@ -118,7 +118,11 @@ const EventModal: React.FC<{ event: SchoolEvent; onClose: () => void }> = ({ eve
 
 const RecentNews: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<SchoolEvent | null>(null);
-  const upcomingEvents = getUpcomingEvents();
+  const [upcomingEvents, setUpcomingEvents] = useState<SchoolEvent[]>([]);
+
+  useEffect(() => {
+    fetchEvents().then((all) => setUpcomingEvents(filterUpcoming(all))).catch(console.error);
+  }, []);
 
   if (upcomingEvents.length === 0) return null;
 

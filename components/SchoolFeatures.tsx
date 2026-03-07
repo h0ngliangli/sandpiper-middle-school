@@ -1,12 +1,10 @@
 import React from 'react';
 import { SectionContent } from '../types';
 import { ArrowRight } from 'lucide-react';
+import { fetchSchoolFeatures } from '@/lib/sheets';
 
-interface Props {
-  sections: SectionContent[];
-}
-
-const SectionGrid: React.FC<Props> = ({ sections }) => {
+const SectionGrid: React.FC = async () => {
+  const sections: SectionContent[] = await fetchSchoolFeatures();
   return (
     <div className="bg-slate-50 dark:bg-slate-900">
       {sections.map((section, index) => (

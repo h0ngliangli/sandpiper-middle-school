@@ -1,34 +1,41 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { testimonials } from '../data/testimonials';
+import { fetchTestimonials } from '@/lib/sheets';
+import { Testimonial } from '@/types';
 
 
 export default function Testimonials() {
+  const [items, setItems] = useState<Testimonial[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const isAnimatingRef = useRef(false);
 
   useEffect(() => {
+    fetchTestimonials().then(setItems).catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    if (items.length === 0) return;
     const timer = setInterval(() => {
       if (isAnimatingRef.current) return;
       isAnimatingRef.current = true;
       setIsAnimating(true);
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+        setCurrentIndex((prev) => (prev + 1) % items.length);
         isAnimatingRef.current = false;
         setIsAnimating(false);
       }, 300);
     }, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [items.length]);
 
   const handleNext = () => {
     if (isAnimatingRef.current) return;
     isAnimatingRef.current = true;
     setIsAnimating(true);
     setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      setCurrentIndex((prev) => (prev + 1) % items.length);
       isAnimatingRef.current = false;
       setIsAnimating(false);
     }, 300);
@@ -39,11 +46,13 @@ export default function Testimonials() {
     isAnimatingRef.current = true;
     setIsAnimating(true);
     setTimeout(() => {
-      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
       isAnimatingRef.current = false;
       setIsAnimating(false);
     }, 300);
   };
+
+  if (items.length === 0) return null;
 
   return (
     <section id="testimonials" className="py-16 bg-slate-50 dark:bg-slate-900 px-4 overflow-hidden">
@@ -64,21 +73,21 @@ export default function Testimonials() {
           {/* Switching Content */}
           <div className={`transition-all duration-300 transform ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
             <p className="text-xl md:text-2xl italic text-slate-700 dark:text-slate-200 leading-relaxed mb-8 relative z-10">
-              "{testimonials[currentIndex].content}"
+              "{items[currentIndex].content}"
             </p>
 
             {/* Avatar and Role */}
             <div className="flex flex-col items-center">
-              <div className={`w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden mb-4 bg-blue-50 ${testimonials[currentIndex].avatar ? '' : 'hidden'}`} >
+              <div className={`w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden mb-4 bg-blue-50 ${items[currentIndex].avatar ? '' : 'hidden'}`} >
                 <img 
-                  src={testimonials[currentIndex].avatar} 
-                  alt={testimonials[currentIndex].name}
+                  src={items[currentIndex].avatar} 
+                  alt={items[currentIndex].name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-white">{testimonials[currentIndex].name}</h4>
+              <h4 className="text-lg font-bold text-slate-900 dark:text-white">{items[currentIndex].name}</h4>
               <p className="text-blue-800 font-medium text-sm uppercase tracking-wider">
-                {testimonials[currentIndex].role}
+                {items[currentIndex].role}
               </p>
             </div>
           </div>
@@ -103,7 +112,7 @@ export default function Testimonials() {
 
           {/* Bottom Indicators */}
           <div className="absolute bottom-6 flex space-x-2">
-            {testimonials.map((_, idx) => (
+            {items.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}

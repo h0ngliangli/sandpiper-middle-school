@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 2,
     name: "Y.S.",
-    role: "Parent of 8th Grader",
+    role: "Current 8th Grader",
     content: "Because Sandpiper is a small middle school, it feels like there are no walls between the grades. Everyone talks to each other and has open, friendly conversations. Also, each year there are Intersessions. watercolor painting, japanese anime and manga, interior design, and more."
   },
   {

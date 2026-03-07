@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getAppCheck } from 'firebase-admin/app-check';
 import { initAdmin } from '@/lib/firebase-admin';
-import { FAQ_ITEMS } from '@/data/faq';
+import { fetchFAQ } from '@/lib/sheets';
 
 // Initialize Firebase Admin
 initAdmin();
@@ -11,21 +11,33 @@ const GEMINI_URL =
 
 const REDIRECT_SIGNAL = 'REDIRECT_TO_WHATSAPP';
 
-const SYSTEM_PROMPT = `You are a friendly and helpful assistant for Sandpiper Middle School in Redwood City, CA. You help parents find quick answers about the school.
+// Cache the system prompt (FAQ changes infrequently; refresh every 5 minutes).
+let promptCache: { value: string; expiresAt: number } | null = null;
+
+async function getSystemPrompt(): Promise<string> {
+  if (promptCache && promptCache.expiresAt > Date.now()) {
+    return promptCache.value;
+  }
+  const faqItems = await fetchFAQ(process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID);
+  const faqText = faqItems.map((item) => `Q: ${item.question}\nA: ${item.answer}`).join('\n\n');
+  const value = `You are a friendly and helpful assistant for Sandpiper Middle School in Redwood City, CA. You help parents find quick answers about the school.
 
 Here is the school FAQ you should draw from:
 
-${FAQ_ITEMS.map((item) => `Q: ${item.question}\nA: ${item.answer}`).join('\n\n')}
+${faqText}
 
 Rules:
 1. Answer questions if the answer can be found in the FAQ.
-2. If the FAQ does not cover the topic, you may use Google Search to look for information from the School District website at 
+2. If the FAQ does not cover the topic, you may use Google Search to look for information from the School District website at
    https://www.brssd.org/ or https://sandpipermiddle.org.
 3. The reply should be text only. You can use markdown for formatting.
 4. If the FAQ does not cover the topic and you can't find it via search, respond with exactly the word: ${REDIRECT_SIGNAL}
 5. If the parent asks to speak to a person or a parent ambassador, please softly respond with ${REDIRECT_SIGNAL}
 6. Visitors can ask about anything in any language, you can reply in the same language.
 7. Otherwise, keep answers concise, warm, and helpful. Do not invent information not found in the FAQ or from the Google Search results.`;
+  promptCache = { value, expiresAt: Date.now() + 5 * 60 * 1000 };
+  return value;
+}
 
 export async function GET() {
   return NextResponse.json({ ok: true });
@@ -66,13 +78,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid request: contents must be an array' }, { status: 400 });
     }
 
+    const systemPrompt = await getSystemPrompt();
     const geminiRes = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        system_instruction: { parts: [{ text: systemPrompt }] },
         contents: contents,
         tools: [{ googleSearch: {} }],
         generationConfig: { temperature: 0.2, maxOutputTokens: 512 },

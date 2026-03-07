@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { siWhatsapp } from 'simple-icons';
-import { gradeGroups } from '@/data/grade-groups';
+import { fetchGradeGroups } from '@/lib/sheets';
 import { GradeGroup, RoomParent } from '@/types';
 
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -49,7 +49,12 @@ const RoomParentCard: React.FC<{ parent: RoomParent; colorIndex: number }> = ({
 );
 
 const WhatsAppGroups: React.FC = () => {
+  const [groups, setGroups] = useState<GradeGroup[]>([]);
   const [confirmGroup, setConfirmGroup] = useState<GradeGroup | null>(null);
+
+  useEffect(() => {
+    fetchGradeGroups().then(setGroups).catch(console.error);
+  }, []);
 
   const handleConfirm = () => {
     if (confirmGroup) {
@@ -75,7 +80,7 @@ const WhatsAppGroups: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {gradeGroups.map((group) => (
+          {groups.map((group) => (
             <div
               key={group.grade}
               className="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 overflow-hidden flex flex-col"

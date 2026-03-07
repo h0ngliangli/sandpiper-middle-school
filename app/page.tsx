@@ -8,8 +8,6 @@ import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 import Testimonials from '@/components/Testimonials';
 import RecentNews from '@/components/RecentNews';
-import { schoolFeatures } from '@/data/school-features';
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-sandpiper-blue flex flex-col">
@@ -19,7 +17,7 @@ export default function Home() {
         <ByTheNumbers />
         <RecentNews />
         <Testimonials />
-        <SectionGrid sections={schoolFeatures} />
+        <SectionGrid />
         <WhatsAppGroups />
         <QuickLinks />
       </main>
