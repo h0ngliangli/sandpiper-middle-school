@@ -14,6 +14,7 @@
   - NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
   - NEXT_PUBLIC_FIREBASE_APP_ID
   - NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  - NEXT_PUBLIC_GOOGLE_SHEET_ID (see SHEETS_SETUP.md for instructions)
 
 3. download the service account key from Firebase Console for the staging project
   and save it as `firebase-admin-key.json` in the root directory of the project
@@ -44,3 +45,4 @@
    - NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
    - NEXT_PUBLIC_FIREBASE_APP_ID
    - NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+   - NEXT_PUBLIC_GOOGLE_SHEET_ID
