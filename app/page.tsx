@@ -3,7 +3,6 @@ import Hero from '@/components/Hero';
 import ByTheNumbers from '@/components/ByTheNumbers';
 import SectionGrid from '@/components/SchoolFeatures';
 import QuickLinks from '@/components/QuickLinks';
-import WhatsAppGroups from '@/components/WhatsAppGroups';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 import Testimonials from '@/components/Testimonials';
@@ -21,7 +20,6 @@ export default function Home() {
         <Testimonials />
         <SectionGrid />
         <ParentAmbassadors />
-        <WhatsAppGroups />
         <QuickLinks />
       </main>
       <Footer />
