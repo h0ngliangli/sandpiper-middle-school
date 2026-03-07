@@ -1,8 +1,9 @@
 import React from 'react';
-import { Users, Trophy, SmilePlus, Bot, LucideIcon } from 'lucide-react';
+import * as Icons from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { fetchByTheNumbers } from '@/lib/sheets';
 
-const ICON_MAP: Record<string, LucideIcon> = { Users, Trophy, SmilePlus, Bot };
+const DEFAULT_ICON = Icons.Users as LucideIcon;
 
 const ByTheNumbers: React.FC = async () => {
   const items = await fetchByTheNumbers();
@@ -17,7 +18,7 @@ const ByTheNumbers: React.FC = async () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {items.map((item) => {
-            const Icon = ICON_MAP[item.iconName] ?? Users;
+            const Icon = (Icons[item.iconName as keyof typeof Icons] as LucideIcon) ?? DEFAULT_ICON;
             return (
               <div key={item.id} className="flex flex-col items-center p-6 bg-blue-900/50 rounded-lg border border-blue-800 backdrop-blur-sm hover:transform hover:-translate-y-1 transition-transform duration-300">
                 <div className="mb-4 bg-midnight p-3 rounded-full shadow-lg">
