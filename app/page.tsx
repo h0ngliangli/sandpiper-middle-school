@@ -8,6 +8,8 @@ import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 import Testimonials from '@/components/Testimonials';
 import RecentNews from '@/components/RecentNews';
+import ParentAmbassadors from '@/components/ParentAmbassadors';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-sandpiper-blue flex flex-col">
@@ -18,6 +20,7 @@ export default function Home() {
         <RecentNews />
         <Testimonials />
         <SectionGrid />
+        <ParentAmbassadors />
         <WhatsAppGroups />
         <QuickLinks />
       </main>

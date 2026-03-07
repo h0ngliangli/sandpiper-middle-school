@@ -109,6 +109,22 @@ export async function fetchFAQ(sheetId?: string) {
   }));
 }
 
+export async function fetchParentAmbassador(sheetId?: string) {
+  const rows = await fetchTab('parent-ambassadors', sheetId);
+  const r = rows[0];
+  if (!r) return null;
+  return {
+    id: r.id || 'parent-ambassadors',
+    title: r.title,
+    description: r.description,
+    imageUrl: r.imageUrl,
+    imageAlt: r.imageAlt,
+    reverse: r.reverse?.toLowerCase() === 'true',
+    ctaText: r.ctaText || undefined,
+    ctaLink: r.ctaLink || undefined,
+  };
+}
+
 export async function fetchQuickLinks(sheetId?: string) {
   const rows = await fetchTab('quick-links', sheetId);
   return rows.map((r) => ({

@@ -1,13 +1,13 @@
 # Google Sheets CMS Setup
 
-学校数据存储在一个 Google Spreadsheet 中，分为 6 个 Sheet Tab。
+学校数据存储在一个 Google Spreadsheet 中，分为 8 个 Sheet Tab。
 老师、家长、学生均可通过编辑这个表格来更新网站内容，**无需重新部署代码**。
 
 ## 第一步：创建 Google Spreadsheet
 
 1. 打开 [Google Sheets](https://sheets.google.com) 并新建一个表格
 2. 将表格命名为 `Sandpiper Middle School - Website Data`
-3. 在底部创建以下 6 个 Tab（名称必须完全一致）：
+3. 在底部创建以下 8 个 Tab（名称必须完全一致）：
 
 ```
 by-the-numbers
@@ -17,6 +17,7 @@ grade-groups
 events
 faq
 quick-links
+parent-ambassadors
 ```
 
 ## 第二步：设置权限
@@ -131,6 +132,25 @@ NEXT_PUBLIC_GOOGLE_SHEET_ID=你的Sheet ID
 | `description` | 补充说明（可为空） | `View upcoming events` |
 
 **可用图标名：** `Calendar` / `Utensils` / `Phone` / `ShieldAlert` / `FileText`
+
+---
+
+### Tab: `parent-ambassadors`
+
+只有**一行数据**，对应页面上的 Parent Ambassadors 区块。
+
+| 列名 | 说明 | 示例 |
+|------|------|------|
+| `id` | 页面锚点 ID | `parent-ambassadors` |
+| `title` | 标题 | `ASK ME ANYTHING` |
+| `description` | 正文段落 | `At Sandpiper...` |
+| `imageUrl` | 图片路径 | `/images/ask-me-anything.png` |
+| `imageAlt` | 图片说明 | `Parents chatting at a school event` |
+| `reverse` | 图片是否在右侧 | `true` 或 `false` |
+| `ctaText` | 按钮文字 | `Chat Now` |
+| `ctaLink` | WhatsApp 链接 | `https://wa.me/...` |
+
+> 点击 CTA 按钮会弹出确认对话框，用户确认后才会跳转到 WhatsApp。
 
 ---
 
