@@ -24,7 +24,6 @@ export interface LinkItem {
   url: string;
   icon: React.ReactNode;
   description?: string; // Optional description for the link
-  newTab?: boolean;
 }
 
 export interface SchoolEvent {

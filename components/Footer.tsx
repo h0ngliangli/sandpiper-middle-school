@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 href="https://www.facebook.com/SandpiperElementary"
                 className="text-slate-400 hover:text-sandpiper-gold transition-colors"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <SocialIcon icon={siFacebook} />
               </a>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/sandpiper_stingrays"
                 className="text-slate-400 hover:text-sandpiper-gold transition-colors"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <SocialIcon icon={siInstagram} />
               </a>
@@ -129,9 +129,9 @@ const Footer: React.FC = () => {
                <ShieldCheck className="h-3.5 w-3.5 text-slate-500" />
                <span>Protected by reCAPTCHA v3</span>
                <span className="text-slate-700 mx-0.5">|</span>
-               <a href="https://policies.google.com/privacy" className="hover:text-slate-400 underline decoration-slate-700 underline-offset-2 transition-colors" target="_blank" rel="noreferrer">Privacy</a>
+               <a href="https://policies.google.com/privacy" className="hover:text-slate-400 underline decoration-slate-700 underline-offset-2 transition-colors" target="_blank" rel="noopener noreferrer">Privacy</a>
                <span className="text-slate-700">&</span>
-               <a href="https://policies.google.com/terms" className="hover:text-slate-400 underline decoration-slate-700 underline-offset-2 transition-colors" target="_blank" rel="noreferrer">Terms</a>
+               <a href="https://policies.google.com/terms" className="hover:text-slate-400 underline decoration-slate-700 underline-offset-2 transition-colors" target="_blank" rel="noopener noreferrer">Terms</a>
             </div>
          </div>
        </div>

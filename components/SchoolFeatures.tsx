@@ -46,6 +46,8 @@ const SectionGrid: React.FC = async () => {
                   <div>
                     <a
                       href={section.ctaLink || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center text-sandpiper-blue dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300 transition-colors group"
                     >
                       {section.ctaText}

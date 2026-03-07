@@ -26,8 +26,8 @@ const QuickLinks: React.FC = () => {
             <a
               key={link.id}
               href={link.url}
-              target={link.newTab ? '_blank' : undefined}
-              rel={link.newTab ? 'noopener noreferrer' : undefined}
+              target='_blank'
+              rel='noopener noreferrer'
               className="group flex items-center p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:bg-sandpiper-blue hover:border-sandpiper-blue transition-all duration-300 hover:-translate-y-1 shadow-lg"
             >
               <div className="flex-shrink-0 bg-slate-900 group-hover:bg-white/20 p-3 rounded-lg transition-colors">

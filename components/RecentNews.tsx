@@ -102,7 +102,14 @@ const EventModal: React.FC<{ event: SchoolEvent; onClose: () => void }> = ({ eve
 
         <h2 className="text-xl font-extrabold text-midnight dark:text-white leading-tight pr-6">{event.title}</h2>
         <div className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed prose prose-sm max-w-none prose-headings:text-midnight dark:prose-headings:text-white prose-a:text-sandpiper-blue prose-strong:text-slate-800 dark:prose-strong:text-slate-200">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{event.description}</ReactMarkdown>
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm]}
+            components={{
+              a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" />
+            }}
+          >
+            {event.description}
+          </ReactMarkdown>
         </div>
 
         <button
