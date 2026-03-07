@@ -86,7 +86,7 @@ export default function Testimonials() {
                 />
               </div>
               <h4 className="text-lg font-bold text-slate-900 dark:text-white">{items[currentIndex].name}</h4>
-              <p className="text-blue-800 font-medium text-sm uppercase tracking-wider">
+              <p className="text-blue-800 font-medium text-sm uppercase tracking-wider dark:text-blue-400">
                 {items[currentIndex].role}
               </p>
             </div>

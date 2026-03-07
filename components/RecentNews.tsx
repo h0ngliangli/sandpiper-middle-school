@@ -60,7 +60,7 @@ const EventCard: React.FC<{ event: SchoolEvent; onClick: () => void }> = ({ even
         </h3>
         <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3">{event.summary}</p>
       </div>
-      <span className="text-xs font-semibold text-sandpiper-blue mt-auto">
+      <span className="text-xs font-semibold text-sandpiper-blue mt-auto dark:text-blue-300">
         View details →
       </span>
     </button>
