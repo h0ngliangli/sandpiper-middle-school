@@ -2,14 +2,10 @@ import { NextResponse } from 'next/server';
 import { getAppCheck } from 'firebase-admin/app-check';
 import { initAdmin } from '@/lib/firebase-admin';
 import { fetchFAQ } from '@/lib/sheets';
+import { REDIRECT_SIGNAL, GEMINI_URL } from '@/lib/constants';
 
 // Initialize Firebase Admin
 initAdmin();
-
-const GEMINI_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent';
-
-const REDIRECT_SIGNAL = 'REDIRECT_TO_WHATSAPP';
 
 // Cache the system prompt (FAQ changes infrequently; refresh every 5 minutes).
 let promptCache: { value: string; expiresAt: number } | null = null;

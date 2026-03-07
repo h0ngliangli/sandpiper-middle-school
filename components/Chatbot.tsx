@@ -5,10 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getToken } from 'firebase/app-check';
 import { appCheck } from '@/lib/firebase';
-// TODO: Replace with your actual WhatsApp number, e.g. https://wa.me/16501234567
-const WHATSAPP_URL = 'https://wa.me/1234567890';
-
-const REDIRECT_SIGNAL = 'REDIRECT_TO_WHATSAPP';
+import { REDIRECT_SIGNAL } from '@/lib/constants';
 
 type ConnectionStatus = 'idle' | 'checking' | 'ok' | 'error';
 
@@ -37,13 +34,11 @@ const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const WhatsAppButton: React.FC = () => (
   <a
-    href={WHATSAPP_URL}
-    target="_blank"
-    rel="noopener noreferrer"
+    href='#parent-ambassadors'
     className="mt-2 flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-3 py-2 rounded-xl transition-colors"
   >
     <WhatsAppIcon className="h-4 w-4" />
-    <span>Chat with a Parent Ambassador</span>
+    <span>Take me to a Parent Ambassador</span>
   </a>
 );
 
@@ -190,10 +185,10 @@ const Chatbot: React.FC = () => {
     setIsLoading(true);
     try {
       const raw = await callGemini(nextHistory);
-      const shouldRedirect = raw.trim() === REDIRECT_SIGNAL;
+      const shouldRedirect = raw.trim().indexOf(REDIRECT_SIGNAL) !== -1;
 
       const assistantContent = shouldRedirect
-        ? "I don't have a specific answer for that, but one of our Parent Ambassadors would be happy to help you directly!"
+        ? "Our Parent Ambassadors are experienced Sandpiper parents who would be happy to help you directly!"
         : raw;
 
       const assistantMsg: Message = {
