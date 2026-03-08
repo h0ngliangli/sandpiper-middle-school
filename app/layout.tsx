@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="apple-mobile-web-app-title" content="Sandpiper Middle School" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');var dark=t==='dark'||(t==null&&(function(){var h=new Date().getHours();return h>=18||h<6})());if(dark)document.documentElement.classList.add('dark')}catch(e){}})()`,
