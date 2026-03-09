@@ -55,7 +55,7 @@ export default function Testimonials() {
   if (items.length === 0) return null;
 
   return (
-    <section id="testimonials" className="py-16 bg-slate-50 dark:bg-slate-900 px-4 overflow-hidden">
+    <section id="testimonials" className="py-16 bg-slate-50 dark:bg-slate-800 px-4 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="section-title">Voices From Our Community</h2>
@@ -63,7 +63,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Card */}
-        <div className="relative bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center">
+        <div className="relative bg-white dark:bg-slate-700 rounded-3xl shadow-xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center">
           
           {/* Background Quote */}
           <div className="absolute top-8 left-8 text-blue-100 opacity-50">
@@ -78,7 +78,7 @@ export default function Testimonials() {
 
             {/* Avatar and Role */}
             <div className="flex flex-col items-center">
-              <div className={`w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden mb-4 bg-blue-50 ${items[currentIndex].avatar ? '' : 'hidden'}`} >
+              <div className={`w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden mb-4 bg-blue-50 dark:bg-slate-700 ${items[currentIndex].avatar ? '' : 'hidden'}`} >
                 <img 
                   src={items[currentIndex].avatar} 
                   alt={items[currentIndex].name}

@@ -19,6 +19,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       const hour = new Date().getHours();
       initial = hour >= 18 || hour < 6 ? 'dark' : 'light';
+      // initial = 'dark'; // to test dark theme
     }
     setTheme(initial);
     document.documentElement.classList.toggle('dark', initial === 'dark');

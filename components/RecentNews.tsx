@@ -134,7 +134,7 @@ const RecentNews: React.FC = () => {
   if (upcomingEvents.length === 0) return null;
 
   return (
-    <section id="recent-news" className="py-20 bg-white dark:bg-slate-900">
+    <section id="news" className="py-20 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue dark:text-blue-300 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full">

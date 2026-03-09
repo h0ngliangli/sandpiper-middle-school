@@ -1,5 +1,9 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import AboutUs from '@/components/AboutUs';
+import WhyUnique from '@/components/WhyUnique';
+import DesignThinking from '@/components/DesignThinking';
+import AcademicPerformance from '@/components/AcademicPerformance';
 import ByTheNumbers from '@/components/ByTheNumbers';
 import SectionGrid from '@/components/SchoolFeatures';
 import QuickLinks from '@/components/QuickLinks';
@@ -15,10 +19,12 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow pt-16">
         <Hero />
-        <ByTheNumbers />
+        <AboutUs />
+        <WhyUnique />
+        <DesignThinking />
+        <AcademicPerformance />
         <RecentNews />
         <Testimonials />
-        <SectionGrid />
         <ParentAmbassadors />
         <QuickLinks />
       </main>

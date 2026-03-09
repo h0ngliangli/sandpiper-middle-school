@@ -31,11 +31,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Academics', href: '#design-thinking' },
-    { name: 'News', href: '#recent-news' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#parent-ambassadors' },
-    { name: 'Quick Links', href: '#links' },
+    { name: 'About', href: '#about' },
+    { name: 'Why Sandpiper', href: '#why-sandpiper' },
+    { name: 'Design Thinking', href: '#design-thinking' },
+    { name: 'Academics', href: '#academics' },
+    { name: 'News', href: 'news'},
   ];
 
   return (

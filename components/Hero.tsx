@@ -19,15 +19,17 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-midnight/20 mix-blend-multiply"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col justify-center h-full">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-light text-white tracking-tight mb-6">
-          <span className="block text-sandpiper-gold mb-2 text-xl sm:text-2xl font-sans uppercase tracking-widest font-semibold">
-            Welcome to
+      <div className="relative max-w-6xl py-20 px-6 lg:px-12 flex flex-col justify-center h-full">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
+          <span className="block text-sandpiper-gold mb-2 text-sm sm:text-lg font-sans uppercase tracking-widest font-semibold">
+            Welcome to SANDPIPER MIDDLE SCHOOL
           </span>
-          Sandpiper<br />Middle School
+          Think<br /> Design<br /> Belong
         </h1>
         <p className="mt-4 max-w-2xl text-xl text-gray-300 sm:mt-6 font-light leading-relaxed">
-          home of our Stingray Families. We are a safe and vibrant TK–8 community committed to <strong>strong academics, reduced bullying, and student leadership</strong>, where diversity is celebrated and every learner feels empowered to belong and succeed.
+          Welcome to the home of the Stingrays! We are a design thinking-focused middle school where students build 
+          <span className="font-semibold"> future-ready skills </span> 
+          in a culture of belonging and kindness.
         </p>
       </div>
     </div>
