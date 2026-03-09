@@ -6,15 +6,15 @@
    `npm install`
 
 2. set the following environment variables in `.env.local`:
-  - GEMINI_API_KEY
-  - NEXT_PUBLIC_FIREBASE_API_KEY
+  - GEMINI_API_KEY (obtained from aistudio.google.com)
+  - NEXT_PUBLIC_FIREBASE_API_KEY (obtained from console.firebase.google.com > sandpipermiddle-staging > Project Settings > General > Your Apps > SDK setup and configuration)
   - NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
   - NEXT_PUBLIC_FIREBASE_PROJECT_ID
   - NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
   - NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
   - NEXT_PUBLIC_FIREBASE_APP_ID
-  - NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-  - NEXT_PUBLIC_GOOGLE_SHEET_ID (see SHEETS_SETUP.md for instructions)
+  - NEXT_PUBLIC_RECAPTCHA_SITE_KEY (obtained from console.cloud.google.com > sandpipermiddle-staging > Security > reCAPTCHA > reCAPTCHA keys > sandpiper > Key details)
+  - NEXT_PUBLIC_GOOGLE_SHEET_ID (obtained from docs.google.com/spreadsheet/d/{SHEET_ID}/...)
 
 3. download the service account key from Firebase Console for the staging project
   and save it as `firebase-admin-key.json` in the root directory of the project
