@@ -37,7 +37,7 @@ function GaugeCard({ subject, points }: { subject: string; points: string }) {
           <span className="text-white font-extrabold text-xs uppercase tracking-widest">{subject}</span>
         </div>
         <span className="bg-sandpiper-gold text-midnight text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-          Blue — Highest
+          Highest
         </span>
       </div>
 
