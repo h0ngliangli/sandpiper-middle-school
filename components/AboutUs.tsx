@@ -10,7 +10,7 @@ const AboutUs: React.FC = () => {
           </span>
           <h2 className="section-title uppercase tracking-tight leading-tight mb-5">
             EDUCATION THAT MEETS {' '}
-            <span className="text-sandpiper-gold">THIS MOMENT</span>
+            <span className="text-sandpiper-gold whitespace-nowrap">THIS MOMENT</span>
           </h2>
         </div>
 
