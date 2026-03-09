@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           </span>
           Think<br /> Design<br /> Belong
         </h1>
-        <p className="mt-4 max-w-2xl text-xl text-gray-300 sm:mt-6 font-light leading-relaxed">
+        <p className="mt-4 max-w-2xl text-xl text-white sm:mt-6 font-light leading-relaxed">
           Welcome to the home of the Stingrays! We are a design thinking-focused middle school where students build 
           <span className="font-semibold"> future-ready skills </span> 
           in a culture of belonging and kindness.
