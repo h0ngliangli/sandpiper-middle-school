@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Sandpiper Middle School',
   description:
-    'Sandpiper Middle School is a public, safe, and vibrant grades 6-8 school focused on strong academics, reduced bullying, and student leadership.',
+    'Sandpiper Middle School is a design thinking-focused middle school where students build future-ready skills in a culture of belonging and kindness.',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://sandpipermiddle.org' },
   openGraph: {
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
     siteName: 'Sandpiper Middle School',
     title: 'Sandpiper Middle School',
     description:
-      'Sandpiper Middle School is a public, safe, and vibrant grades 6-8 school focused on strong academics, reduced bullying, and student leadership.',
+      'Sandpiper Middle School is a design thinking-focused middle school where students build future-ready skills in a culture of belonging and kindness.',
     url: 'https://sandpipermiddle.org',
-    images: [{ url: 'https://sandpipermiddle.web.app/favicon.svg' }],
+    images: [{ url: 'https://sandpipermiddle.web.app/favicon.ico' }],
   },
   twitter: {
     card: 'summary',
     title: 'Sandpiper Middle School',
     description:
-      'Sandpiper Middle School is a public, safe, and vibrant grades 6-8 school focused on strong academics, reduced bullying, and student leadership.',
-    images: ['https://sandpipermiddle.web.app/favicon.svg'],
+      'Sandpiper Middle School is a design thinking-focused middle school where students build future-ready skills in a culture of belonging and kindness.',
+    images: ['https://sandpipermiddle.web.app/favicon.ico'],
   },
 };
 
