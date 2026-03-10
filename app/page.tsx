@@ -4,14 +4,12 @@ import AboutUs from '@/components/AboutUs';
 import WhyUnique from '@/components/WhyUnique';
 import DesignThinking from '@/components/DesignThinking';
 import AcademicPerformance from '@/components/AcademicPerformance';
-import ByTheNumbers from '@/components/ByTheNumbers';
-import SectionGrid from '@/components/SchoolFeatures';
 import QuickLinks from '@/components/QuickLinks';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 import Testimonials from '@/components/Testimonials';
 import RecentNews from '@/components/RecentNews';
-import ParentAmbassadors from '@/components/ParentAmbassadors';
+import ParentAmbassadors2 from '@/components/ParentAmbassadors2';
 
 export default function Home() {
   return (
@@ -25,7 +23,7 @@ export default function Home() {
         <AcademicPerformance />
         <RecentNews />
         <Testimonials />
-        <ParentAmbassadors />
+        <ParentAmbassadors2 />
         <QuickLinks />
       </main>
       <Footer />

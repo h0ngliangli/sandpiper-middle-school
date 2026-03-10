@@ -82,14 +82,6 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://sandpiper.brssd.org"
-                  className="hover:text-white transition-colors"
-                >
-                  Sandpiper Elementary School
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://www.brssd.org"
                   className="hover:text-white transition-colors"
                 >
