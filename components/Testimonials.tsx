@@ -55,19 +55,19 @@ export default function Testimonials() {
   if (items.length === 0) return null;
 
   return (
-    <section id="testimonials" className="py-16 bg-slate-50 dark:bg-slate-800 px-4 overflow-hidden">
+    <section id="testimonials" className="py-10 bg-slate-50 dark:bg-slate-800 px-4 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="section-title">Voices From Our Community</h2>
-          <div className="w-16 h-1 bg-blue-800 mx-auto rounded-full"></div>
+          <h2 className="section-title">Hear from Our Students, Parents, and Alumni</h2>
+          <div className="w-16 h-0.5 bg-blue-800 mx-auto rounded-full"></div>
         </div>
 
         {/* Testimonial Card */}
         <div className="relative bg-white dark:bg-slate-700 rounded-3xl shadow-xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center">
           
           {/* Background Quote */}
-          <div className="absolute top-8 left-8 text-blue-100 opacity-50">
-            <Quote size={80} strokeWidth={1} />
+          <div className="absolute top-8 left-8 text-blue-200">
+            <Quote size={40} strokeWidth={1} />
           </div>
 
           {/* Switching Content */}

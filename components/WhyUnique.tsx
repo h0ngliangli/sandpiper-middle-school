@@ -45,7 +45,7 @@ const cards: { icon: LucideIcon; title: string; desc: React.ReactNode }[] = [
         <strong className="text-sandpiper-gold font-semibold">
           private school-like setting
         </strong>
-         with a customized learning experience for students.
+        {' '}with a customized learning experience for students.
       </>
     ),
   },
