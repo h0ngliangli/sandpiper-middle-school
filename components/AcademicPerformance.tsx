@@ -86,10 +86,10 @@ const stats = [
 
 const AcademicPerformance: React.FC = () => {
   return (
-    <section className="bg-slate-50 dark:bg-slate-900 py-10 px-6 lg:px-12">
+    <section className="bg-slate-100 dark:bg-slate-900 py-10 px-6 lg:px-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-3 block">
-          CA Dashboard Results
+          Student Performance
         </div>
 
         {/* Top row: heading + summary stats */}
@@ -113,10 +113,10 @@ const AcademicPerformance: React.FC = () => {
             {stats.map(({ value, label, subject }) => (
               <div key={subject}
                 className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-6 py-5 min-w-[160px] text-center shadow-sm">
-                <div className="text-xl font-extrabold text-sandpiper-blue dark:text-blue-400 leading-none mb-2">
+                <div className="font-extrabold text-sandpiper-blue dark:text-blue-400 leading-none mb-2">
                   {value}
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 leading-snug">
+                <div className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 leading-snug">
                   {label}
                   <br />
                   {subject}
@@ -137,7 +137,7 @@ const AcademicPerformance: React.FC = () => {
           Source:{' '}
           <a href="https://www.caschooldashboard.org/reports/41688666114771/2025"
             target="_blank" rel="noopener noreferrer"
-            className="underline hover:text-sandpiper-blue transition-colors">
+            className="underline text-midnight dark:text-slate-300">
             California School Dashboard
           </a>
           {' '}· Data reflects most recent reporting period.

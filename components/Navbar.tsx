@@ -31,11 +31,12 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Why Sandpiper', href: '#why-sandpiper' },
+    { name: 'About Us', href: '#about' },
     { name: 'Design Thinking', href: '#design-thinking' },
-    { name: 'Academics', href: '#academics' },
-    { name: 'News', href: 'news'},
+    { name: 'News', href: '#news'},
+    { name: 'Testimonials', href: '#testimonials'},
+    { name: 'Contact', href: '#parent-ambassadors'},
+    { name: 'Quick Links', href: '#links'}
   ];
 
   return (
@@ -58,12 +59,12 @@ const Navbar: React.FC = () => {
           </div>
           
           <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="flex items-baseline">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="hover:text-sandpiper-gold transition-all duration-300 px-3 py-2 text-sm hover:scale-110 font-medium uppercase tracking-wide"
+                  className="hover:text-sandpiper-gold transition-all duration-300 px-2 py-2 text-xs sm:text-sm hover:scale-110  sm:font-medium tracking-wide"
                 >
                   {link.name}
                 </a>

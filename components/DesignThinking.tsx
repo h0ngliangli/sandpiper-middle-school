@@ -12,13 +12,13 @@ const stages: { icon: LucideIcon; step: string; name: string; tagline: string }[
 const DesignThinking: React.FC = () => {
   return (
     <>
-      <section id="design-thinking" className="bg-sandpiper-blue py-10 px-6 lg:px-12">
-        <div className="text-center mb-6">
+      <section id="design-thinking" className="">
+        <div className="bg-sandpiper-dark text-center px-6 lg:px-12 py-16">
           <span className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-4 block">
             Our Approach to Learning
           </span>
-          <h2 className="section-title font-extrabold text-white uppercase tracking-tight leading-tight mb-5">
-            What is Design Thinking
+          <h2 className="section-title lg:text-4xl font-extrabold text-white uppercase tracking-tight leading-tight mb-5">
+            What is Design Thinking?
           </h2>
           <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto text-base">
             Design thinking is a human-centered problem-solving process used by the world&apos;s most
@@ -28,10 +28,10 @@ const DesignThinking: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-stretch gap-1 lg:gap-2">
+        <div className="bg-midnight flex flex-col md:flex-row items-stretch gap-1 md:gap-2 px-6 md:px-12 py-10">
           {stages.map(({ icon: Icon, step, name, tagline }, i) => (
             <React.Fragment key={name}>
-              <div className="flex-1 flex flex-row lg:flex-col items-center lg:text-center gap-4 lg:gap-0 bg-white/5 border border-white/10 rounded-xl px-5 py-6 lg:py-8 hover:bg-white/10 hover:-translate-y-1 transition-all duration-200">
+              <div className="flex-1 flex flex-row md:flex-col items-center md:text-center gap-4 lg:gap-0 bg-white/5 border border-white/10 rounded-xl px-5 py-6 md:py-8 hover:bg-white/10 hover:-translate-y-1 transition-all duration-200">
                 <div className="w-12 h-12 rounded-full bg-midnight border border-sandpiper-gold/25 flex items-center justify-center shrink-0 lg:mb-4">
                   <Icon className="h-6 w-6 text-sandpiper-gold" />
                 </div>

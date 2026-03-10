@@ -9,12 +9,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        midnight: '#0F172A',
+        midnight: '#1B2580',
         charcoal: '#334155',
         sandpiper: {
           blue: '#1e3a8a',
-          gold: '#fbbf24',
+          gold: '#F5A623',
           light: '#f8fafc',
+          dark: '#0A0A0A',
         },
       },
       fontFamily: {

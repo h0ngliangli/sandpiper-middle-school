@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           <span className="block text-sandpiper-gold mb-2 text-sm sm:text-lg font-sans uppercase tracking-widest font-semibold">
             Welcome to SANDPIPER MIDDLE SCHOOL
           </span>
-          Think<br /> Design<br /> Belong
+          Think.<br />Design.<br />Belong.
         </h1>
         <p className="mt-4 max-w-2xl text-xl text-white sm:mt-6 font-light leading-relaxed">
           Welcome to the home of the Stingrays! We are a design thinking-focused middle school where students build 
