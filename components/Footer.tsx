@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                   href="https://sandpiper.brssd.org"
                   className="hover:text-white transition-colors"
                 >
-                  Sandpiper School
+                  Sandpiper Elementary School
                 </a>
               </li>
               <li>
@@ -93,15 +93,7 @@ const Footer: React.FC = () => {
                   href="https://www.brssd.org"
                   className="hover:text-white transition-colors"
                 >
-                  BRSSD
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.brssd.org/board-of-trustees"
-                  className="hover:text-white transition-colors"
-                >
-                  Board of Trustees
+                  Belmont-Redwood Shores School District
                 </a>
               </li>
             </ul>
