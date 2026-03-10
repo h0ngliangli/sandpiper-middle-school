@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     description:
       'Sandpiper Middle School is a design thinking-focused middle school where students build future-ready skills in a culture of belonging and kindness.',
     url: 'https://sandpipermiddle.org',
-    images: [{ url: 'https://sandpipermiddle.web.app/favicon.ico' }],
+    images: [{ url: 'https://sandpipermiddle.org/favicon.ico' }],
   },
   twitter: {
     card: 'summary',
     title: 'Sandpiper Middle School',
     description:
       'Sandpiper Middle School is a design thinking-focused middle school where students build future-ready skills in a culture of belonging and kindness.',
-    images: ['https://sandpipermiddle.web.app/favicon.ico'],
+    images: ['https://sandpipermiddle.org/favicon.ico'],
   },
 };
 
