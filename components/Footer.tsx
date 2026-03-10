@@ -25,9 +25,7 @@ const Footer: React.FC = () => {
               SANDPIPER MIDDLE SCHOOL
             </h3>
             <p className="mb-6 max-w-sm text-slate-400">
-              Fostering a community of curious minds and compassionate hearts.
-              We are dedicated to excellence in education and character
-              development.
+              Where design thinking meets genuine belonging, and students learn to lead with both their minds and their hearts.
             </p>
             <div className="flex space-x-4">
               <a
@@ -80,6 +78,14 @@ const Footer: React.FC = () => {
               More Links
             </h4>
             <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://www.brssd.org"
+                  className="hover:text-white transition-colors"
+                >
+                  Sandpiper School TK-8 Homepage
+                </a>
+              </li>
               <li>
                 <a
                   href="https://www.brssd.org"
