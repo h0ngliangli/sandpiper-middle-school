@@ -12,8 +12,8 @@ const stages: { icon: LucideIcon; step: string; name: string; tagline: string }[
 const DesignThinking: React.FC = () => {
   return (
     <>
-      <section id="design-thinking" className="">
-        <div className="bg-sandpiper-dark text-center px-6 lg:px-12 py-16">
+      <section id="design-thinking" className="max-w-6xl mx-auto ">
+        <div className="px-6 lg:px-12 py-10 bg-sandpiper-dark text-center">
           <span className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-4 block">
             Our Approach to Learning
           </span>
@@ -28,7 +28,7 @@ const DesignThinking: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-midnight flex flex-col md:flex-row items-stretch gap-1 md:gap-2 px-6 md:px-12 py-10">
+        <div className="max-w-6xl mx-auto bg-midnight flex flex-col md:flex-row items-stretch gap-1 md:gap-2 px-6 md:px-12 py-10">
           {stages.map(({ icon: Icon, step, name, tagline }, i) => (
             <React.Fragment key={name}>
               <div className="flex-1 flex flex-row md:flex-col items-center md:text-center gap-4 lg:gap-0 bg-white/5 border border-white/10 rounded-xl px-5 py-6 md:py-8 hover:bg-white/10 hover:-translate-y-1 transition-all duration-200">
