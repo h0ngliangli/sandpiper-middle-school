@@ -1,5 +1,5 @@
 import React from 'react';
-import EmailCopyLink from './EmailCopyLink';
+import ContactForm from './ContactForm';
 
 const AboutUs: React.FC = () => {
   return (
@@ -13,16 +13,13 @@ const AboutUs: React.FC = () => {
             Parent Ambassadors
           </h2>
         </div>
-        <p className="section-text">
-          At Sandpiper, our close-knit community thrives because families support one another 
-          every step of the way. Our dedicated Parent Ambassadors are the heart of this mission, 
-          fostering a welcoming environment where every family is valued and informed. 
+        <p className="section-text mb-8">
+          At Sandpiper, our close-knit community thrives because families support one another
+          every step of the way. Our dedicated Parent Ambassadors are the heart of this mission,
+          fostering a welcoming environment where every family is valued and informed.
           Whether you need help navigating school life or have questions—big or small—we are here to help.
         </p>
-      </div>
-      <div>
-        {/* Copy email address section*/}
-        <EmailCopyLink href='mailto:sandpiper.middle.parents@gmail.com' label='Contact Our Parent Ambassadors' />
+        <ContactForm />
       </div>
     </section>
   );
