@@ -16,15 +16,15 @@ const SocialIcon: React.FC<{ icon: SimpleIcon }> = ({ icon }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 text-slate-300 py-12 border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-slate-950 text-slate-300 pt-6 pb-3 max-w-6xl mx-auto ">
+      <div className="px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-serif font-bold text-white mb-4">
               SANDPIPER MIDDLE SCHOOL
             </h3>
-            <p className="mb-6 max-w-sm text-slate-400">
+            <p className="mb-6 text-slate-400">
               Where design thinking meets genuine belonging, and students learn to lead with both their minds and their hearts.
             </p>
             <div className="flex space-x-4">
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-       <div className="border-t border-slate-800 mt-12 pt-8 pb-4 text-center text-sm text-slate-500 md:flex md:items-start md:justify-between md:text-left">
+       <div className="border-t border-slate-800 mt-6 pt-8 pb-4 text-center text-sm text-slate-500 md:flex md:items-start md:justify-between md:text-left">
          <div className="flex flex-col space-y-2 md:pr-4">
            <div>
              &copy; {new Date().getFullYear()} Sandpiper Middle School. All rights reserved.
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
          </div>
 
 
-         <div className="mt-6 md:mt-0 md:pl-4 flex flex-col items-center md:items-end text-xs text-slate-600 space-y-1.5">
+         <div className="md:mt-0 md:pl-4 flex flex-col items-center md:items-end text-xs text-slate-600 space-y-1.5">
             <div className="flex items-center space-x-1 font-mono opacity-60">
                <ThemeIndicator />
                <span>Build: {process.env.BUILD_TIME}</span>
