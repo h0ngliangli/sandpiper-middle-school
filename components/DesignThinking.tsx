@@ -39,10 +39,10 @@ const DesignThinking: React.FC = () => {
                   <div className="text-sandpiper-gold text-xs font-bold tracking-widest uppercase mb-1">
                     {step}
                   </div>
-                  <div className="text-white font-extrabold uppercase tracking-wide text-sm lg:text-base mb-1">
+                  <div className="text-white font-extrabold uppercase tracking-wide lg:text-lg mb-1">
                     {name}
                   </div>
-                  <div className="text-white/55 text-xs font-light leading-relaxed">
+                  <div className="text-white/55 leading-relaxed">
                     {tagline}
                   </div>
                 </div>

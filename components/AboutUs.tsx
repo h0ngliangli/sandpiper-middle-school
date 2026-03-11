@@ -37,7 +37,7 @@ const AboutUs: React.FC = () => {
         <div className="w-16 h-0.5 bg-sandpiper-gold rounded my-7" />
 
         <blockquote className="border-l-4 border-sandpiper-gold bg-white dark:bg-slate-800 rounded-r-xl shadow-sm pl-6 pr-5 py-5 max-w-xl">
-          <p className="italic text-sandpiper-blue dark:text-blue-200 text-sm leading-relaxed mb-2">
+          <p className="italic text-sandpiper-blue dark:text-blue-200 leading-relaxed mb-2">
             &ldquo;If we teach today as we taught yesterday, we rob our children of tomorrow.&rdquo;
           </p>
           <cite className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold not-italic">

@@ -58,8 +58,8 @@ export default function Testimonials() {
     <section id="testimonials" className=" bg-slate-50 dark:bg-slate-800 max-w-6xl mx-auto py-10 px-6 lg:px-12">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-6">
-          <h2 className="section-title">Hear from Our Students, Parents, and Alumni</h2>
-          <div className="w-16 h-0.5 bg-blue-800 mx-auto rounded-full"></div>
+          <h2 className="section-title text-sky-500">Hear from Our Students, Parents, and Alumni</h2>
+          <div className="w-16 h-0.5 bg-sky-500 mx-auto rounded-full"></div>
         </div>
 
         {/* Testimonial Card */}

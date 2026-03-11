@@ -100,7 +100,7 @@ const AcademicPerformance: React.FC = () => {
               Academic Excellence,<br/>
               <span className="text-sandpiper-gold">By the Numbers</span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-md">
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
               Sandpiper students consistently perform{' '}
               <strong className="text-sandpiper-blue dark:text-white font-semibold">above state standards</strong>{' '}
               in both English Language Arts and Mathematics — proof that design thinking
@@ -109,7 +109,7 @@ const AcademicPerformance: React.FC = () => {
           </div>
 
           {/* Right: summary stat cards */}
-          <div className="flex flex-row gap-4 shrink-0">
+          <div className="flex flex-row gap-4 shrink-0 m-3">
             {stats.map(({ value, label, subject }) => (
               <div key={subject}
                 className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-6 py-5 min-w-[160px] text-center shadow-sm">

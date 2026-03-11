@@ -72,7 +72,7 @@ const WhyUnique: React.FC = () => {
               {/* <div className="absolute top-0 left-0 right-0 h-1 bg-sandpiper-gold rounded-t-2xl" /> */}
               <div className="flex gap-4 mb-4">
                 <Icon className="h-6 w-6 lg:h-8 lg:w-8 text-sandpiper-gold" />
-                <h3 className="text-white font-bold uppercase tracking-wide text-xs lg:text-sm mb-1">
+                <h3 className="text-white font-bold uppercase tracking-wide lg:text-lg mb-1">
                   {title}
                 </h3>
               </div>
@@ -80,7 +80,7 @@ const WhyUnique: React.FC = () => {
               </div> */}
 
 
-              <p className="text-xs text-slate-300 leading-relaxed font-light">
+              <p className="text-slate-300 leading-relaxed font-light">
                 {desc}
               </p>
             </div>
