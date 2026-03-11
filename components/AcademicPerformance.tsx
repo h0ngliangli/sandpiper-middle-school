@@ -86,8 +86,8 @@ const stats = [
 
 const AcademicPerformance: React.FC = () => {
   return (
-    <section className="bg-slate-100 dark:bg-slate-900 py-10 px-6 lg:px-12">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-slate-100 dark:bg-slate-900 max-w-6xl mx-auto">
+      <div className="py-10 px-6 lg:px-12">
         <div className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-3 block">
           Student Performance
         </div>
