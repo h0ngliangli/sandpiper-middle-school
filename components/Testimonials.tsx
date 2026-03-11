@@ -85,8 +85,8 @@ export default function Testimonials() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-white">{items[currentIndex].name}</h4>
-              <p className="text-blue-800 font-medium text-sm uppercase tracking-wider dark:text-blue-400">
+              <h4 className="text-lg font-bold text-amber-700 dark:text-white">{items[currentIndex].name}</h4>
+              <p className="text-amber-700 font-medium text-sm uppercase tracking-wider dark:text-blue-400">
                 {items[currentIndex].role}
               </p>
             </div>
