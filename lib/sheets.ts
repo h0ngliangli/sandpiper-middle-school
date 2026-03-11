@@ -52,6 +52,7 @@ export async function fetchSchoolFeatures(sheetId?: string) {
   const rows = await fetchTab('school-features', sheetId);
   return rows.map((r) => ({
     id: r.id,
+    tag: r.tag,
     title: r.title,
     description: r.description,
     imageUrl: r.imageUrl,

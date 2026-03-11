@@ -9,6 +9,7 @@ export interface ByTheNumberItem {
 
 export interface SectionContent {
   id: string;
+  tag: string;
   title: string;
   description: string;
   imageUrl: string;

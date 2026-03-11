@@ -1,21 +1,30 @@
 import React from 'react';
-import { SectionContent } from '../types';
+import { SectionContent as StudentExpSection } from '../types';
 import { ArrowRight } from 'lucide-react';
-import { fetchSchoolFeatures } from '@/lib/sheets';
+import { fetchSchoolFeatures as fetchStudentExpSections } from '@/lib/sheets';
 
-const SectionGrid: React.FC = async () => {
-  const sections: SectionContent[] = await fetchSchoolFeatures();
+const StudentExperience: React.FC = async () => {
+  const sections: StudentExpSection[] = await fetchStudentExpSections();
   return (
-    <div className="bg-slate-50 dark:bg-slate-900">
+    <div className="max-w-6xl mx-auto px-6 lg:px-12 pt-10 bg-slate-50 dark:bg-slate-900">
+      <div className="mb-6">
+          {/* <span className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-3 block">
+            About Us
+          </span> */}
+          <h2 className="section-title uppercase tracking-tight leading-tight mb-5">
+            STUDENT {' '}
+            <span className="text-sandpiper-gold whitespace-nowrap">EXPERIENCE</span>
+          </h2>
+      </div>
       {sections.map((section, index) => (
         <section
           id={section.id}
           key={section.id}
-          className={`py-20 lg:py-28 overflow-hidden ${index % 2 === 0 ? 'bg-white dark:bg-slate-900' : 'bg-slate-50 dark:bg-slate-800'}`}
+          className={`py-5 ${index % 2 === 0 ? 'bg-white dark:bg-slate-900' : 'bg-slate-50 dark:bg-slate-800'}`}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-4 sm:px-6 lg:px-8">
             <div
-              className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${section.reverse ? 'lg:flex-row-reverse' : ''}`}
+              className={`flex flex-col lg:flex-row items-center gap-12 ${section.reverse ? 'lg:flex-row-reverse' : ''}`}
             >
               {/* Image Side */}
               <div className="w-full lg:w-1/2 relative group">
@@ -27,19 +36,18 @@ const SectionGrid: React.FC = async () => {
                     loading="lazy"
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
 
               {/* Text Side */}
               <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue dark:text-blue-300 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full w-fit">
-                  Sandpiper {section.title}
+                <div className="inline-block my-2 text-xs font-bold tracking-widest text-sandpiper-gold w-fit">
+                  {section.tag}
                 </div>
-                <h2 className="section-title">
+                <h2 className="section-title text-xl md:text-2xl mb-4">
                   {section.title}
                 </h2>
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                <p className=" text-slate-600 dark:text-slate-300 leading-relaxed">
                   {section.description}
                 </p>
                 {section.ctaText && (
@@ -64,4 +72,4 @@ const SectionGrid: React.FC = async () => {
   );
 };
 
-export default SectionGrid;
+export default StudentExperience;

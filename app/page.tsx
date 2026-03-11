@@ -10,6 +10,7 @@ import Chatbot from '@/components/Chatbot';
 import Testimonials from '@/components/Testimonials';
 import RecentNews from '@/components/RecentNews';
 import ParentAmbassadors2 from '@/components/ParentAmbassadors2';
+import StudentExperience from '@/components/StudentExperience';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <WhyUnique />
         <DesignThinking />
         <AcademicPerformance />
+        <StudentExperience />
         <RecentNews />
         <Testimonials />
         <ParentAmbassadors2 />
