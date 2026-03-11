@@ -134,25 +134,23 @@ const RecentNews: React.FC = () => {
   if (upcomingEvents.length === 0) return null;
 
   return (
-    <section id="news" className="py-20 bg-white dark:bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <div className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-sandpiper-blue dark:text-blue-300 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full">
-            What&apos;s Coming Up
-          </div>
-          <h2 className="section-title">
-            Recent News &amp; Events
-          </h2>
-          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-            Stay up to date with what&apos;s happening at Sandpiper. Click any event for full details.
-          </p>
+    <section id="news" className="bg-slate-100 dark:bg-slate-700 max-w-6xl mx-auto py-10 px-6 lg:px-12">
+      <div className="mb-6">
+        <div className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-3 block">
+          What&apos;s Coming Up
         </div>
+        <h2 className="section-title uppercase tracking-tight leading-tight">
+          NEWS & EVENTS
+        </h2>
+        <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+          Stay up to date with what&apos;s happening at Sandpiper. Click any event for full details.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upcomingEvents.map((event) => (
-            <EventCard key={event.id} event={event} onClick={() => setSelectedEvent(event)} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {upcomingEvents.map((event) => (
+          <EventCard key={event.id} event={event} onClick={() => setSelectedEvent(event)} />
+        ))}
       </div>
 
       {selectedEvent && (

@@ -55,24 +55,24 @@ export default function Testimonials() {
   if (items.length === 0) return null;
 
   return (
-    <section id="testimonials" className="py-10 bg-slate-50 dark:bg-slate-800 px-4 overflow-hidden">
+    <section id="testimonials" className=" bg-slate-50 dark:bg-slate-800 max-w-6xl mx-auto py-10 px-6 lg:px-12">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2 className="section-title">Hear from Our Students, Parents, and Alumni</h2>
           <div className="w-16 h-0.5 bg-blue-800 mx-auto rounded-full"></div>
         </div>
 
         {/* Testimonial Card */}
-        <div className="relative bg-white dark:bg-slate-700 rounded-3xl shadow-xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center items-center text-center">
+        <div className="relative bg-white dark:bg-slate-700 rounded-3xl shadow-xl p-8 md:p-12 min-h-[300px] flex flex-col justify-center items-center ">
           
           {/* Background Quote */}
           <div className="absolute top-8 left-8 text-blue-200">
-            <Quote size={40} strokeWidth={1} />
+            <Quote size={30} strokeWidth={1} />
           </div>
 
           {/* Switching Content */}
           <div className={`transition-all duration-300 transform ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-            <p className="text-xl md:text-2xl italic text-slate-700 dark:text-slate-200 leading-relaxed mb-8 relative z-10">
+            <p className="md:text-lg italic text-slate-700 dark:text-slate-200 leading-relaxed mb-8 px-6 relative z-10">
               "{items[currentIndex].content}"
             </p>
 

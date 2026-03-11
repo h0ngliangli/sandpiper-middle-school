@@ -14,7 +14,7 @@ import StudentExperience from '@/components/StudentExperience';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-sandpiper-blue flex flex-col">
+    <div className="min-h-screen bg-sandpiper-blue/90 flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
         <Hero />

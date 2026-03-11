@@ -30,8 +30,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Text Content — below video */}
-      <div className="bg-slate-100 dark:bg-slate-700">
-      <div className="max-w-6xl mx-auto pt-10 flex flex-col lg:flex-row lg:gap-12 lg:items-center px-6 lg:px-12">
+      <div className="bg-slate-100 max-w-6xl mx-auto pt-10 flex flex-col lg:flex-row lg:gap-12 lg:items-center px-6 lg:px-12">
         <h1 className="section-title text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-snug">
           Think.<br />Design.<br />Belong.
         </h1>
@@ -40,7 +39,6 @@ const Hero: React.FC = () => {
           <span className="font-semibold"> future-ready skills </span>
           in a culture of belonging and kindness.
         </p>
-      </div>
       </div>
     </div>
   );

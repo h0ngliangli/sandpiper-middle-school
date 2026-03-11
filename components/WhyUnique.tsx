@@ -53,8 +53,8 @@ const cards: { icon: LucideIcon; title: string; desc: React.ReactNode }[] = [
 
 const WhyUnique: React.FC = () => {
   return (
-    <section id="why-sandpiper" className="bg-sandpiper-blue border-t border-slate-100 dark:border-slate-800 py-10 px-6 lg:px-12">
-      <div className="max-w-6xl mx-auto">
+    <section id="why-sandpiper" className="max-w-6xl mx-auto bg-sandpiper-blue border-t border-slate-100 dark:border-slate-800 py-10 px-6 lg:px-12">
+      <div className="">
         <div className="text-center mb-6">
           <span className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-3 block">
             Why Sandpiper
