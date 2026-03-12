@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
       {/* Video Section */}
       <div className="relative h-[80vh] min-h-[560px]">
         <div className="absolute inset-0 overflow-hidden">
