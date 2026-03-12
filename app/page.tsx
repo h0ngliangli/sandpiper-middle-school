@@ -11,6 +11,7 @@ import Testimonials from '@/components/Testimonials';
 import RecentNews from '@/components/RecentNews';
 import ParentAmbassadors2 from '@/components/ParentAmbassadors2';
 import StudentExperience from '@/components/StudentExperience';
+import Alumni from '@/components/Alumni';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <StudentExperience />
         <RecentNews />
         <Testimonials />
+        <Alumni />
         <ParentAmbassadors2 />
         <QuickLinks />
       </main>

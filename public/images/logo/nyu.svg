@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 135 46"
+   width="135"
+   height="46"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="nyu.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="20.846555"
+     inkscape:cx="26.862951"
+     inkscape:cy="20.842772"
+     inkscape:window-width="2648"
+     inkscape:window-height="1426"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     class="cls-1"
+     d="m 57.88,9.71 h 5.28 l 12.26,16 v -16 H 81 V 35.78 H 76.1 L 63.5,19.08 v 16.7 h -5.62 z"
+     id="path1"
+     style="display:inline;fill:#57068c;fill-opacity:1" />
+  <path
+     class="cls-1"
+     d="M 94,25.56 84,9.71 h 6.64 l 6.3,10.56 6.3,-10.56 h 6.46 l -10,15.68 V 35.78 H 93.8 V 25.56 Z"
+     id="path2"
+     style="display:inline;fill:#57068c;fill-opacity:1" />
+  <path
+     class="cls-1"
+     d="M 112.19,24.7 V 9.7 H 118 v 14.83 c 0,4.26 2,6.48 5.61,6.48 3.61,0 5.62,-2.05 5.62,-6.31 V 9.7 H 135 v 14.83 c 0,7.84 -4.43,11.76 -11.41,11.76 -7.15,0 -11.4,-3.92 -11.4,-11.59 z"
+     id="path3"
+     style="display:inline;fill:#57068c;fill-opacity:1" />
+  <path
+     class="cls-1"
+     d="M 46,46 H 0 V 0 H 46 Z M 21.45,40.55 c 0,0.34 0.68,0.51 0.85,0 L 23.83,27.77 H 19.92 Z M 25.2,26.92 V 25 h -6.64 v 1.88 z M 23.32,24 c 8.34,0.34 9,-7.32 9,-10.22 v 0 c -0.17,0.68 -1.37,2.73 -4.43,4.09 A 7.38,7.38 0 0 0 23.32,24 Z m -0.85,-0.51 c 1.36,-6.3 6.47,-6.47 7,-7.67 0.68,-1.87 -0.68,-5.28 -1,-5.62 H 28.3 A 11.15,11.15 0 0 1 25.54,14 c -1,0.85 -5.45,4.26 -3.07,9.54 z m -1,0.34 c -2.89,-6 2.89,-9.88 3.75,-10.73 0.17,-0.17 0.17,-0.17 0.17,-0.34 A 15.55,15.55 0 0 0 24,7.33 h -0.17 c -0.51,1.87 -3.06,4.6 -3.57,5.28 -4.43,5.11 -3.41,8.35 1.19,11.24 z M 20.26,24 C 15.49,21.11 16,17.19 18.05,14.29 V 14 a 7.46,7.46 0 0 0 -1.2,-2.9 c 0,-0.17 -0.17,-0.17 -0.17,0 0,0.86 -1,2.9 -2.38,5.12 -1.36,2.38 -1.36,7.66 6,7.83 z"
+     id="path4"
+     style="display:inline;fill:#57068c;fill-opacity:1" />
+</svg>

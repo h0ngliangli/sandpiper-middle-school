@@ -11,6 +11,7 @@ export default {
       colors: {
         midnight: '#1B2580',
         charcoal: '#334155',
+        beige: '#efead7',
         sandpiper: {
           blue: '#1e3a8a',
           gold: '#F5A623',
