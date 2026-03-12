@@ -10,14 +10,13 @@ export default {
     extend: {
       colors: {
         midnight: '#1B2580',
-        charcoal: '#334155',
         beige: '#efead7',
         sandpiper: {
           blue: '#1e3a8a',
           gold: '#F5A623',
-          light: '#f8fafc',
           dark: '#0A0A0A',
         },
+        whatsapp: '#25D366',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
