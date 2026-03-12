@@ -156,6 +156,30 @@ const RecentNews: React.FC = () => {
       {selectedEvent && (
         <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
       )}
+
+      {/* Special Event Section */}
+      <div className="mt-6">
+        <h3 className="section-title text-lg uppercase tracking-tight leading-tight mb-4">
+          FEATURED HIGHLIGHTS
+        </h3>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* YouTube Video */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-base font-extrabold text-midnight dark:text-white">2026-2027 Middle School Information Night</h3>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute inset-0 w-full h-full rounded-2xl shadow-md"
+                src="https://www.youtube.com/embed/V9b1lj6JO1w?si=R9YumkvADugWeRGD"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
