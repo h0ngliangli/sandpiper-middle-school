@@ -41,13 +41,13 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full max-w-6xl left-1/2 -translate-x-1/2 bg-sandpiper-blue transition-transform duration-300 ${
+      className={`fixed left-1/2 top-0 z-50 w-full max-w-6xl -translate-x-1/2 bg-sandpiper-blue transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-grow items-center gap-2">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               aria-label="Back to top"
@@ -58,9 +58,9 @@ const Navbar: React.FC = () => {
                 alt="Sandpiper Middle School logo"
               />
             </button>
-            <span className="whitespace-nowrap text-sm tracking-wider sm:text-base md:text-xl">
+            <div className="flex-grow whitespace-nowrap text-center tracking-wider md:text-xl lg:text-left">
               SANDPIPER MIDDLE SCHOOL
-            </span>
+            </div>
           </div>
 
           <div className="hidden lg:block">
