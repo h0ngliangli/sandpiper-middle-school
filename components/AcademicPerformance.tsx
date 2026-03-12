@@ -23,8 +23,17 @@ const SEGMENTS = [
 
 function GaugeCard({ subject, points }: { subject: string; points: string }) {
   const cx = 130, cy = 125, r = 96, sw = 20;
-  // Needle points to middle of blue segment (18°)
-  const needleTip = pt(cx, cy, r - sw / 2 - 8, 18);
+  const needleAngle = 18;
+  // Unit vectors along and perpendicular to needle (SVG screen coords)
+  const rad = (needleAngle * Math.PI) / 180;
+  const ndx = Math.cos(rad), ndy = -Math.sin(rad);
+  const pdx = -ndy, pdy = ndx;
+  // Needle line ends before the arrowhead base
+  const needleLineEnd = pt(cx, cy, r - sw / 2 - 20, needleAngle);
+  // Arrowhead: tip just inside arc, base 12px behind, wings ±5px perpendicular
+  const arrowTip = pt(cx, cy, r - sw / 2 - 4, needleAngle);
+  const arrowW1 = { x: arrowTip.x - 12 * ndx + 5 * pdx, y: arrowTip.y - 12 * ndy + 5 * pdy };
+  const arrowW2 = { x: arrowTip.x - 12 * ndx - 5 * pdx, y: arrowTip.y - 12 * ndy - 5 * pdy };
 
   return (
     <div id="academics" className="flex-1 rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
@@ -50,12 +59,16 @@ function GaugeCard({ subject, points }: { subject: string; points: string }) {
             stroke={seg.color}
             strokeWidth={sw}
             fill="none"
-            strokeLinecap="round"
+            strokeLinecap="butt"
           />
         ))}
         {/* Needle */}
-        <line x1={cx} y1={cy} x2={needleTip.x.toFixed(2)} y2={needleTip.y.toFixed(2)}
+        <line x1={cx} y1={cy} x2={needleLineEnd.x.toFixed(2)} y2={needleLineEnd.y.toFixed(2)}
           stroke="#0f172a" strokeWidth={3} strokeLinecap="round" />
+        <polygon
+          points={`${arrowTip.x.toFixed(2)},${arrowTip.y.toFixed(2)} ${arrowW1.x.toFixed(2)},${arrowW1.y.toFixed(2)} ${arrowW2.x.toFixed(2)},${arrowW2.y.toFixed(2)}`}
+          fill="#0f172a"
+        />
         <circle cx={cx} cy={cy} r={8} fill="#0f172a" />
         <circle cx={cx} cy={cy} r={4} fill="white" />
       </svg>
