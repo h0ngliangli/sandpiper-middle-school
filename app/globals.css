@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .section-title {
-    @apply text-2xl md:text-3xl font-extrabold text-midnight dark:text-white mb-4 tracking-tight;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-  .section-text {
-    @apply text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-5;
-  }
-  .section-text strong {
-    @apply text-midnight dark:text-sandpiper-gold font-semibold;
+  body {
+    @apply bg-sandpiper-blue/90 font-sans text-slate-100 antialiased;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer components {
+  .section-title {
+    @apply mb-4 text-2xl font-extrabold tracking-tight text-midnight dark:text-white md:text-3xl;
+  }
+  .section-text {
+    @apply mb-5 text-base leading-relaxed text-slate-600 dark:text-slate-300;
+  }
+  .section-text strong {
+    @apply font-semibold text-midnight dark:text-sandpiper-gold;
+  }
 }

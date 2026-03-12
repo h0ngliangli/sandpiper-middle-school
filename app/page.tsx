@@ -15,9 +15,9 @@ import Alumni from '@/components/Alumni';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-sandpiper-blue/90 flex flex-col">
+    <div>
       <Navbar />
-      <main className="flex-grow pt-16">
+      <main className="pt-16">
         <Hero />
         <AboutUs />
         <WhyUnique />
