@@ -1,21 +1,21 @@
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs';
-import WhyUnique from '@/components/WhyUnique';
-import DesignThinking from '@/components/DesignThinking';
 import AcademicPerformance from '@/components/AcademicPerformance';
-import QuickLinks from '@/components/QuickLinks';
-import Footer from '@/components/Footer';
-import Chatbot from '@/components/Chatbot';
-import Testimonials from '@/components/Testimonials';
-import RecentNews from '@/components/RecentNews';
-import ParentAmbassadors2 from '@/components/ParentAmbassadors2';
-import StudentExperience from '@/components/StudentExperience';
 import Alumni from '@/components/Alumni';
+import Chatbot from '@/components/Chatbot';
+import DesignThinking from '@/components/DesignThinking';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import Navbar from '@/components/Navbar';
+import ParentAmbassadors2 from '@/components/ParentAmbassadors2';
+import QuickLinks from '@/components/QuickLinks';
+import RecentNews from '@/components/RecentNews';
+import StudentExperience from '@/components/StudentExperience';
+import Testimonials from '@/components/Testimonials';
+import WhyUnique from '@/components/WhyUnique';
 
 export default function Home() {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="mx-auto max-w-6xl">
       <Navbar />
       <main className="pt-16">
         <Hero />
