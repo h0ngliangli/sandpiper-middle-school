@@ -10,13 +10,13 @@ const QuickLinks: React.FC = async () => {
   return (
     <section
       id="links"
-      className="mx-auto max-w-6xl border-t border-slate-800 bg-midnight px-4 py-10 sm:px-6 lg:px-8"
+      className=" bg-midnight px-4 py-5 sm:px-6 lg:px-8"
     >
       <div className="mb-6 text-center">
         <h2 className="section-title text-white">Quick Links</h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {links.map((link) => {
           const Icon =
             (Icons[link.iconName as keyof typeof Icons] as LucideIcon) ??
@@ -27,7 +27,7 @@ const QuickLinks: React.FC = async () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center rounded-xl border border-slate-700 bg-slate-800/50 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-sandpiper-blue hover:bg-sandpiper-blue"
+              className="group flex items-center rounded-xl border border-slate-700 bg-slate-800/50 p-3 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-sandpiper-blue hover:bg-sandpiper-blue"
             >
               <div className="flex-shrink-0 rounded-lg bg-slate-900 p-3 transition-colors group-hover:bg-white/20">
                 <span className="text-sandpiper-gold transition-colors group-hover:text-white">
