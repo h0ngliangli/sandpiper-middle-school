@@ -15,7 +15,7 @@ import Alumni from '@/components/Alumni';
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
       <Navbar />
       <main className="pt-16">
         <Hero />
