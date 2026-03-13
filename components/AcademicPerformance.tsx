@@ -16,42 +16,58 @@ function arc(cx: number, cy: number, r: number, from: number, to: number) {
 const SEGMENTS = [
   { from: 179, to: 145, color: '#ef4444' },
   { from: 143, to: 109, color: '#f97316' },
-  { from: 107, to:  73, color: '#eab308' },
-  { from:  71, to:  37, color: '#22c55e' },
-  { from:  35, to:   1, color: '#3b82f6' },
+  { from: 107, to: 73, color: '#eab308' },
+  { from: 71, to: 37, color: '#22c55e' },
+  { from: 35, to: 1, color: '#3b82f6' },
 ];
 
 function GaugeCard({ subject, points }: { subject: string; points: string }) {
-  const cx = 130, cy = 125, r = 96, sw = 20;
+  const cx = 130,
+    cy = 125,
+    r = 96,
+    sw = 20;
   const needleAngle = 18;
   // Unit vectors along and perpendicular to needle (SVG screen coords)
   const rad = (needleAngle * Math.PI) / 180;
-  const ndx = Math.cos(rad), ndy = -Math.sin(rad);
-  const pdx = -ndy, pdy = ndx;
+  const ndx = Math.cos(rad),
+    ndy = -Math.sin(rad);
+  const pdx = -ndy,
+    pdy = ndx;
   // Needle line ends before the arrowhead base
   const needleLineEnd = pt(cx, cy, r - sw / 2 - 20, needleAngle);
   // Arrowhead: tip just inside arc, base 12px behind, wings ±5px perpendicular
   const arrowTip = pt(cx, cy, r - sw / 2 - 4, needleAngle);
-  const arrowW1 = { x: arrowTip.x - 12 * ndx + 5 * pdx, y: arrowTip.y - 12 * ndy + 5 * pdy };
-  const arrowW2 = { x: arrowTip.x - 12 * ndx - 5 * pdx, y: arrowTip.y - 12 * ndy - 5 * pdy };
+  const arrowW1 = {
+    x: arrowTip.x - 12 * ndx + 5 * pdx,
+    y: arrowTip.y - 12 * ndy + 5 * pdy,
+  };
+  const arrowW2 = {
+    x: arrowTip.x - 12 * ndx - 5 * pdx,
+    y: arrowTip.y - 12 * ndy - 5 * pdy,
+  };
 
   return (
-    <div id="academics" className="flex-1 rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+    <div
+      id="academics"
+      className="flex-1 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800"
+    >
       {/* Card header */}
-      <div className="bg-sandpiper-blue flex items-center justify-between px-5 pt-5 pb-3">
+      <div className="flex items-center justify-between bg-sandpiper-blue px-5 pb-3 pt-5">
         <div className="flex items-center gap-2">
-          <div className="w-4 h-4 rounded-sm bg-white/20 flex items-center justify-center">
-            <div className="w-2 h-2 rounded-sm bg-sandpiper-gold" />
+          <div className="flex h-4 w-4 items-center justify-center rounded-sm bg-white/20">
+            <div className="h-2 w-2 rounded-sm bg-sandpiper-gold" />
           </div>
-          <span className="text-white font-extrabold text-xs uppercase tracking-widest">{subject}</span>
+          <span className="text-xs font-extrabold uppercase tracking-widest text-white">
+            {subject}
+          </span>
         </div>
-        <span className="bg-sandpiper-gold text-midnight text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+        <span className="rounded-full bg-sandpiper-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-midnight">
           Highest
         </span>
       </div>
 
       {/* Gauge SVG */}
-      <svg viewBox="15 18 230 118" className="max-w-48 px-2 mx-auto mt-5">
+      <svg viewBox="15 18 230 118" className="mx-auto mt-5 max-w-48 px-2">
         {SEGMENTS.map((seg) => (
           <path
             key={seg.from}
@@ -63,8 +79,15 @@ function GaugeCard({ subject, points }: { subject: string; points: string }) {
           />
         ))}
         {/* Needle */}
-        <line x1={cx} y1={cy} x2={needleLineEnd.x.toFixed(2)} y2={needleLineEnd.y.toFixed(2)}
-          stroke="#0f172a" strokeWidth={3} strokeLinecap="round" />
+        <line
+          x1={cx}
+          y1={cy}
+          x2={needleLineEnd.x.toFixed(2)}
+          y2={needleLineEnd.y.toFixed(2)}
+          stroke="#0f172a"
+          strokeWidth={3}
+          strokeLinecap="round"
+        />
         <polygon
           points={`${arrowTip.x.toFixed(2)},${arrowTip.y.toFixed(2)} ${arrowW1.x.toFixed(2)},${arrowW1.y.toFixed(2)} ${arrowW2.x.toFixed(2)},${arrowW2.y.toFixed(2)}`}
           fill="#0f172a"
@@ -74,18 +97,26 @@ function GaugeCard({ subject, points }: { subject: string; points: string }) {
       </svg>
 
       {/* Level label */}
-      <div className="text-center pb-3 px-5">
-        <div className="text-base font-extrabold text-sandpiper-blue dark:text-sandpiper-gold tracking-wide">BLUE</div>
-        <div className="text-xs mt-0.5 text-slate-400 dark:text-slate-500">Highest performance level in CA</div>
+      <div className="px-5 pb-3 text-center">
+        <div className="text-base font-extrabold tracking-wide text-sandpiper-blue dark:text-sandpiper-gold">
+          BLUE
+        </div>
+        <div className="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
+          Highest performance level in CA
+        </div>
       </div>
 
       {/* Bottom stat bar */}
-      <div className="mx-4 mb-4 bg-green-50 rounded-xl px-4 py-3 flex items-center justify-between">
+      <div className="mx-4 mb-4 flex items-center justify-between rounded-xl bg-green-50 px-4 py-3">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-green-500 shrink-0" />
-          <span className="text-xs font-bold uppercase tracking-wide text-slate-700">Above Standard</span>
+          <div className="h-2 w-2 shrink-0 rounded-full bg-green-500" />
+          <span className="text-xs font-bold uppercase tracking-wide text-slate-700">
+            Above Standard
+          </span>
         </div>
-        <span className="text-sandpiper-blue font-extrabold text-sm">{points} pts</span>
+        <span className="text-sm font-extrabold text-sandpiper-blue">
+          {points} pts
+        </span>
       </div>
     </div>
   );
@@ -93,43 +124,52 @@ function GaugeCard({ subject, points }: { subject: string; points: string }) {
 
 // ── Main section ───────────────────────────────────────────────────────────
 const stats = [
-  { value: '+60.2', label: 'Points Above Standard', subject: 'English Language Arts' },
-  { value: '+60',   label: 'Points Above Standard', subject: 'Mathematics' },
+  {
+    value: '+60.2',
+    label: 'Points Above Standard',
+    subject: 'English Language Arts',
+  },
+  { value: '+60', label: 'Points Above Standard', subject: 'Mathematics' },
 ];
 
 const AcademicPerformance: React.FC = () => {
   return (
-    <section className="bg-slate-100 dark:bg-slate-900 max-w-6xl mx-auto">
-      <div className="py-10 px-6 lg:px-12">
-        <div className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-3 block">
+    <section className="mx-auto max-w-6xl bg-slate-100 dark:bg-slate-900">
+      <div className="px-6 py-10 lg:px-12">
+        <div className="mb-3 block text-xs font-bold uppercase tracking-widest text-sandpiper-gold">
           Student Performance
         </div>
 
         {/* Top row: heading + summary stats */}
-        <div className="flex flex-col lg:flex-row mb-10 items-start">
+        <div className="mb-10 flex flex-col items-start lg:flex-row">
           {/* Left: heading */}
           <div className="flex-1">
-            <h2 className="section-title uppercase mb-4">
-              Academic Excellence,<br/>
+            <h2 className="section-title mb-4 uppercase">
+              Academic Excellence,
+              <br />
               <span className="text-sandpiper-gold">By the Numbers</span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
+            <p className="max-w-md leading-relaxed text-slate-500 dark:text-slate-400">
               Sandpiper students consistently perform{' '}
-              <strong className="text-sandpiper-blue dark:text-white font-semibold">above state standards</strong>{' '}
-              in both English Language Arts and Mathematics — proof that design thinking
-              and academic rigor go hand in hand.
+              <strong className="font-semibold text-sandpiper-blue dark:text-white">
+                above state standards
+              </strong>{' '}
+              in both English Language Arts and Mathematics — proof that design
+              thinking and academic rigor go hand in hand.
             </p>
           </div>
 
           {/* Right: summary stat cards */}
-          <div className="flex flex-row gap-4 shrink-0 m-3">
+          <div className="m-3 flex shrink-0 flex-row gap-4">
             {stats.map(({ value, label, subject }) => (
-              <div key={subject}
-                className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-6 py-5 min-w-[160px] text-center shadow-sm">
-                <div className="font-extrabold text-sandpiper-blue dark:text-blue-400 leading-none mb-2">
+              <div
+                key={subject}
+                className="min-w-[160px] rounded-2xl border border-slate-200 bg-white px-6 py-5 text-center shadow-sm dark:border-slate-700 dark:bg-slate-800"
+              >
+                <div className="mb-2 font-extrabold leading-none text-sandpiper-blue dark:text-blue-400">
                   {value}
                 </div>
-                <div className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 leading-snug">
+                <div className="text-xs uppercase leading-snug tracking-widest text-slate-500 dark:text-slate-400">
                   {label}
                   <br />
                   {subject}
@@ -140,22 +180,24 @@ const AcademicPerformance: React.FC = () => {
         </div>
 
         {/* Gauge cards */}
-        <div className="flex flex-col sm:flex-row gap-5">
+        <div className="flex flex-col gap-5 sm:flex-row">
           <GaugeCard subject="English Language Arts" points="+60.2" />
-          <GaugeCard subject="Mathematics"           points="+60" />
+          <GaugeCard subject="Mathematics" points="+60" />
         </div>
 
         {/* Source footnote */}
-        <p className="text-center mt-6 text-xs text-slate-400 dark:text-slate-500 italic">
+        <p className="mt-6 text-center text-xs italic text-slate-400 dark:text-slate-500">
           Source:{' '}
-          <a href="https://www.caschooldashboard.org/reports/41688666114771/2025"
-            target="_blank" rel="noopener noreferrer"
-            className="underline text-midnight dark:text-slate-300">
+          <a
+            href="https://www.caschooldashboard.org/reports/41688666114771/2025"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-midnight underline dark:text-slate-300"
+          >
             California School Dashboard
-          </a>
-          {' '}· Data reflects most recent reporting period.
+          </a>{' '}
+          · Data reflects most recent reporting period.
         </p>
-
       </div>
     </section>
   );
