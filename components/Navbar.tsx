@@ -41,9 +41,10 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed left-1/2 top-0 z-50 w-full max-w-6xl -translate-x-1/2 bg-sandpiper-blue transition-transform duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      className={`fixed left-1/2 top-0 z-50 w-full max-w-6xl -translate-x-1/2
+        bg-sandpiper-blue transition-transform duration-300 ${
+          isVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
     >
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between">
@@ -58,7 +59,10 @@ const Navbar: React.FC = () => {
                 alt="Sandpiper Middle School logo"
               />
             </button>
-            <div className="flex-grow whitespace-nowrap text-center tracking-wider md:text-xl lg:text-left">
+            <div
+              className="flex-grow whitespace-nowrap text-center tracking-wider
+                md:text-xl lg:text-left"
+            >
               SANDPIPER MIDDLE SCHOOL
             </div>
           </div>
@@ -69,7 +73,8 @@ const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-2 py-2 text-sm font-semibold transition-all duration-300 hover:underline hover:text-sandpiper-gold"
+                  className="px-2 py-2 text-sm font-semibold transition-all
+                    duration-300 hover:text-sandpiper-gold hover:underline"
                 >
                   {link.name}
                 </a>
@@ -81,7 +86,8 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center rounded-md focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md
+                focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -106,7 +112,8 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white"
+                className="block rounded-md px-3 py-2 text-base font-medium
+                  text-slate-300 hover:bg-slate-800 hover:text-white"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
