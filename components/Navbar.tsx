@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-2 py-2 text-sm font-semibold transition-all duration-300 hover:scale-110 hover:text-sandpiper-gold"
+                  className="px-2 py-2 text-sm font-semibold transition-all duration-300 hover:underline hover:text-sandpiper-gold"
                 >
                   {link.name}
                 </a>
