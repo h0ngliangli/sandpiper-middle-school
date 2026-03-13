@@ -17,7 +17,6 @@ const Hero: React.FC = () => {
           >
             <source src="/videos/school-life.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-midnight/20 mix-blend-multiply"></div>
         </div>
         {/* Welcome badge — straddles bottom edge of video */}
         <div className="absolute bottom-0 left-0 z-10 w-full translate-y-1/2">
