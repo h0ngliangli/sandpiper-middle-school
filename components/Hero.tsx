@@ -19,12 +19,10 @@ const Hero: React.FC = () => {
           </video>
         </div>
         {/* Welcome badge — straddles bottom edge of video */}
-        <div className="absolute bottom-0 left-0 z-10 w-full translate-y-1/2">
-          <div className="mx-auto max-w-6xl px-3 sm:px-6 lg:px-8">
-            <span className="inline-block rounded-xl bg-sandpiper-gold px-6 py-3 font-sans text-sm font-bold uppercase tracking-widest text-midnight shadow-lg sm:text-base">
-              Welcome to SANDPIPER MIDDLE SCHOOL
-            </span>
-          </div>
+        <div className="absolute bottom-0 left-0 z-10 w-full translate-y-1/2 px-3 sm:px-6 lg:px-8">
+          <span className="inline-block whitespace-nowrap rounded-xl bg-sandpiper-gold px-6 py-1 text-xs font-bold uppercase tracking-widest text-midnight shadow-lg sm:text-base">
+            Welcome to SANDPIPER MIDDLE SCHOOL
+          </span>
         </div>
       </div>
 
