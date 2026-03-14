@@ -1,3 +1,4 @@
+import SectionTitle from './SectionTitle';
 import {
   Heart,
   Target,
@@ -6,6 +7,7 @@ import {
   CheckCircle,
   ChevronRight,
   type LucideIcon,
+  ChevronDown,
 } from 'lucide-react';
 import React from 'react';
 
@@ -50,23 +52,22 @@ const stages: {
 const DesignThinking: React.FC = () => {
   return (
     <>
-      <section id="design-thinking" className="mx-auto max-w-6xl">
+      <section id="design-thinking" className="">
         <div className="bg-sandpiper-dark px-6 py-10 text-center lg:px-12">
-          <span
-            className="mb-4 block text-xs font-bold uppercase tracking-widest
-              text-sandpiper-gold"
-          >
-            Our Approach to Learning
-          </span>
-          <h2
-            className="section-title mb-5 font-extrabold uppercase leading-tight
-              tracking-tight text-white lg:text-4xl"
-          >
-            What is Design Thinking?
-          </h2>
+          <SectionTitle
+            className="text-center"
+            small="Our Approach to Learning"
+            title={
+              <>
+                <div className="text-white lg:text-4xl">
+                  WHAT IS DESIGN THINKING?
+                </div>
+              </>
+            }
+          />
           <p
-            className="mx-auto max-w-2xl text-base leading-relaxed
-              text-gray-400"
+            className="section-text-light-2 mx-auto max-w-2xl text-left
+              text-base leading-relaxed md:text-center md:text-lg"
           >
             Design thinking is a human-centered problem-solving process used by
             the world&apos;s most innovative organizations from Apple and Google
@@ -78,8 +79,8 @@ const DesignThinking: React.FC = () => {
         </div>
 
         <div
-          className="mx-auto flex max-w-6xl flex-col items-stretch gap-1
-            bg-midnight px-6 py-10 md:flex-row md:gap-2 md:px-12"
+          className="flex flex-col items-stretch gap-1 bg-midnight px-6 py-5
+            md:flex-row md:gap-2 md:px-12"
         >
           {stages.map(({ icon: Icon, step, name, tagline }, i) => (
             <React.Fragment key={name}>
@@ -116,9 +117,18 @@ const DesignThinking: React.FC = () => {
               {i < stages.length - 1 && (
                 <div
                   className="hidden shrink-0 items-center self-center
-                    text-sandpiper-gold lg:flex"
+                    text-sandpiper-gold md:flex"
                 >
                   <ChevronRight className="h-6 w-6" />
+                </div>
+              )}
+
+              {i < stages.length - 1 && (
+                <div
+                  className="flex shrink-0 items-center self-center
+                    text-sandpiper-gold md:hidden"
+                >
+                  <ChevronDown className="h-6 w-6" />
                 </div>
               )}
             </React.Fragment>
