@@ -1,11 +1,11 @@
 'use client';
-import React, { useState, useRef, useEffect } from 'react';
+import { REDIRECT_SIGNAL } from '@/lib/constants';
+import { appCheck } from '@/lib/firebase';
+import { getToken } from 'firebase/app-check';
 import { MessageCircle, X, Send, AlertCircle } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { getToken } from 'firebase/app-check';
-import { appCheck } from '@/lib/firebase';
-import { REDIRECT_SIGNAL } from '@/lib/constants';
 
 type ConnectionStatus = 'idle' | 'checking' | 'ok' | 'error';
 
@@ -34,8 +34,10 @@ const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const WhatsAppButton: React.FC = () => (
   <a
-    href='#parent-ambassadors'
-    className="mt-2 flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-3 py-2 rounded-xl transition-colors"
+    href="#parent-ambassadors"
+    className="mt-2 flex items-center justify-center space-x-2 rounded-xl
+      bg-green-500 px-3 py-2 text-sm font-medium text-white transition-colors
+      hover:bg-green-600"
   >
     <WhatsAppIcon className="h-4 w-4" />
     <span>Take me to a Parent Ambassador</span>
@@ -44,12 +46,12 @@ const WhatsAppButton: React.FC = () => (
 
 const TypingIndicator: React.FC = () => (
   <div className="flex justify-start">
-    <div className="bg-slate-100 px-4 py-3 rounded-2xl rounded-bl-sm">
+    <div className="rounded-2xl rounded-bl-sm bg-slate-100 px-4 py-3">
       <div className="flex space-x-1">
         {[0, 150, 300].map((delay) => (
           <div
             key={delay}
-            className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
+            className="h-2 w-2 animate-bounce rounded-full bg-slate-400"
             style={{ animationDelay: `${delay}ms` }}
           />
         ))}
@@ -188,7 +190,7 @@ const Chatbot: React.FC = () => {
       const shouldRedirect = raw.trim().indexOf(REDIRECT_SIGNAL) !== -1;
 
       const assistantContent = shouldRedirect
-        ? "Our Parent Ambassadors are experienced Sandpiper parents who would be happy to help you directly!"
+        ? 'Our Parent Ambassadors are experienced Sandpiper parents who would be happy to help you directly!'
         : raw;
 
       const assistantMsg: Message = {
@@ -240,15 +242,19 @@ const Chatbot: React.FC = () => {
       {/* ── Chat window ────────────────────────────────────────── */}
       {isOpen && (
         <div
-          className="fixed bottom-24 right-4 sm:right-6 z-50 flex flex-col bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
+          className="fixed bottom-24 right-4 z-50 flex flex-col overflow-hidden
+            rounded-2xl border border-slate-200 bg-white shadow-2xl sm:right-6"
           style={{ width: 'min(calc(100vw - 2rem), 24rem)', maxHeight: '70vh' }}
           role="dialog"
           aria-label="School chatbot"
         >
           {/* Header */}
-          <div className="bg-sandpiper-blue px-4 py-3 flex items-center justify-between flex-shrink-0">
+          <div
+            className="flex flex-shrink-0 items-center justify-between
+              bg-sandpiper-blue px-4 py-3"
+          >
             <div className="flex items-center space-x-3">
-              <div className="bg-sandpiper-blue p-2 rounded-full">
+              <div className="rounded-full bg-sandpiper-blue p-2">
                 <img
                   src="/favicon.svg"
                   className="h-8 w-8"
@@ -256,21 +262,24 @@ const Chatbot: React.FC = () => {
                 />
               </div>
               <div>
-                <p className="text-white font-semibold text-sm leading-tight">
+                <p className="text-sm font-semibold leading-tight text-white">
                   Sandpiper Assistant
                 </p>
-                <div className="flex items-center space-x-1.5 mt-0.5">
+                <div className="mt-0.5 flex items-center space-x-1.5">
                   {/* Status indicator */}
                   {connectionStatus === 'checking' && (
-                    <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                    <span
+                      className="h-2 w-2 animate-pulse rounded-full
+                        bg-yellow-400"
+                    />
                   )}
                   {connectionStatus === 'ok' && (
-                    <span className="w-2 h-2 rounded-full bg-green-400" />
+                    <span className="h-2 w-2 rounded-full bg-green-400" />
                   )}
                   {connectionStatus === 'error' && (
                     <AlertCircle className="h-3.5 w-3.5 text-red-400" />
                   )}
-                  <p className="text-blue-200 text-xs">
+                  <p className="text-xs text-blue-200">
                     {statusLabel[connectionStatus]}
                   </p>
                 </div>
@@ -278,7 +287,8 @@ const Chatbot: React.FC = () => {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-blue-200 hover:text-white transition-colors p-1 rounded"
+              className="rounded p-1 text-blue-200 transition-colors
+                hover:text-white"
               aria-label="Close chat"
             >
               <X className="h-5 w-5" />
@@ -286,18 +296,19 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3">
+          <div className="flex-1 space-y-3 overflow-y-auto p-4">
             {messages.map((msg) => (
               <div
                 key={msg.id}
-                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex
+                ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div className="max-w-[85%]">
                   <div
-                    className={`px-3 py-2 rounded-2xl text-sm leading-relaxed ${
+                    className={`rounded-2xl px-3 py-2 text-sm leading-relaxed ${
                       msg.role === 'user'
-                        ? 'bg-sandpiper-blue text-white rounded-br-sm'
-                        : 'bg-slate-100 text-slate-800 rounded-bl-sm'
+                        ? 'rounded-br-sm bg-sandpiper-blue text-white'
+                        : 'rounded-bl-sm bg-slate-100 text-slate-800'
                     }`}
                   >
                     {msg.role === 'user' ? (
@@ -310,12 +321,17 @@ const Chatbot: React.FC = () => {
                             <p className="mb-1 last:mb-0">{children}</p>
                           ),
                           ul: ({ children }) => (
-                            <ul className="list-disc list-inside mb-1 space-y-0.5">
+                            <ul
+                              className="mb-1 list-inside list-disc space-y-0.5"
+                            >
                               {children}
                             </ul>
                           ),
                           ol: ({ children }) => (
-                            <ol className="list-decimal list-inside mb-1 space-y-0.5">
+                            <ol
+                              className="mb-1 list-inside list-decimal
+                                space-y-0.5"
+                            >
                               {children}
                             </ol>
                           ),
@@ -330,13 +346,17 @@ const Chatbot: React.FC = () => {
                               href={href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="underline text-blue-700 hover:text-blue-900"
+                              className="text-blue-700 underline
+                                hover:text-blue-900"
                             >
                               {children}
                             </a>
                           ),
                           code: ({ children }) => (
-                            <code className="bg-slate-200 rounded px-1 font-mono text-xs">
+                            <code
+                              className="rounded bg-slate-200 px-1 font-mono
+                                text-xs"
+                            >
                               {children}
                             </code>
                           ),
@@ -356,7 +376,10 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="px-3 py-3 border-t border-slate-200 flex items-center space-x-2 flex-shrink-0">
+          <div
+            className="flex flex-shrink-0 items-center space-x-2 border-t
+              border-slate-200 px-3 py-3"
+          >
             <input
               ref={inputRef}
               type="text"
@@ -369,12 +392,17 @@ const Chatbot: React.FC = () => {
                   : 'Type your question…'
               }
               disabled={isInputDisabled}
-              className="flex-1 text-sm text-midnight border border-slate-200 rounded-full px-4 py-2 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 rounded-full border border-slate-200 bg-slate-50
+                px-4 py-2 text-sm text-midnight focus:border-transparent
+                focus:outline-none focus:ring-2 focus:ring-blue-500
+                disabled:cursor-not-allowed disabled:opacity-50"
             />
             <button
               onClick={handleSend}
               disabled={!inputValue.trim() || isInputDisabled}
-              className="w-9 h-9 bg-sandpiper-blue hover:bg-blue-900 disabled:bg-slate-300 text-white rounded-full flex items-center justify-center transition-colors flex-shrink-0"
+              className="flex h-9 w-9 flex-shrink-0 items-center justify-center
+                rounded-full bg-sandpiper-blue text-white transition-colors
+                hover:bg-blue-900 disabled:bg-slate-300"
               aria-label="Send message"
             >
               <Send className="h-4 w-4" />
@@ -386,16 +414,21 @@ const Chatbot: React.FC = () => {
       {/* ── Floating action button ──────────────────────────────── */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed bottom-6 right-4 sm:right-6 z-50 w-14 h-14 bg-blue-800 text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-110"
+        className="fixed bottom-6 right-4 z-50 flex h-14 w-14 items-center
+          justify-center rounded-full bg-blue-800 text-white shadow-xl
+          transition-all duration-200 hover:scale-110 sm:right-6"
         aria-label={isOpen ? 'Close chat' : 'Open school assistant chat'}
       >
         {!isOpen && (
-          <span className="absolute inline-flex w-full h-full rounded-full bg-blue-800 opacity-75 animate-ping" />
+          <span
+            className="absolute inline-flex h-full w-full animate-ping
+              rounded-full bg-blue-800 opacity-75"
+          />
         )}
         {isOpen ? (
-          <X className="h-6 w-6 relative" />
+          <X className="relative h-6 w-6" />
         ) : (
-          <MessageCircle className="h-6 w-6 relative" />
+          <MessageCircle className="relative h-6 w-6" />
         )}
       </button>
     </>
