@@ -12,9 +12,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   title,
 }) => {
   return (
-    <div className={`pb-4 ${className ?? ''}`}>
+    <div className={`flex flex-col gap-3 ${className ?? ''}`}>
       <div
-        className="pb-3 text-xs font-bold uppercase tracking-widest
+        className="text-xs font-bold uppercase tracking-widest
           text-sandpiper-gold"
       >
         {small}

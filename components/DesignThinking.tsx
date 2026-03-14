@@ -53,7 +53,10 @@ const DesignThinking: React.FC = () => {
   return (
     <>
       <section id="design-thinking" className="">
-        <div className="bg-sandpiper-dark px-6 py-10 text-center lg:px-12">
+        <div
+          className="flex flex-col gap-4 bg-sandpiper-dark px-6 py-10
+            text-center lg:px-12"
+        >
           <SectionTitle
             className="text-center"
             small="Our Approach to Learning"

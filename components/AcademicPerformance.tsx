@@ -154,7 +154,7 @@ const AcademicPerformance: React.FC = () => {
   return (
     <section id="academic-performance" className="bg-light-2 section-p">
       <div className="mb-5 flex flex-col lg:flex-row lg:items-center lg:gap-5">
-        <div>
+        <div className="flex flex-col gap-4">
           <SectionTitle
             small="Student Performance"
             title={

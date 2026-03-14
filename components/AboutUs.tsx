@@ -3,7 +3,7 @@ import React from 'react';
 
 const AboutUs: React.FC = () => {
   return (
-    <section id="about" className="section-p bg-light-2">
+    <section id="about" className="section-p bg-light-2 flex flex-col gap-3">
       <SectionTitle
         small="About Us"
         title={

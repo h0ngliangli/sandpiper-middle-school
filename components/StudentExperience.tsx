@@ -7,7 +7,7 @@ import React from 'react';
 const StudentExperience: React.FC = async () => {
   const sections: StudentExpSection[] = await fetchStudentExpSections();
   return (
-    <div className="section-p bg-light-1">
+    <div className="section-p flex flex-col gap-3 bg-light-1">
       <SectionTitle
         small=""
         title={
