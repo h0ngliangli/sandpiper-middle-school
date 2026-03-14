@@ -152,7 +152,7 @@ const stats = [
 
 const AcademicPerformance: React.FC = () => {
   return (
-    <section id="academic-performance" className="bg-light-1 section-p">
+    <section id="academic-performance" className="bg-light-2 section-p">
       <div className="mb-5 flex flex-col lg:flex-row lg:items-center lg:gap-5">
         <div>
           <SectionTitle

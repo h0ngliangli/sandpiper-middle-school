@@ -1,53 +1,70 @@
-import React from 'react';
 import { SectionContent as StudentExpSection } from '../types';
-import { ArrowRight } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 import { fetchSchoolFeatures as fetchStudentExpSections } from '@/lib/sheets';
+import { ArrowRight } from 'lucide-react';
+import React from 'react';
 
 const StudentExperience: React.FC = async () => {
   const sections: StudentExpSection[] = await fetchStudentExpSections();
   return (
-    <div className="max-w-6xl mx-auto px-6 lg:px-12 pt-10 bg-slate-50 dark:bg-slate-900">
-      <div className="mb-6">
-          {/* <span className="text-xs font-bold tracking-widest uppercase text-sandpiper-gold mb-3 block">
-            About Us
-          </span> */}
-          <h2 className="section-title uppercase tracking-tight leading-tight mb-5">
-            STUDENT {' '}
-            <span className="text-sandpiper-gold whitespace-nowrap">EXPERIENCE</span>
-          </h2>
-      </div>
+    <div className="section-p bg-light-1">
+      <SectionTitle
+        small=""
+        title={
+          <>
+            STUDENT{' '}
+            <span className="whitespace-nowrap text-sandpiper-gold">
+              EXPERIENCE
+            </span>
+          </>
+        }
+      />
       {sections.map((section, index) => (
         <section
           id={section.id}
           key={section.id}
-          className={`py-5 ${index % 2 === 0 ? 'bg-white dark:bg-slate-900' : 'bg-slate-50 dark:bg-slate-800'}`}
+          className={`py-5 ${index % 2 === 0 ? '' : 'bg-light-2'}`}
         >
           <div className="px-4 sm:px-6 lg:px-8">
             <div
-              className={`flex flex-col lg:flex-row items-center gap-12 ${section.reverse ? 'lg:flex-row-reverse' : ''}`}
+              className={`flex flex-col items-center gap-12 lg:flex-row
+              ${section.reverse ? 'lg:flex-row-reverse' : ''}`}
             >
               {/* Image Side */}
-              <div className="w-full lg:w-1/2 relative group">
-                <div className="absolute inset-0 bg-sandpiper-gold translate-x-3 translate-y-3 rounded-xl transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <div className="group relative w-full lg:w-1/2">
+                <div
+                  className="absolute inset-0 translate-x-3 translate-y-3
+                    rounded-xl bg-sandpiper-gold transition-transform
+                    group-hover:translate-x-2 group-hover:translate-y-2"
+                ></div>
+                <div
+                  className="relative aspect-[4/3] overflow-hidden rounded-xl
+                    shadow-2xl"
+                >
                   <img
                     src={section.imageUrl}
                     alt={section.imageAlt}
                     loading="lazy"
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full transform object-cover
+                      transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </div>
 
               {/* Text Side */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <div className="inline-block my-2 text-xs font-bold tracking-widest text-sandpiper-gold w-fit">
+              <div className="flex w-full flex-col justify-center lg:w-1/2">
+                <div
+                  className="my-2 inline-block w-fit text-xs font-bold
+                    tracking-widest text-sandpiper-gold"
+                >
                   {section.tag}
                 </div>
-                <h2 className="section-title text-xl md:text-2xl mb-4">
+                <h2 className="section-title mb-4 text-xl md:text-2xl">
                   {section.title}
                 </h2>
-                <p className=" text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p
+                  className="leading-relaxed text-slate-600 dark:text-slate-300"
+                >
                   {section.description}
                 </p>
                 {section.ctaText && (
@@ -56,10 +73,16 @@ const StudentExperience: React.FC = async () => {
                       href={section.ctaLink || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sandpiper-blue dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300 transition-colors group"
+                      className="group inline-flex items-center font-bold
+                        text-sandpiper-blue transition-colors
+                        hover:text-blue-800 dark:text-blue-400
+                        dark:hover:text-blue-300"
                     >
                       {section.ctaText}
-                      <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight
+                        className="ml-2 h-5 w-5 transform transition-transform
+                          group-hover:translate-x-1"
+                      />
                     </a>
                   </div>
                 )}

@@ -16,7 +16,7 @@
     @apply px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12;
   }
   .section-title {
-    @apply text-2xl font-extrabold tracking-tight text-midnight dark:text-white md:text-3xl;
+    @apply text-2xl font-extrabold tracking-tight text-midnight dark:text-white md:text-3xl uppercase;
   }
   .section-text {
     @apply mb-4 text-base leading-relaxed text-slate-600 dark:text-slate-300;
@@ -25,7 +25,10 @@
     @apply text-xs leading-relaxed text-slate-500 dark:text-slate-300;
   }
   .section-text-annotation a {
-    @apply text-midnight underline dark:text-sandpiper-gold;
+    @apply font-light text-midnight underline dark:text-sandpiper-gold;
+  }
+  .section-text-annotation-light {
+    @apply text-xs leading-relaxed text-slate-400 dark:text-slate-500;
   }
   .section-text strong {
     @apply font-semibold text-midnight dark:text-sandpiper-gold;

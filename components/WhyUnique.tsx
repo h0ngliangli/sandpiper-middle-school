@@ -91,7 +91,7 @@ const WhyUnique: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="section-text-light mb-0 mt-4 text-xs font-light italic">
+      <div className="section-text-annotation-light mb-0 mt-2 italic">
         * 2025 Youth Truth Survey
       </div>
     </section>
