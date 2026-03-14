@@ -14,8 +14,8 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   return (
     <div className={`py-4 ${className ?? ''}`}>
       <div
-        className="text-xs font-bold uppercase tracking-widest
-          text-sandpiper-gold pb-2"
+        className="pb-3 text-xs font-bold uppercase tracking-widest
+          text-sandpiper-gold"
       >
         {small}
       </div>
