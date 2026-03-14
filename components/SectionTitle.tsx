@@ -12,7 +12,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   title,
 }) => {
   return (
-    <div className={`py-4 ${className ?? ''}`}>
+    <div className={`pb-4 ${className ?? ''}`}>
       <div
         className="pb-3 text-xs font-bold uppercase tracking-widest
           text-sandpiper-gold"
