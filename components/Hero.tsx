@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         </div>
         {/* Welcome badge — straddles bottom edge of video */}
         <div
-          className="section-px absolute bottom-0 left-0 z-10 w-full
+          className="section-p absolute bottom-0 left-0 z-10 w-full
             translate-y-1/2"
         >
           <span
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
 
       {/* Text Content — below video */}
       <div
-        className="section-px flex flex-col bg-slate-100 pt-5 md:pt-7
+        className="section-p flex flex-col bg-light-1 pt-5 md:pt-7
           lg:flex-row lg:items-center lg:gap-12 lg:pt-10"
       >
         <h1

@@ -12,16 +12,22 @@
 }
 
 @layer components {
-  .section-px {
-    @apply px-4 sm:px-6 md:px-8 lg:px-10;
+  .section-p {
+    @apply px-4 py-4 sm:px-6 sm:py-6 md:px-8 md:py-8 lg:px-10 lg:py-10;
   }
   .section-title {
-    @apply mb-4 text-2xl font-extrabold tracking-tight text-midnight dark:text-white md:text-3xl;
+    @apply text-2xl font-extrabold tracking-tight text-midnight dark:text-white md:text-3xl;
   }
   .section-text {
-    @apply mb-5 text-base leading-relaxed text-slate-600 dark:text-slate-300;
+    @apply mb-4 text-base leading-relaxed text-slate-600 dark:text-slate-300;
   }
   .section-text strong {
     @apply font-semibold text-midnight dark:text-sandpiper-gold;
+  }
+  .bg-light-1 {
+    @apply bg-slate-100 dark:bg-slate-700;
+  }
+  .bg-light-2 {
+    @apply bg-slate-200 dark:bg-slate-600;
   }
 }
