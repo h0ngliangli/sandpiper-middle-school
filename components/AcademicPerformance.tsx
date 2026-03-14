@@ -1,3 +1,4 @@
+import SectionTitle from './SectionTitle';
 import React from 'react';
 
 // ── SVG Gauge helpers ──────────────────────────────────────────────────────
@@ -151,93 +152,72 @@ const stats = [
 
 const AcademicPerformance: React.FC = () => {
   return (
-    <section
-      id="academic-performance"
-      className="bg-slate-100 dark:bg-slate-900"
-    >
-      <div className="px-6 py-10 lg:px-12">
-        <div
-          className="mb-3 block text-xs font-bold uppercase tracking-widest
-            text-sandpiper-gold"
-        >
-          Student Performance
-        </div>
-
-        {/* Top row: heading + summary stats */}
-        <div className="mb-5 flex flex-col lg:flex-row lg:items-center lg:gap-5">
-          {/* Left: heading */}
-          <div>
-            <h2 className="section-title mb-4 whitespace-nowrap uppercase">
-              Academic Excellence,
-              <br />
-              <span className="text-sandpiper-gold">By the Numbers</span>
-            </h2>
-            <p
-              className="max-w-lg leading-relaxed text-slate-500
-                dark:text-slate-400"
-            >
-              Sandpiper students consistently perform{' '}
-              <strong
-                className="font-semibold text-sandpiper-blue dark:text-white"
-              >
-                above state standards
-              </strong>{' '}
-              in both English Language Arts and Mathematics — proof that design
-              thinking and academic rigor go hand in hand.
-            </p>
-          </div>
-
-          {/* Right: summary stat cards */}
-          <div className="my-3 flex shrink-0 flex-row gap-4">
-            {stats.map(({ value, label, subject }) => (
-              <div
-                key={subject}
-                className="min-w-[160px] rounded-2xl border border-slate-200
-                  bg-white px-6 py-5 text-center shadow-sm dark:border-slate-700
-                  dark:bg-slate-800"
-              >
-                <div
-                  className="mb-2 font-extrabold leading-none
-                    text-sandpiper-blue dark:text-blue-400"
-                >
-                  {value}
-                </div>
-                <div
-                  className="text-xs uppercase text-slate-500
-                    dark:text-slate-400"
-                >
-                  {label}
+    <section id="academic-performance" className="bg-light-1 section-p">
+      <div className="mb-5 flex flex-col lg:flex-row lg:items-center lg:gap-5">
+        <div>
+          <SectionTitle
+            small="Student Performance"
+            title={
+              <>
+                <div className="whitespace-nowrap">
+                  Academic Excellence,
                   <br />
-                  {subject}
+                  <span className="text-sandpiper-gold">By the Numbers</span>
                 </div>
+              </>
+            }
+          />
+          <p className="section-text max-w-lg">
+            Sandpiper students consistently perform{' '}
+            <strong>above state standards</strong> in both English Language Arts
+            and Mathematics — proof that design thinking and academic rigor go
+            hand in hand.
+          </p>
+        </div>
+
+        {/* Right: summary stat cards */}
+        <div className="my-3 flex shrink-0 flex-row gap-4">
+          {stats.map(({ value, label, subject }) => (
+            <div
+              key={subject}
+              className="min-w-[160px] rounded-2xl border border-slate-200
+                bg-white px-6 py-5 text-center shadow-sm dark:border-slate-700
+                dark:bg-slate-800"
+            >
+              <div
+                className="mb-2 font-extrabold leading-none text-sandpiper-blue
+                  dark:text-blue-400"
+              >
+                {value}
               </div>
-            ))}
-          </div>
+              <div className="section-text-annotation uppercase italic">
+                {label}
+                <br />
+                {subject}
+              </div>
+            </div>
+          ))}
         </div>
-
-        {/* Gauge cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <GaugeCard subject="English Language Arts" points="+60.2" />
-          <GaugeCard subject="Mathematics" points="+60" />
-        </div>
-
-        {/* Source footnote */}
-        <p
-          className="mt-6 text-center text-xs italic text-slate-400
-            dark:text-slate-500"
-        >
-          Source:{' '}
-          <a
-            href="https://www.caschooldashboard.org/reports/41688666114771/2025"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-midnight underline dark:text-slate-300"
-          >
-            California School Dashboard
-          </a>{' '}
-          · Data reflects most recent reporting period.
-        </p>
       </div>
+
+      {/* Gauge cards */}
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <GaugeCard subject="English Language Arts" points="+60.2" />
+        <GaugeCard subject="Mathematics" points="+60" />
+      </div>
+
+      {/* Source footnote */}
+      <p className="section-text-annotation mt-3 text-center italic">
+        Source:{' '}
+        <a
+          href="https://www.caschooldashboard.org/reports/41688666114771/2025"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          California School Dashboard
+        </a>{' '}
+        · Data reflects most recent reporting period.
+      </p>
     </section>
   );
 };

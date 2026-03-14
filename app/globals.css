@@ -21,6 +21,12 @@
   .section-text {
     @apply mb-4 text-base leading-relaxed text-slate-600 dark:text-slate-300;
   }
+  .section-text-annotation {
+    @apply text-xs leading-relaxed text-slate-500 dark:text-slate-300;
+  }
+  .section-text-annotation a {
+    @apply text-midnight underline dark:text-sandpiper-gold;
+  }
   .section-text strong {
     @apply font-semibold text-midnight dark:text-sandpiper-gold;
   }
