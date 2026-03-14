@@ -4,7 +4,7 @@ const Hero: React.FC = () => {
   return (
     <>
       {/* Video Section */}
-      <div className="relative h-[80vh] min-h-[560px]">
+      <div className="relative h-[50vh] min-h-[480px]">
         <div className="absolute inset-0 overflow-hidden">
           <video
             className="pointer-events-none absolute left-1/2 top-1/2 h-full
@@ -21,13 +21,13 @@ const Hero: React.FC = () => {
         </div>
         {/* Welcome badge — straddles bottom edge of video */}
         <div
-          className="absolute bottom-0 left-0 z-10 w-full translate-y-1/2 px-3
-            sm:px-6 lg:px-8"
+          className="section-px absolute bottom-0 left-0 z-10 w-full
+            translate-y-1/2"
         >
           <span
             className="inline-block whitespace-nowrap rounded-xl
               bg-sandpiper-gold px-3 py-1 text-xs font-bold uppercase
-              tracking-widest text-midnight sm:text-base"
+              tracking-wide text-midnight sm:text-base"
           >
             Welcome to SANDPIPER MIDDLE SCHOOL
           </span>
@@ -36,8 +36,8 @@ const Hero: React.FC = () => {
 
       {/* Text Content — below video */}
       <div
-        className="flex flex-col bg-slate-100 px-6 pt-5 md:pt-7 lg:flex-row
-          lg:items-center lg:gap-12 lg:px-12 lg:pt-10"
+        className="section-px flex flex-col bg-slate-100 pt-5 md:pt-7
+          lg:flex-row lg:items-center lg:gap-12 lg:pt-10"
       >
         <h1
           className="section-title text-4xl font-extrabold leading-snug
