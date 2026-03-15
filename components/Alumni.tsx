@@ -1,3 +1,4 @@
+import SectionTitle from './SectionTitle';
 import React from 'react';
 
 const universities = [
@@ -51,32 +52,33 @@ const UniversityCard = ({
 
 const Alumni: React.FC = () => {
   return (
-    <section id="alumni" className="mx-auto w-full max-w-6xl">
-      <div className="bg-sandpiper-blue px-4 py-5 text-center">
-        {/* Section label */}
-        <span className="mb-3 block text-xs font-bold uppercase tracking-widest text-sandpiper-gold">
-          Alumni
-        </span>
-
-        {/* Headline */}
-        <h2 className="mb-3 font-serif text-xl font-bold uppercase tracking-wider text-white sm:text-2xl md:text-3xl">
-          Where Our Alumni Are Now
-        </h2>
-
-        {/* Decorative divider */}
-        <div className="mb-5 mt-5 flex items-center justify-center gap-3">
+    <>
+      <section id="alumni" className="section-p bg-blue-1 flex flex-col gap-3">
+        <SectionTitle
+          className="text-center"
+          small="Alumni"
+          title={
+            <div
+              className="font-serif text-xl tracking-wider text-white
+                sm:text-2xl md:text-3xl"
+            >
+              Where Our Alumni Are Now
+            </div>
+          }
+        />
+        <div className="flex items-center justify-center gap-3">
           <div className="h-px w-16 bg-sandpiper-gold/50" />
           <div className="h-2 w-2 rounded-full bg-sandpiper-gold" />
           <div className="h-px w-16 bg-sandpiper-gold/50" />
         </div>
-
-        {/* Subtitle */}
-        <p className="mx-auto max-w-xl text-sm text-white/70 sm:text-base">
+        <p className="section-text-light-2 text-center text-sm">
           Our graduates go on to attend leading universities.
         </p>
-      </div>
-
-      <div className="flex flex-wrap items-baseline justify-evenly gap-2 bg-beige p-3 sm:gap-3 sm:p-5 md:gap-5 md:p-8">
+      </section>
+      <section
+        className="flex flex-wrap items-baseline justify-evenly gap-2 bg-beige
+          p-3 sm:gap-3 sm:p-5 md:gap-5 md:p-8"
+      >
         {/* University cards grid */}
         {universities.map(({ domain, imgUrl, imgAlt }) => (
           <UniversityCard
@@ -86,8 +88,8 @@ const Alumni: React.FC = () => {
             imgAlt={imgAlt}
           />
         ))}
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
