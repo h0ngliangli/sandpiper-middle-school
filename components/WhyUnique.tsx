@@ -67,7 +67,7 @@ const WhyUnique: React.FC = () => {
   return (
     <section
       id="why-sandpiper"
-      className="bg-blue-1 section-p flex flex-col gap-8"
+      className="bg-blue-1 section-p flex flex-col gap-3"
     >
       <SectionTitle
         className="text-center"
@@ -94,7 +94,7 @@ const WhyUnique: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="section-text-annotation-light mb-0 mt-2 italic">
+      <div className="section-text-annotation-light italic">
         * 2025 Youth Truth Survey
       </div>
     </section>

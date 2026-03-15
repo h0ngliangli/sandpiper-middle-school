@@ -19,7 +19,7 @@
     @apply text-2xl font-extrabold tracking-tight text-midnight dark:text-white md:text-3xl uppercase;
   }
   .section-text {
-    @apply mb-4 text-base leading-relaxed text-slate-600 dark:text-slate-300;
+    @apply text-base leading-relaxed text-slate-600 dark:text-slate-300;
   }
   .section-text-annotation {
     @apply text-xs leading-relaxed text-slate-500 dark:text-slate-300;
@@ -34,10 +34,13 @@
     @apply font-semibold text-midnight dark:text-sandpiper-gold;
   }
   .section-text-light {
-    @apply mb-4 text-base leading-relaxed text-slate-100 dark:text-slate-400;
+    @apply text-base leading-relaxed text-slate-100 dark:text-slate-400;
   }
   .section-text-light-2 {
-    @apply mb-4 text-base leading-relaxed text-slate-300 dark:text-slate-500;
+    @apply text-base leading-relaxed text-slate-300 dark:text-slate-500;
+  }
+  .bg-light-0 {
+    @apply bg-slate-50 dark:bg-slate-800;
   }
   .bg-light-1 {
     @apply bg-slate-100 dark:bg-slate-700;

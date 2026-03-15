@@ -2,13 +2,13 @@ import React from 'react';
 
 interface SectionTitleProps {
   className?: string;
-  small: string;
+  small?: string;
   title: React.ReactNode;
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({
   className = '',
-  small,
+  small = '',
   title,
 }) => {
   return (
