@@ -8,7 +8,8 @@ initAdmin();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const TO_EMAIL = 'sandpiper.middle.parents@gmail.com';
-const FROM_EMAIL = 'onboarding@resend.dev';
+// const FROM_EMAIL = 'onboarding@resend.dev';
+const FROM_EMAIL = 'send@sandpipermiddle.org';
 
 export async function POST(req: Request) {
   // App Check verification
