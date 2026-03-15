@@ -80,11 +80,9 @@ const DesignThinking: React.FC = () => {
             can replace.
           </p>
         </div>
-
-        <div
-          className="flex flex-col items-stretch gap-1 bg-midnight px-6 py-5
-            md:flex-row md:gap-2 md:px-12"
-        >
+      </section>
+      <section className="section-p bg-midnight">
+        <div className="mx-auto flex w-fit flex-col items-stretch md:flex-row">
           {stages.map(({ icon: Icon, step, name, tagline }, i) => (
             <React.Fragment key={name}>
               <div
