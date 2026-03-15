@@ -1,3 +1,4 @@
+import SectionTitle from './SectionTitle';
 import { fetchQuickLinks } from '@/lib/sheets';
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -8,10 +9,11 @@ const DEFAULT_ICON = Icons.FileText as LucideIcon;
 const QuickLinks: React.FC = async () => {
   const links = await fetchQuickLinks();
   return (
-    <section id="links" className="bg-midnight px-4 py-5 sm:px-6 lg:px-8">
-      <div className="mb-6 text-center">
-        <h2 className="section-title text-white">Quick Links</h2>
-      </div>
+    <section id="links" className="section-p bg-midnight flex flex-col gap-3">
+      <SectionTitle
+        className="text-center"
+        title={<div className="text-white">Quick Links</div>}
+      />
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {links.map((link) => {
