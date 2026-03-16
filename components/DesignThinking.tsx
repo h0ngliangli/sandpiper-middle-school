@@ -52,34 +52,32 @@ const stages: {
 const DesignThinking: React.FC = () => {
   return (
     <>
-      <section id="design-thinking" className="">
-        <div
-          className="flex flex-col gap-4 bg-sandpiper-dark px-6 py-10
-            text-center lg:px-12"
+      <section
+        id="design-thinking"
+        className="section-p flex flex-col gap-4 bg-sandpiper-dark px-6 py-10
+          text-center lg:px-12"
+      >
+        <SectionTitle
+          className="text-center"
+          small="Our Approach to Learning"
+          title={
+            <>
+              <div className="font-serif tracking-wider text-white lg:text-4xl">
+                WHAT IS DESIGN THINKING?
+              </div>
+            </>
+          }
+        />
+        <p
+          className="section-text-light-2 mx-auto max-w-2xl text-left text-base
+            leading-relaxed md:text-center md:text-lg"
         >
-          <SectionTitle
-            className="text-center"
-            small="Our Approach to Learning"
-            title={
-              <>
-                <div className="text-white lg:text-4xl">
-                  WHAT IS DESIGN THINKING?
-                </div>
-              </>
-            }
-          />
-          <p
-            className="section-text-light-2 mx-auto max-w-2xl text-left
-              text-base leading-relaxed md:text-center md:text-lg"
-          >
-            Design thinking is a human-centered problem-solving process used by
-            the world&apos;s most innovative organizations from Apple and Google
-            to IDEO and Stanford&apos;s d.school. At Sandpiper, we teach
-            students to understand real world challenges, imagine bold
-            solutions, and bring their ideas to life — building the skills no AI
-            can replace.
-          </p>
-        </div>
+          Design thinking is a human-centered problem-solving process used by
+          the world&apos;s most innovative organizations from Apple and Google
+          to IDEO and Stanford&apos;s d.school. At Sandpiper, we teach students
+          to understand real world challenges, imagine bold solutions, and bring
+          their ideas to life — building the skills no AI can replace.
+        </p>
       </section>
       <section className="section-p-sm bg-midnight">
         <div className="mx-auto flex w-fit flex-col items-stretch md:flex-row">
