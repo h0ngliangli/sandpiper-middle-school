@@ -63,7 +63,7 @@ const DesignThinking: React.FC = () => {
           title={
             <>
               <div className="font-serif tracking-wider text-white lg:text-4xl">
-                WHAT IS DESIGN THINKING?
+                WHAT IS <span className="whitespace-nowrap">DESIGN THINKING?</span>
               </div>
             </>
           }
