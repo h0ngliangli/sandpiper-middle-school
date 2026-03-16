@@ -81,15 +81,13 @@ const DesignThinking: React.FC = () => {
           </p>
         </div>
       </section>
-      <section className="section-p bg-midnight">
+      <section className="section-p-sm bg-midnight">
         <div className="mx-auto flex w-fit flex-col items-stretch md:flex-row">
           {stages.map(({ icon: Icon, step, name, tagline }, i) => (
             <React.Fragment key={name}>
               <div
-                className="flex flex-1 flex-row items-center gap-4 rounded-xl
-                  border border-white/10 bg-white/5 px-5 py-6 transition-all
-                  duration-200 hover:-translate-y-1 hover:bg-white/10
-                  md:flex-col md:py-8 md:text-center lg:gap-0"
+                className="card-1 flex flex-1 flex-row items-center gap-4
+                  rounded-xl md:flex-col md:text-center lg:gap-0"
               >
                 <div
                   className="flex h-12 w-12 shrink-0 items-center justify-center
@@ -100,16 +98,21 @@ const DesignThinking: React.FC = () => {
                 </div>
                 <div>
                   <div
-                    className="mb-1 text-xs font-bold uppercase tracking-widest
-                      text-sandpiper-gold"
+                    className="flex flex-row items-center gap-2 md:flex-col
+                      md:gap-0"
                   >
-                    {step}
-                  </div>
-                  <div
-                    className="mb-1 font-extrabold uppercase tracking-wide
-                      text-white lg:text-lg"
-                  >
-                    {name}
+                    <div
+                      className="text-xs font-bold uppercase tracking-widest
+                        text-sandpiper-gold"
+                    >
+                      {step}
+                    </div>
+                    <div
+                      className="font-extrabold uppercase tracking-wide
+                        text-white lg:text-lg"
+                    >
+                      {name}
+                    </div>
                   </div>
                   <div className="leading-relaxed text-white/55">{tagline}</div>
                 </div>

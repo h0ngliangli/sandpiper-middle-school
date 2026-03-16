@@ -15,6 +15,9 @@
   .section-p {
     @apply px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12;
   }
+  .section-p-sm {
+    @apply px-2 py-4 md:px-4 md:py-4 lg:px-6 lg:py-6;
+  }
   .section-title {
     @apply text-2xl font-extrabold tracking-tight text-midnight dark:text-white md:text-3xl uppercase;
   }
