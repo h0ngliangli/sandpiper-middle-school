@@ -122,17 +122,17 @@ function GaugeCard({ subject, points }: { subject: string; points: string }) {
       {/* Bottom stat bar */}
       <div
         className="mx-4 mb-4 flex items-center justify-between rounded-xl
-          bg-green-50 px-4 py-3"
+          bg-light-1 px-4 py-3"
       >
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 shrink-0 rounded-full bg-green-500" />
           <span
-            className="text-xs font-bold uppercase tracking-wide text-slate-700"
+            className="text-xs font-bold uppercase tracking-wide "
           >
             Above Standard
           </span>
         </div>
-        <span className="text-sm font-extrabold text-sandpiper-blue">
+        <span className="text-sm font-extrabold text-sandpiper-blue dark:text-blue-400">
           {points} pts
         </span>
       </div>

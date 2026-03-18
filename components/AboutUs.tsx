@@ -44,7 +44,7 @@ const AboutUs: React.FC = () => {
 
       <blockquote
         className="dark:midnight max-w-xl rounded-r-xl border-l-4
-          border-sandpiper-gold bg-white px-4 py-4 shadow-sm"
+          border-sandpiper-gold bg-light-0 px-4 py-4 shadow-sm"
       >
         <p
           className="mb-2 italic leading-relaxed text-sandpiper-blue
