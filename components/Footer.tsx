@@ -1,5 +1,5 @@
 import ThemeIndicator from './ThemeIndicator';
-import { Phone, MapPin, ShieldCheck } from 'lucide-react';
+import { Phone, MapPin, ShieldCheck, Copyright } from 'lucide-react';
 import React from 'react';
 import { siFacebook, siX, siInstagram, SimpleIcon } from 'simple-icons';
 
@@ -114,33 +114,28 @@ const Footer: React.FC = () => {
         </div>
 
         <div
-          className="mt-6 border-t border-slate-800 pb-4 pt-8 text-center
-            text-sm text-slate-500 md:flex md:items-start md:justify-between
-            md:text-left"
+          className="mt-4 flex flex-col items-center gap-2 border-t
+            border-slate-800 py-4 text-xs text-slate-500 md:flex-row
+            md:justify-between md:text-left"
         >
-          <div className="flex flex-col space-y-2 md:pr-4">
-            <div>
-              &copy; {new Date().getFullYear()} Sandpiper Middle School. All
-              rights reserved.
+          <div className="flex flex-col items-center space-y-1 md:items-start">
+            <div className="flex items-center space-x-1">
+              <Copyright className="h-3 w-3" />
+              <span>
+                {new Date().getFullYear()} Sandpiper Middle School. All rights
+                reserved.
+              </span>
             </div>
-            <div className="text-xs italic text-slate-600">
+            <div>
               Powered by the Sandpiper Parent Innovation Advisory Council
             </div>
           </div>
 
-          <div
-            className="flex flex-col items-center space-y-1.5 text-xs
-              text-slate-600 md:mt-0 md:items-end md:pl-4"
-          >
-            <div className="flex items-center space-x-1 font-mono opacity-60">
-              <ThemeIndicator />
-              <span>Build: {process.env.BUILD_TIME}</span>
-              <span>[{process.env.COMMIT_HASH}]</span>
-            </div>
-            <div className={'flex items-center space-x-1 opacity-80'}>
-              <ShieldCheck className="h-3.5 w-3.5 text-slate-500" />
+          <div className="flex flex-col items-center space-y-1 md:items-end">
+            <div className="flex items-center space-x-1 opacity-80">
+              <ShieldCheck className="h-3 w-3" />
               <span>Protected by reCAPTCHA v3</span>
-              <span className="mx-0.5 text-slate-700">|</span>
+              <span className="mx-0.5">|</span>
               <a
                 href="https://policies.google.com/privacy"
                 className="underline decoration-slate-700 underline-offset-2
@@ -150,7 +145,7 @@ const Footer: React.FC = () => {
               >
                 Privacy
               </a>
-              <span className="text-slate-700">&</span>
+              <span className="">&</span>
               <a
                 href="https://policies.google.com/terms"
                 className="underline decoration-slate-700 underline-offset-2
@@ -160,6 +155,11 @@ const Footer: React.FC = () => {
               >
                 Terms
               </a>
+            </div>
+            <div className="flex items-center space-x-1 opacity-80">
+              <ThemeIndicator />
+              <span>Build: {process.env.BUILD_TIME}</span>
+              <span className="font-mono">[{process.env.COMMIT_HASH}]</span>
             </div>
           </div>
         </div>
