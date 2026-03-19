@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import type { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,7 +30,9 @@ export const metadata: Metadata = {
     description:
       'Sandpiper Middle School is a design thinking-focused middle school where students build future-ready skills in a culture of belonging and kindness.',
     url: 'https://sandpipermiddle.org',
-    images: [{ url: 'https://sandpipermiddle.org/web-app-manifest-512x512.png' }],
+    images: [
+      { url: 'https://sandpipermiddle.org/web-app-manifest-512x512.png' },
+    ],
   },
   twitter: {
     card: 'summary',
@@ -60,9 +62,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <meta name="apple-mobile-web-app-title" content="Sandpiper Middle School" />
+        <meta
+          name="apple-mobile-web-app-title"
+          content="Sandpiper Middle School"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');var dark=t==='dark'||(t==null&&(function(){var h=new Date().getHours();return h>=18||h<6})());if(dark)document.documentElement.classList.add('dark')}catch(e){}})()`,
