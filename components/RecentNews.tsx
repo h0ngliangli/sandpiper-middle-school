@@ -233,23 +233,27 @@ const RecentNews: React.FC = () => {
           <p>
             4 Sandpiper Middle School students just took home 1st and 2nd place
             awards at the 2026 San Mateo County STEM Fair, placing us #4 out of
-            24 competing schools countywide.🏆
+            24 competing schools countywide.
           </p>
-          <ul className="list-inside list-disc">
+          <ul className="list-inside text-sm">
             <li>
+              🏆
               Lyra Bloom &mdash; &ldquo;BinBuddy: AI Trash-Sorting Robot For
               Kids&rdquo; &mdash; Environmental: 1st Place
             </li>
             <li>
+              🏆
               Louis Guo &mdash; &ldquo;Affordable Rapid Prototyping&rdquo;
               &mdash; Physical Sciences: 2nd Place
             </li>
             <li>
+              🏆
               Andrew Park &mdash; &ldquo;Interactive 3D Sound Antenna for
               Real-Time Sound Localization and Visualization&rdquo; &mdash;
               Physical Sciences: 1st Place
             </li>
             <li>
+              🏆
               Christopher Lorilla &mdash; &ldquo;Can Public Market Sentiment
               Predict Stock Market Returns?&rdquo; &mdash;
               Mathematical/Computational: 2nd Place
