@@ -221,6 +221,59 @@ const RecentNews: React.FC = () => {
 
       <h3 className="section-title text-lg">FEATURED HIGHLIGHTS</h3>
 
+      <div
+        className="flex flex-col gap-4 rounded-2xl border border-slate-500
+          bg-white p-6 shadow-sm dark:border-slate-600 dark:bg-slate-800"
+      >
+        <h3 className="text-base font-extrabold text-midnight dark:text-white">
+          Congratulations to Sandpiper Middle Students at the 2026 San Mateo
+          STEM Fair
+        </h3>
+        <div className="section-text">
+          <p>
+            4 Sandpiper Middle School students just took home 1st and 2nd place
+            awards at the 2026 San Mateo County STEM Fair, placing us #4 out of
+            24 competing schools countywide.🏆
+          </p>
+          <ul className="list-inside list-disc">
+            <li>
+              Lyra Bloom &mdash; &ldquo;BinBuddy: AI Trash-Sorting Robot For
+              Kids&rdquo; &mdash; Environmental: 1st Place
+            </li>
+            <li>
+              Louis Guo &mdash; &ldquo;Affordable Rapid Prototyping&rdquo;
+              &mdash; Physical Sciences: 2nd Place
+            </li>
+            <li>
+              Andrew Park &mdash; &ldquo;Interactive 3D Sound Antenna for
+              Real-Time Sound Localization and Visualization&rdquo; &mdash;
+              Physical Sciences: 1st Place
+            </li>
+            <li>
+              Christopher Lorilla &mdash; &ldquo;Can Public Market Sentiment
+              Predict Stock Market Returns?&rdquo; &mdash;
+              Mathematical/Computational: 2nd Place
+            </li>
+          </ul>
+          <p>
+            Our first-place winners have been invited to the{' '}
+            <strong>California State Science and Engineering Fair</strong> and
+            nominated for the
+            <strong> Thermo Fisher Junior Innovators Challenge</strong>. Please
+            join us in congratulating these amazing students!{' '}
+            <a
+              href="https://stemfair.net/results/2026/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sandpiper-blue underline
+                hover:opacity-80 dark:text-blue-300"
+            >
+              See all 2026 STEM Fair Results here.
+            </a>
+          </p>
+        </div>
+      </div>
+
       <div className="flex flex-col gap-3">
         <h3 className="text-base font-extrabold text-midnight dark:text-white">
           2026-2027 Middle School Information Night
