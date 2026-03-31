@@ -183,7 +183,7 @@ const EventModal: React.FC<{ event: SchoolEvent; onClose: () => void }> = ({
   );
 };
 
-const RecentNews: React.FC = () => {
+const NewsEvents: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<SchoolEvent | null>(null);
   const [upcomingEvents, setUpcomingEvents] = useState<SchoolEvent[]>([]);
 
@@ -317,4 +317,4 @@ const RecentNews: React.FC = () => {
   );
 };
 
-export default RecentNews;
+export default NewsEvents;

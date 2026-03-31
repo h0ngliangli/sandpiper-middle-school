@@ -2,15 +2,15 @@ import AboutUs from '@/components/AboutUs';
 import AcademicPerformance from '@/components/AcademicPerformance';
 import Alumni from '@/components/Alumni';
 import BannerSpacer from '@/components/BannerSpacer';
-import StingrayNewsBanner from '@/components/StingrayNewsBanner';
 import Chatbot from '@/components/Chatbot';
 import DesignThinking from '@/components/DesignThinking';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
+import NewsEvents from '@/components/NewsEvents';
 import ParentAmbassadors2 from '@/components/ParentAmbassadors2';
 import QuickLinks from '@/components/QuickLinks';
-import RecentNews from '@/components/RecentNews';
+import StingrayNewsBanner from '@/components/StingrayNewsBanner';
 import StudentExperience from '@/components/StudentExperience';
 import Testimonials from '@/components/Testimonials';
 import WhyUnique from '@/components/WhyUnique';
@@ -28,7 +28,7 @@ export default function Home() {
         <DesignThinking />
         <AcademicPerformance />
         <StudentExperience />
-        <RecentNews />
+        <NewsEvents />
         <Testimonials />
         <Alumni />
         <ParentAmbassadors2 />
