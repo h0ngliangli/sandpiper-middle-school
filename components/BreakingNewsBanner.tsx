@@ -49,7 +49,7 @@ export default function BreakingNewsBanner() {
     <div
       ref={bannerRef}
       className="fixed left-1/2 z-[60] flex w-full max-w-6xl -translate-x-1/2
-        items-center bg-sandpiper-blue shadow-md"
+        items-center bg-sandpiper-muted-blue shadow-md"
       style={{ top: 0 }}
     >
       {/* NEWS badge */}
