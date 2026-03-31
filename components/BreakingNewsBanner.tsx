@@ -48,36 +48,42 @@ export default function BreakingNewsBanner() {
   return (
     <div
       ref={bannerRef}
-      className="fixed left-1/2 z-[60] flex w-full max-w-6xl -translate-x-1/2 items-center
-        bg-sandpiper-blue shadow-md"
+      className="fixed left-1/2 z-[60] flex w-full max-w-6xl -translate-x-1/2
+        items-center bg-sandpiper-blue shadow-md"
       style={{ top: 0 }}
     >
       {/* NEWS badge */}
       <div
-        className="flex h-full shrink-0 items-center bg-sandpiper-gold px-3 py-2 text-sandpiper-blue"
+        className="flex shrink-0 items-center self-stretch bg-sandpiper-gold
+          px-2"
       >
-        <span className="text-[10px] font-black tracking-widest italic">BREAKING NEWS</span>
+        <span className="text-xs font-black tracking-widest text-sandpiper-blue">
+          STINGRAY NEWS
+        </span>
       </div>
 
       {/* Text */}
-      <div className="min-w-0 flex-1 px-4 py-2">
-        <p className="text-xs font-medium text-white lg:text-sm">
-          {BREAKING_NEWS.text}{' '}
-          <a
-            href={BREAKING_NEWS.link}
-            className="font-semibold text-sandpiper-gold underline-offset-2 hover:underline"
-          >
-            Read more →
-          </a>
-        </p>
+      <div
+        className="min-w-0 flex-1 px-4 py-2 text-xs font-medium
+          lg:text-sm"
+      >
+        <span className="text-white mr-2">{BREAKING_NEWS.text}</span>
+        <a
+          href={BREAKING_NEWS.link}
+          className="whitespace-nowrap font-semibold text-sandpiper-gold underline 
+            underline-offset-2"
+        >
+          Read more
+        </a>
       </div>
 
       {/* Close */}
-      <div className="shrink-0 pr-3">
+      <div className="shrink-0 self-stretch border-l border-white/20">
         <button
           onClick={dismiss}
           aria-label="Close breaking news"
-          className="text-white/50 transition-colors hover:text-white"
+          className="flex h-full items-center px-3 text-white/50
+            transition-colors hover:text-white"
         >
           <X className="h-4 w-4" />
         </button>
