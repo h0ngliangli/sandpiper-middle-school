@@ -127,7 +127,7 @@ function GaugeCard({ subject, points }: { subject: string; points: string }) {
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 shrink-0 rounded-full bg-green-500" />
           <span
-            className="text-xs font-bold uppercase tracking-wide "
+            className="text-xs font-bold uppercase tracking-wide text-sandpiper-blue dark:text-blue-400"
           >
             Above Standard
           </span>
