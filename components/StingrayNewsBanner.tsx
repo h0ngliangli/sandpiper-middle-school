@@ -57,7 +57,7 @@ export default function StingrayNewsBanner() {
         className="flex shrink-0 items-center self-stretch bg-sandpiper-gold
           px-2"
       >
-        <span className="text-xs font-black tracking-widest text-sandpiper-blue">
+        <span className="text-[10px] font-black tracking-widest text-sandpiper-blue">
           STINGRAY NEWS
         </span>
       </div>
