@@ -41,10 +41,11 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed left-1/2 top-0 z-50 w-full max-w-6xl -translate-x-1/2
+      className={`fixed left-1/2 z-50 w-full max-w-6xl -translate-x-1/2
         bg-sandpiper-blue transition-transform duration-300 ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         } px-4`}
+      style={{ top: 'var(--banner-h, 0px)' }}
     >
       <div className="flex h-16 items-center justify-between">
         <div className="flex flex-grow items-center gap-2">

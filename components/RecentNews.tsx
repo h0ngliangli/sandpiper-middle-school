@@ -253,7 +253,7 @@ const RecentNews: React.FC = () => {
             </a>{' '}
             and nominated for the
             <a
-              href="https://www.thermofisher.com/us/en/home/industrial/education/thermo-fisher-junior-innovators-challenge.html"
+              href="https://www.societyforscience.org/jic/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-sandpiper-blue underline
