@@ -12,7 +12,7 @@ const BREAKING_NEWS = {
 
 const STORAGE_KEY = `breaking-news-dismissed-${BREAKING_NEWS.id}`;
 
-export default function BreakingNewsBanner() {
+export default function StingrayNewsBanner() {
   const [visible, setVisible] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
 

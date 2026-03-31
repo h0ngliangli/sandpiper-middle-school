@@ -2,7 +2,7 @@ import AboutUs from '@/components/AboutUs';
 import AcademicPerformance from '@/components/AcademicPerformance';
 import Alumni from '@/components/Alumni';
 import BannerSpacer from '@/components/BannerSpacer';
-import BreakingNewsBanner from '@/components/BreakingNewsBanner';
+import StingrayNewsBanner from '@/components/StingrayNewsBanner';
 import Chatbot from '@/components/Chatbot';
 import DesignThinking from '@/components/DesignThinking';
 import Footer from '@/components/Footer';
@@ -18,7 +18,7 @@ import WhyUnique from '@/components/WhyUnique';
 export default function Home() {
   return (
     <div className="mx-auto max-w-6xl">
-      <BreakingNewsBanner />
+      <StingrayNewsBanner />
       <Navbar />
       <main className="pt-16">
         <BannerSpacer />
