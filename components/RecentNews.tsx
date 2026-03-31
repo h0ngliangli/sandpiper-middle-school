@@ -198,32 +198,10 @@ const RecentNews: React.FC = () => {
   return (
     <section id="news" className="section-p bg-light-2 flex flex-col gap-3">
       <SectionTitle small="What's Coming Up" title="NEWS & EVENTS" />
-      <p className="section-text">
-        Stay up to date with what&apos;s happening at Sandpiper. Click any event
-        for full details.
-      </p>
-      <div className="lg:grid-cols-3q grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {upcomingEvents.map((event) => (
-          <EventCard
-            key={event.id}
-            event={event}
-            onClick={() => setSelectedEvent(event)}
-          />
-        ))}
-      </div>
-
-      {selectedEvent && (
-        <EventModal
-          event={selectedEvent}
-          onClose={() => setSelectedEvent(null)}
-        />
-      )}
-
-      <h3 className="section-title text-lg">FEATURED HIGHLIGHTS</h3>
-
       <div
+        id="breaking-news"
         className="relative flex flex-col gap-4 rounded-2xl border
-          border-slate-500 bg-white p-6 shadow-sm dark:border-slate-600
+          border-slate-500 bg-beige/50 p-6 shadow-md dark:border-slate-600
           dark:bg-slate-800"
       >
         <span
@@ -297,6 +275,28 @@ const RecentNews: React.FC = () => {
           </p>
         </div>
       </div>
+      <p className="section-text">
+        Stay up to date with what&apos;s happening at Sandpiper. Click any event
+        for full details.
+      </p>
+      <div className="lg:grid-cols-3q grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {upcomingEvents.map((event) => (
+          <EventCard
+            key={event.id}
+            event={event}
+            onClick={() => setSelectedEvent(event)}
+          />
+        ))}
+      </div>
+
+      {selectedEvent && (
+        <EventModal
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
+        />
+      )}
+
+      <h3 className="section-title text-lg">FEATURED HIGHLIGHTS</h3>
 
       <div className="flex flex-col gap-3">
         <h3 className="text-base font-extrabold text-midnight dark:text-white">
