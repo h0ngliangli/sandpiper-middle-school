@@ -222,12 +222,19 @@ const RecentNews: React.FC = () => {
       <h3 className="section-title text-lg">FEATURED HIGHLIGHTS</h3>
 
       <div
-        className="flex flex-col gap-4 rounded-2xl border border-slate-500
-          bg-white p-6 shadow-sm dark:border-slate-600 dark:bg-slate-800"
+        className="relative flex flex-col gap-4 rounded-2xl border
+          border-slate-500 bg-white p-6 shadow-sm dark:border-slate-600
+          dark:bg-slate-800"
       >
-        <h3 className="text-base font-extrabold text-midnight dark:text-white">
-          Congratulations to Sandpiper Middle Students at the 2026 San Mateo
-          STEM Fair
+        <span
+          className="absolute -top-3 right-4 rounded-full bg-red-600 px-3 py-0.5
+            text-xs font-bold uppercase tracking-wide text-white shadow"
+        >
+          Breaking News!
+        </span>
+        <h3 className="text-xl font-extrabold text-midnight dark:text-white">
+          Congratulations to Sandpiper Middle Students for winning big at the
+          2026 San Mateo County STEM Fair!
         </h3>
         <div className="section-text">
           <p>
@@ -235,36 +242,49 @@ const RecentNews: React.FC = () => {
             awards at the 2026 San Mateo County STEM Fair, placing us #4 out of
             24 competing schools countywide.
           </p>
-          <ul className="list-inside text-sm">
+          <ul className="flex list-inside flex-col gap-2 p-4">
             <li>
-              🏆
-              Lyra Bloom &mdash; &ldquo;BinBuddy: AI Trash-Sorting Robot For
-              Kids&rdquo; &mdash; Environmental: 1st Place
+              🏆 Lyra B. &mdash; &ldquo;BinBuddy: AI Trash-Sorting Robot For
+              Kids&rdquo; &mdash; <span>Environmental: 1st Place</span>
             </li>
             <li>
-              🏆
-              Louis Guo &mdash; &ldquo;Affordable Rapid Prototyping&rdquo;
-              &mdash; Physical Sciences: 2nd Place
+              🏆 Louis G. &mdash; &ldquo;Affordable Rapid Prototyping&rdquo;
+              &mdash; <span>Physical Sciences: 2nd Place</span>
             </li>
             <li>
-              🏆
-              Andrew Park &mdash; &ldquo;Interactive 3D Sound Antenna for
+              🏆 Andrew P. &mdash; &ldquo;Interactive 3D Sound Antenna for
               Real-Time Sound Localization and Visualization&rdquo; &mdash;
-              Physical Sciences: 1st Place
+              <span>Physical Sciences: 1st Place</span>
             </li>
             <li>
-              🏆
-              Christopher Lorilla &mdash; &ldquo;Can Public Market Sentiment
+              🏆 Christopher L. &mdash; &ldquo;Can Public Market Sentiment
               Predict Stock Market Returns?&rdquo; &mdash;
-              Mathematical/Computational: 2nd Place
+              <span>Mathematical/Computational: 2nd Place</span>
             </li>
           </ul>
           <p>
             Our first-place winners have been invited to the{' '}
-            <strong>California State Science and Engineering Fair</strong> and
-            nominated for the
-            <strong> Thermo Fisher Junior Innovators Challenge</strong>. Please
-            join us in congratulating these amazing students!{' '}
+            <a
+              href="https://csef.usc.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sandpiper-blue underline
+                hover:opacity-80 dark:text-blue-300"
+            >
+              California State Science and Engineering Fair
+            </a>{' '}
+            and nominated for the
+            <a
+              href="https://www.thermofisher.com/us/en/home/industrial/education/thermo-fisher-junior-innovators-challenge.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-sandpiper-blue underline
+                hover:opacity-80 dark:text-blue-300"
+            >
+              {' '}
+              Thermo Fisher Junior Innovators Challenge
+            </a>
+            . Please join us in congratulating these amazing students!{' '}
             <a
               href="https://stemfair.net/results/2026/"
               target="_blank"
