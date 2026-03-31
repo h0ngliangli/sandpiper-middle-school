@@ -196,124 +196,130 @@ const NewsEvents: React.FC = () => {
   if (upcomingEvents.length === 0) return null;
 
   return (
-    <section id="news" className="section-p bg-light-2 flex flex-col gap-3">
-      <SectionTitle small="What's Coming Up" title="NEWS & EVENTS" />
-      <div
-        id="breaking-news"
-        className="relative flex flex-col gap-4 rounded-2xl border
-          border-slate-500 bg-beige/50 p-6 shadow-md dark:border-slate-600
-          dark:bg-slate-800"
-      >
-        <span
-          className="absolute -top-3 right-4 rounded-full bg-red-600 px-3 py-0.5
-            text-xs font-bold uppercase tracking-wide text-white shadow"
+    <>
+      <section id="news" className="section-p bg-light-2 flex flex-col gap-5">
+        <SectionTitle small="What's Coming Up" title="NEWS" />
+        <div
+          className="relative flex flex-col gap-4 rounded-2xl border
+            border-slate-500 bg-beige/50 p-6 shadow-md dark:border-slate-600
+            dark:bg-slate-800"
         >
-          Breaking News!
-        </span>
-        <h3 className="text-xl font-extrabold text-midnight dark:text-white">
-          Congratulations to Sandpiper Middle Students for winning big at the
-          2026 San Mateo County STEM Fair!
-        </h3>
-        <div className="section-text">
-          <p>
-            4 Sandpiper Middle School students just took home 1st and 2nd place
-            awards at the 2026 San Mateo County STEM Fair, placing us #4 out of
-            24 competing schools countywide.
-          </p>
-          <ul className="flex list-inside flex-col gap-2 p-4">
-            <li>
-              🏆 Lyra B. &mdash; &ldquo;BinBuddy: AI Trash-Sorting Robot For
-              Kids&rdquo; &mdash; <span>Environmental: 1st Place</span>
-            </li>
-            <li>
-              🏆 Louis G. &mdash; &ldquo;Affordable Rapid Prototyping&rdquo;
-              &mdash; <span>Physical Sciences: 2nd Place</span>
-            </li>
-            <li>
-              🏆 Andrew P. &mdash; &ldquo;Interactive 3D Sound Antenna for
-              Real-Time Sound Localization and Visualization&rdquo; &mdash;
-              <span>Physical Sciences: 1st Place</span>
-            </li>
-            <li>
-              🏆 Christopher L. &mdash; &ldquo;Can Public Market Sentiment
-              Predict Stock Market Returns?&rdquo; &mdash;
-              <span>Mathematical/Computational: 2nd Place</span>
-            </li>
-          </ul>
-          <p>
-            Our first-place winners have been invited to the{' '}
-            <a
-              href="https://csef.usc.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-sandpiper-blue underline
-                hover:opacity-80 dark:text-blue-300"
-            >
-              California State Science and Engineering Fair
-            </a>{' '}
-            and nominated for the
-            <a
-              href="https://www.societyforscience.org/jic/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-sandpiper-blue underline
-                hover:opacity-80 dark:text-blue-300"
-            >
-              {' '}
-              Thermo Fisher Junior Innovators Challenge
-            </a>
-            . Please join us in congratulating these amazing students!{' '}
-            <a
-              href="https://stemfair.net/results/2026/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-sandpiper-blue underline
-                hover:opacity-80 dark:text-blue-300"
-            >
-              See all 2026 STEM Fair Results here.
-            </a>
-          </p>
+          <span
+            className="absolute -top-3 right-4 rounded-full bg-red-600 px-3
+              py-0.5 text-xs font-bold uppercase tracking-wide text-white
+              shadow"
+          >
+            Breaking News!
+          </span>
+          <h3 className="text-xl font-extrabold text-midnight dark:text-white">
+            Congratulations to Sandpiper Middle Students for winning big at the
+            2026 San Mateo County STEM Fair!
+          </h3>
+          <div className="section-text">
+            <p>
+              4 Sandpiper Middle School students just took home 1st and 2nd
+              place awards at the 2026 San Mateo County STEM Fair, placing us #4
+              out of 24 competing schools countywide.
+            </p>
+            <ul className="flex list-inside flex-col gap-2 p-4">
+              <li>
+                🏆 Lyra B. &mdash; &ldquo;BinBuddy: AI Trash-Sorting Robot For
+                Kids&rdquo; &mdash; <span>Environmental: 1st Place</span>
+              </li>
+              <li>
+                🏆 Louis G. &mdash; &ldquo;Affordable Rapid Prototyping&rdquo;
+                &mdash; <span>Physical Sciences: 2nd Place</span>
+              </li>
+              <li>
+                🏆 Andrew P. &mdash; &ldquo;Interactive 3D Sound Antenna for
+                Real-Time Sound Localization and Visualization&rdquo; &mdash;
+                <span>Physical Sciences: 1st Place</span>
+              </li>
+              <li>
+                🏆 Christopher L. &mdash; &ldquo;Can Public Market Sentiment
+                Predict Stock Market Returns?&rdquo; &mdash;
+                <span>Mathematical/Computational: 2nd Place</span>
+              </li>
+            </ul>
+            <p>
+              Our first-place winners have been invited to the{' '}
+              <a
+                href="https://csef.usc.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sandpiper-blue underline
+                  hover:opacity-80 dark:text-blue-300"
+              >
+                California State Science and Engineering Fair
+              </a>{' '}
+              and nominated for the
+              <a
+                href="https://www.societyforscience.org/jic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sandpiper-blue underline
+                  hover:opacity-80 dark:text-blue-300"
+              >
+                {' '}
+                Thermo Fisher Junior Innovators Challenge
+              </a>
+              . Please join us in congratulating these amazing students!{' '}
+              <a
+                href="https://stemfair.net/results/2026/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sandpiper-blue underline
+                  hover:opacity-80 dark:text-blue-300"
+              >
+                See all 2026 STEM Fair Results here.
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-      <p className="section-text">
-        Stay up to date with what&apos;s happening at Sandpiper. Click any event
-        for full details.
-      </p>
-      <div className="lg:grid-cols-3q grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {upcomingEvents.map((event) => (
-          <EventCard
-            key={event.id}
-            event={event}
-            onClick={() => setSelectedEvent(event)}
-          />
-        ))}
-      </div>
 
-      {selectedEvent && (
-        <EventModal
-          event={selectedEvent}
-          onClose={() => setSelectedEvent(null)}
-        />
-      )}
-
-      <h3 className="section-title text-lg">FEATURED HIGHLIGHTS</h3>
-
-      <div className="flex flex-col gap-3">
-        <h3 className="text-base font-extrabold text-midnight dark:text-white">
-          2026-2027 Middle School Information Night
-        </h3>
-        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-          <iframe
-            className="absolute inset-0 h-full w-full rounded-2xl shadow-md"
-            src="https://www.youtube.com/embed/V9b1lj6JO1w?si=R9YumkvADugWeRGD"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
+        <div className="flex flex-col gap-1">
+          <div className="text-sandpiper-blue text-center">
+            — · —
+          </div>
+          <h3 className="section-title text-center text-base">
+            Middle School Information Night
+          </h3>
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              className="absolute inset-0 h-full w-full rounded-2xl shadow-md"
+              src="https://www.youtube.com/embed/V9b1lj6JO1w?si=R9YumkvADugWeRGD"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
         </div>
-      </div>
-    </section>
+
+        <div className="flex flex-col gap-1">
+          <div className="text-sandpiper-blue text-center">
+            — · —
+          </div>
+          <h3 className="section-title text-center text-base">Recent Events</h3>
+          <div className="lg:grid-cols-3q grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {upcomingEvents.map((event) => (
+              <EventCard
+                key={event.id}
+                event={event}
+                onClick={() => setSelectedEvent(event)}
+              />
+            ))}
+          </div>
+
+          {selectedEvent && (
+            <EventModal
+              event={selectedEvent}
+              onClose={() => setSelectedEvent(null)}
+            />
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 
