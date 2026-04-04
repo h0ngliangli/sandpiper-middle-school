@@ -41,13 +41,15 @@ const StudentExperience: React.FC = async () => {
                   className="relative aspect-[4/3] overflow-hidden rounded-xl
                     shadow-2xl"
                 >
-                  <img
-                    src={section.imageUrl}
-                    alt={section.imageAlt}
-                    loading="lazy"
-                    className="h-full w-full transform object-cover
-                      transition-transform duration-700 group-hover:scale-105"
-                  />
+                  {section.imageUrl && (
+                    <img
+                      src={section.imageUrl}
+                      alt={section.imageAlt}
+                      loading="lazy"
+                      className="h-full w-full transform object-cover
+                        transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
                 </div>
               </div>
 
