@@ -13,7 +13,8 @@ const SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID;
 function parseGviz(text: string): Record<string, string>[] {
   const start = text.indexOf('{');
   const end = text.lastIndexOf('}');
-  if (start === -1 || end === -1) throw new Error('Unexpected gviz response format');
+  if (start === -1 || end === -1)
+    throw new Error('Unexpected gviz response format');
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const json: any = JSON.parse(text.slice(start, end + 1));
   const cols: string[] = json.table.cols.map((c: { label: string }) => c.label);
@@ -27,36 +28,31 @@ function parseGviz(text: string): Record<string, string>[] {
   });
 }
 
-async function fetchTab(tab: string, sheetId = SHEET_ID): Promise<Record<string, string>[]> {
-  if (!sheetId) throw new Error('NEXT_PUBLIC_GOOGLE_SHEET_ID is not configured');
+async function fetchTab(
+  tab: string,
+  sheetId = SHEET_ID,
+): Promise<Record<string, string>[]> {
+  if (!sheetId)
+    throw new Error('NEXT_PUBLIC_GOOGLE_SHEET_ID is not configured');
   const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(tab)}&headers=1`;
   // `next.revalidate` is a Next.js server-side fetch extension (ignored in browsers).
   const res = await fetch(url, { next: { revalidate: 60 } } as RequestInit);
-  if (!res.ok) throw new Error(`Failed to fetch sheet "${tab}": HTTP ${res.status}`);
+  if (!res.ok)
+    throw new Error(`Failed to fetch sheet "${tab}": HTTP ${res.status}`);
   return parseGviz(await res.text());
 }
 
 // ── Typed loaders ──────────────────────────────────────────────────────────────
 
-export async function fetchByTheNumbers(sheetId?: string) {
-  const rows = await fetchTab('by-the-numbers', sheetId);
-  return rows.map((r) => ({
-    id: r.id,
-    label: r.label,
-    value: r.value,
-    iconName: r.icon, // "Users" | "Trophy" | "SmilePlus" | "Bot"
-  }));
-}
-
-export async function fetchSchoolFeatures(sheetId?: string) {
-  const rows = await fetchTab('school-features', sheetId);
+export async function fetchStudentExperience(sheetId?: string) {
+  const rows = await fetchTab('Student Experience', sheetId);
   return rows.map((r) => ({
     id: r.id,
     tag: r.tag,
     title: r.title,
     description: r.description,
-    imageUrl: r.imageUrl,
-    imageAlt: r.imageAlt,
+    imageUrl: r.imageUrl || undefined,
+    imageAlt: r.imageAlt || undefined,
     reverse: r.reverse?.toLowerCase() === 'true',
     ctaText: r.ctaText || undefined,
     ctaLink: r.ctaLink || undefined,
@@ -64,7 +60,7 @@ export async function fetchSchoolFeatures(sheetId?: string) {
 }
 
 export async function fetchTestimonials(sheetId?: string) {
-  const rows = await fetchTab('testimonials', sheetId);
+  const rows = await fetchTab('Testimonials', sheetId);
   return rows.map((r, i) => ({
     id: Number(r.id) || i,
     name: r.name || undefined,
@@ -75,7 +71,7 @@ export async function fetchTestimonials(sheetId?: string) {
 }
 
 export async function fetchGradeGroups(sheetId?: string) {
-  const rows = await fetchTab('grade-groups', sheetId);
+  const rows = await fetchTab('Grade Groups', sheetId);
   return rows.map((r) => ({
     grade: Number(r.grade),
     whatsappUrl: r.whatsappUrl,
@@ -89,7 +85,7 @@ export async function fetchGradeGroups(sheetId?: string) {
 }
 
 export async function fetchEvents(sheetId?: string) {
-  const rows = await fetchTab('events', sheetId);
+  const rows = await fetchTab('Events', sheetId);
   return rows.map((r) => ({
     id: r.id,
     title: r.title,
@@ -127,7 +123,7 @@ export async function fetchParentAmbassador(sheetId?: string) {
 }
 
 export async function fetchQuickLinks(sheetId?: string) {
-  const rows = await fetchTab('quick-links', sheetId);
+  const rows = await fetchTab('Quick Links', sheetId);
   return rows.map((r) => ({
     id: r.id,
     label: r.label,

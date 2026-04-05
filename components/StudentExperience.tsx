@@ -1,13 +1,13 @@
 import { SectionContent as StudentExpSection } from '../types';
 import SectionTitle from './SectionTitle';
-import { fetchSchoolFeatures as fetchStudentExpSections } from '@/lib/sheets';
+import { fetchStudentExperience as fetchStudentExpSections } from '@/lib/sheets';
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
 
 const StudentExperience: React.FC = async () => {
   const sections: StudentExpSection[] = await fetchStudentExpSections();
   return (
-    <div className="section-p flex flex-col gap-3 bg-light-1">
+    <div className="section-p bg-light-1 flex flex-col gap-3">
       <SectionTitle
         small=""
         title={
