@@ -3,8 +3,6 @@
 ## To do
 - [ ] New video clip.
 - [ ] Add separate pages for existing parents.
-- [ ] Move files to firebase storage and update links.
-- [ ] Migrate faq.ts, testimonials.ts to cloud firestore and update code.
 
 ## Done
 - [x] (Short term) move testimonials to a .ts file.
