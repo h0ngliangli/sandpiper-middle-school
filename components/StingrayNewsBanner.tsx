@@ -48,16 +48,19 @@ export default function StingrayNewsBanner() {
   return (
     <div
       ref={bannerRef}
-      className="bg-sandpiper-muted-blue fixed left-1/2 z-[60] flex w-full
-        max-w-6xl -translate-x-1/2 items-center shadow-md"
+      className="fixed left-1/2 z-[60] flex w-full max-w-6xl -translate-x-1/2
+        items-center bg-sandpiper-signal-blue shadow-md"
       style={{ top: 0 }}
     >
       {/* NEWS badge */}
       <div
-        className="flex shrink-0 items-center self-stretch bg-sandpiper-gold
-          px-2"
+        className="flex shrink-0 items-center self-stretch border-r
+          border-white/10 bg-white/10 px-3 backdrop-blur-sm"
       >
-        <span className="text-[10px] font-black tracking-widest text-sandpiper-blue">
+        <span
+          className="text-[10px] font-black tracking-[0.22em]
+            text-sandpiper-gold"
+        >
           STINGRAY NEWS
         </span>
       </div>

@@ -14,6 +14,7 @@ export default {
         sandpiper: {
           blue: '#1e3a8a',
           'muted-blue': '#0A3E5E',
+          'signal-blue': '#0F5B78',
           gold: '#F5A623',
           dark: '#0A0A0A',
         },
