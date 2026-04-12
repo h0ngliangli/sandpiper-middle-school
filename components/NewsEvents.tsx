@@ -193,8 +193,6 @@ const NewsEvents: React.FC = () => {
       .catch(console.error);
   }, []);
 
-  if (upcomingEvents.length === 0) return null;
-
   return (
     <>
       <section id="news" className="section-p bg-light-2 flex flex-col gap-5">
@@ -302,13 +300,17 @@ const NewsEvents: React.FC = () => {
           </div>
           <h3 className="section-title text-center text-base">Recent Events</h3>
           <div className="lg:grid-cols-3q grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {upcomingEvents.map((event) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                onClick={() => setSelectedEvent(event)}
-              />
-            ))}
+            {upcomingEvents.length === 0 ? (
+              <p className="text-center section-text col-span-full">No upcoming events at this time.</p>
+            ) : (
+              upcomingEvents.map((event) => (
+                <EventCard
+                  key={event.id}
+                  event={event}
+                  onClick={() => setSelectedEvent(event)}
+                />
+              ))
+            )}
           </div>
 
           {selectedEvent && (
